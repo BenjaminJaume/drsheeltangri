@@ -47,12 +47,95 @@ $blue-horizon: #4b6584;
 
 // Custom colors
 
-$brand-color: #1f263b;
+$brand-color: #000;
 $white: #fff;
+$black: #000;
 
 // Other
 
 $opacity-link: 0.75;
+
+// Texts color
+
+.text-turquoise {
+  color: $turquoise;
+}
+
+.text-green-sea {
+  color: $green-sea;
+}
+
+.text-sun-flower {
+  color: $sun-flower;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-emerald {
+  color: $emerald;
+}
+
+.text-nephritis {
+  color: $nephritis;
+}
+
+.text-carrot {
+  color: $carrot;
+}
+
+.text-pumkin {
+  color: $pumkin;
+}
+
+.text-peter-river {
+  color: $peter-river;
+}
+
+.text-belize-hole {
+  color: $belize-hole;
+}
+
+.text-alizarin {
+  color: $alizarin;
+}
+
+.text-pomegranate {
+  color: $pomegranate;
+}
+
+.text-amethyst {
+  color: $amethyst;
+}
+
+.text-wisteria {
+  color: $wisteria;
+}
+
+.text-clouds {
+  color: $clouds;
+}
+
+.text-silver {
+  color: $silver;
+}
+
+.text-wet-asphalt {
+  color: $wet-asphalt;
+}
+
+.text-midnight-blue {
+  color: $midnight-blue;
+}
+
+.text-concrete {
+  color: $concrete;
+}
+
+.text-absestos {
+  color: $absestos;
+}
 
 // Links color
 
@@ -214,4 +297,10 @@ $opacity-link: 0.75;
   &:hover {
     color: rgba($absestos, $opacity-link);
   }
+}
+
+// Backgrounds color
+
+.bg-peter-river {
+  background-color: $peter-river;
 }

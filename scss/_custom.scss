@@ -1,15 +1,11 @@
-$navbar-height: 66px;
+$navbar-height: 110px;
 
 .font-manrope {
   font-family: "Manrope", sans-serif !important;
 }
 
-.font-jost {
-  font-family: "Jost", sans-serif !important;
-}
-
-.font-roboto {
-  font-family: "Roboto", sans-serif !important;
+.font-rubik {
+  font-family: "Rubik", sans-serif !important;
 }
 
 .img-text-container {
@@ -35,7 +31,11 @@ $navbar-height: 66px;
   background-size: cover;
 }
 
-.btn-danger.hvr-underline-from-center:before,
-.btn-outline-danger.hvr-underline-from-center:before {
-  background: colors.$white;
+.btn-success.hvr-underline-from-center:before,
+.btn-outline-success.hvr-underline-from-center:before {
+  background: colors.$peter-river;
+}
+
+.font-small {
+  font-size: 0.75rem;
 }

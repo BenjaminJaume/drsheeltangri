@@ -8,33 +8,56 @@ header {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 
   .navbar-dark {
+    &.bg-dark {
+      background-color: colors.$black;
+    }
+
     .navbar-logo {
-      width: 250px;
+      width: 100px;
     }
 
     .navbar-nav {
       font-size: 1rem;
 
+      .dropdown-menu {
+        text-align: center;
+        background-color: colors.$black;
+
+        a {
+          color: colors.$white;
+
+          &:hover {
+            background-color: unset;
+            color: colors.$peter-river;
+          }
+        }
+      }
+
       a {
+        text-transform: uppercase;
         font-weight: 300;
 
         @include transition(all 300ms ease-in-out);
       }
 
-      a[title*="Get started"] {
-        border: 1px solid colors.$emerald;
+      a[title*="Videos & Books"] {
+        border: 1px solid colors.$peter-river;
+      }
+
+      a[title*="Become an N.O.T. Practitioner"] {
+        color: colors.$peter-river;
       }
 
       .nav-link {
         color: colors.$white;
 
         &:hover {
-          color: rgba(colors.$emerald, 0.75);
+          color: rgba(colors.$peter-river, 0.75);
         }
       }
 
       .active > .nav-link {
-        color: colors.$emerald;
+        color: colors.$peter-river;
       }
     }
 

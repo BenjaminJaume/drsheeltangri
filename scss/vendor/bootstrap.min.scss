@@ -1,11 +1,10 @@
 @use "../colors";
 
 $theme-colors: (
-  "dark": colors.$brand-color,
+  "dark": colors.$black,
   "success": colors.$emerald,
   "primary": colors.$peter-river,
   "warning": colors.$sun-flower,
-  "danger": colors.$brand-color,
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
