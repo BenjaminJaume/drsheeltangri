@@ -45,14 +45,18 @@ header {
       }
 
       a[title*="Become an N.O.T. Practitioner"] {
-        color: colors.$peter-river;
+        color: colors.$emerald;
+
+        &:hover {
+          color: rgba(colors.$emerald, colors.$opacity-link);
+        }
       }
 
       .nav-link {
         color: colors.$white;
 
         &:hover {
-          color: rgba(colors.$peter-river, 0.75);
+          color: rgba(colors.$peter-river, colors.$opacity-link);
         }
       }
 

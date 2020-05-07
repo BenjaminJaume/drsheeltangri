@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silent Affirmations</title>
+    <title>Dr. Sheel Tangri</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
