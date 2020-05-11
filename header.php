@@ -30,7 +30,7 @@
                             <div class="col-auto m-0 mx-auto p-0">
                                 <div class="d-flex flex-column">
                                     <span class="font-manrope text-uppercase m-0 p-0">
-                                        Dr Sheel Tangri
+                                        Dr. Sheel Tangri
                                     </span>
                                     <span class="font-small font-rubik text-emerald m-0 p-0">
                                         Chiropractic Kinesiologist

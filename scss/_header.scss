@@ -40,12 +40,13 @@ header {
         @include transition(all 300ms ease-in-out);
       }
 
-      a[title*="Videos & Books"] {
+      a[title*="Videos & Book"] {
         border: 1px solid colors.$peter-river;
       }
 
-      a[title*="Become an N.O.T. Practitioner"] {
+      a[title*="Learn N.O.T."] {
         color: colors.$emerald;
+        font-weight: bold;
 
         &:hover {
           color: rgba(colors.$emerald, colors.$opacity-link);

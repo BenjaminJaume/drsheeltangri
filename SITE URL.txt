@@ -6,8 +6,14 @@ Sheel
 Wordpress Drowssap
 123456
 
-Wordpress Award Space:
-admin
+Wordpress cPanel:
+sheel
 
 Wordpress Award Space Drowssap:
 DrSheel3
+
+cPanel Login:
+kinesiologist
+
+cPanel Drowssap:
+Knslg+*-65/82*-
