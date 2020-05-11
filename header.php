@@ -16,6 +16,13 @@
     <?php wp_head(); ?>
 </head>
 
+<?php
+
+global $template;
+console($template);
+
+?>
+
 <body <?php body_class('main'); ?>>
 
     <header class=" sticky-top" role="banner">

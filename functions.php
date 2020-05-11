@@ -71,10 +71,73 @@ function console($data)
     echo "<script>console.log('" . json_encode($data) . "');</script>";
 }
 
+// Custom post type function
+function create_posttype()
+{
+    register_post_type(
+        'testimonials',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Testimonials'),
+                'singular_name' => __('Testimonial')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'testimonials'),
+            'show_in_rest' => true,
+            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action('init', 'create_posttype');
+
+// Add the custom columns to the testimonials post type:
+add_filter('manage_testimonials_posts_columns', 'set_custom_edit_testimonials_columns');
+function set_custom_edit_testimonials_columns($columns)
+{
+    unset($columns['title']);
+    unset($columns['date']);
+    $columns['full_name'] = __('Full Name');
+    $columns['content'] = __('Content');
+    $columns['date_testimonial'] = __('Date');
+    $columns['edit'] = __('Edit');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the testimonials post type:
+add_action('manage_testimonials_posts_custom_column', 'custom_testimonials_column', 10, 2);
+function custom_testimonials_column($column, $post_id)
+{
+    switch ($column) {
+        case 'full_name':
+            echo get_post_meta($post_id, 'full_name', true);
+            break;
+
+        case 'content':
+            echo wp_trim_words(get_post_meta($post_id, 'content', true), 30) . '[...]';
+            break;
+
+        case 'date_testimonial':
+            $date = get_post_meta($post_id, 'date_testimonial', true);
+            if ($date != '') {
+                echo date("j/m/Y", strtotime($date));
+            }
+            break;
+
+        case 'edit':
+            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</a>';
+            break;
+    }
+}
+
 // turn off wysiwig for custom post types
 add_action('init', 'init_remove_support', 100);
 function init_remove_support()
 {
+    remove_post_type_support('testimonials', 'editor');
     remove_post_type_support('page', 'editor');
 }
 
