@@ -22,7 +22,7 @@ $section_7 = get_field('section_7');
                     <?php echo $introduction['title']; ?>
                 </h1>
 
-                <h4 class="font-rubik text-peter-river w-100 w-md-75 mx-auto mt-4">
+                <h4 class="font-manrope text-peter-river w-100 w-md-75 mx-auto mt-4">
                     <?php echo $introduction['introduction_content']; ?>
                 </h4>
 
@@ -40,7 +40,7 @@ $section_7 = get_field('section_7');
             </div>
         </div>
         <div class="col-12 col-md-6 p-0">
-            <iframe width="100%" height="500px" src="ghttps://www.youtube.com/embed/KRFdfcNjj5Q?controls=0?autoplay=1?loop=1" frameborder="0" allow="autoplay">
+            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/KRFdfcNjj5Q?controls=0?autoplay=1?loop=1" frameborder="0" allow="autoplay">
             </iframe>
         </div>
     </div>
@@ -182,6 +182,12 @@ $section_7 = get_field('section_7');
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center">
+            <div class="is-mobile mx-auto mb-3">
+                <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary btn-lg hvr-glow rounded-0">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Learn more
+                </a>
+            </div>
             <form class="form-inline justify-content-center my-2 my-lg-0">
                 <input class="form-control form-control-lg rounded-0 mr-2" type="search" placeholder="Condition keyword" aria-label="Search">
                 <button class="btn btn-primary btn-lg rounded-0 hvr-icon-wobble-horizontal my-2" type="submit">
@@ -189,12 +195,6 @@ $section_7 = get_field('section_7');
                     <i class="fas fa-search hvr-icon ml-1"></i>
                 </button>
             </form>
-        </div>
-        <div class="mx-auto is-mobile">
-            <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary btn-lg hvr-glow rounded-0">
-                <i class="fas fa-info-circle mr-1"></i>
-                Learn more
-            </a>
         </div>
     </div>
 </article>
