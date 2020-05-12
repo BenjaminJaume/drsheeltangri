@@ -79,13 +79,13 @@ $section_7 = get_field('section_7');
                 <table class="table table-striped table-bordered table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">
+                            <th scope="col" class="align-middle">
                                 <h3 class="font-manrope text-uppercase text-center m-0 p-0">
                                     <?php echo $section_2['column_1']; ?>
                                 </h3>
                             </th>
-                            <th scope="col" class="">
-                                <h3 class="font-manrope text-uppercase text-center mx-3 p-0">
+                            <th scope="col" class="align-middle">
+                                <h3 class="font-manrope text-uppercase text-center mx-3 my-0 p-0">
                                     <?php echo $section_2['column_2']; ?>
                                 </h3>
                             </th>
@@ -182,7 +182,7 @@ $section_7 = get_field('section_7');
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center">
-            <div class="is-mobile mx-auto mb-3">
+            <div class="is-mobile mx-auto mb-4">
                 <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary btn-lg hvr-glow rounded-0">
                     <i class="fas fa-info-circle mr-1"></i>
                     Learn more
@@ -190,7 +190,7 @@ $section_7 = get_field('section_7');
             </div>
             <form class="form-inline justify-content-center my-2 my-lg-0">
                 <input class="form-control form-control-lg rounded-0 mr-2" type="search" placeholder="Condition keyword" aria-label="Search">
-                <button class="btn btn-primary btn-lg rounded-0 hvr-icon-wobble-horizontal my-2" type="submit">
+                <button class="btn btn-success btn-lg rounded-0 hvr-icon-wobble-horizontal my-2" type="submit">
                     Search
                     <i class="fas fa-search hvr-icon ml-1"></i>
                 </button>
@@ -347,7 +347,6 @@ $section_7 = get_field('section_7');
 
 <?php
 if ($section_6['displayed'] == "Yes") { ?>
-
     <article class="container my-5">
         <div class="row">
             <div class="col-12 mb-5">
@@ -358,8 +357,8 @@ if ($section_6['displayed'] == "Yes") { ?>
         </div>
         <div class="row">
             <div class="col-12">
-                <div id="carousel-front-page" class="carousel slide bg-light " data-ride="carousel">
-                    <div class="carousel-inner">
+                <div id="carousel-front-page" class="carousel slide bg-light vh-100" data-ride="carousel">
+                    <div class="carousel-inner h-100">
 
                         <?php
                         $iteration = 0;
@@ -367,14 +366,21 @@ if ($section_6['displayed'] == "Yes") { ?>
                         $loop = new WP_Query($args);
                         while ($loop->have_posts()) : $loop->the_post();
                             $iteration++; ?>
-                            <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?>" data-interval="10000">
+                            <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
                                 <div class="carousel-caption text-center">
                                     <p class="font-italic font-big font-weight-light mb-3">
                                         "<?php the_field('content'); ?>"
                                     </p>
-                                    <p class="h5 font-manrope text-emerald">
-                                        <?php the_field('full_name'); ?>
-                                    </p>
+                                    <div>
+                                        <span class="h5 font-manrope text-emerald">
+                                            <?php the_field('full_name'); ?>
+                                        </span>
+                                        -
+                                        <span class="h6 font-weight-light">
+                                            <?php the_field('location'); ?>
+                                        </span>
+                                    </div>
+
 
                                     <?php
                                     if (have_rows('position')) { ?>
@@ -388,6 +394,10 @@ if ($section_6['displayed'] == "Yes") { ?>
                                         }
                                         ?>
                                     <?php } ?>
+
+                                    <p class="font-manrope">
+
+                                    </p>
 
                                     <h6 class="text-muted">
                                         <i class="far fa-clock"></i>
@@ -431,10 +441,13 @@ if ($section_6['displayed'] == "Yes") { ?>
                     <div class="form-group mx-md-1 mx-lg-3 mb-2">
                         <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
                     </div>
-                    <button type="submit" class="btn btn-primary rounded-0 hvr-icon-forward mb-2">
-                        <?php echo $section_7['submit_button_label'] ?>
-                        <i class="fas fa-chevron-right hvr-icon ml-1"></i>
-                    </button>
+                    <div>
+
+                        <button type="submit" class="btn btn-primary rounded-0 hvr-icon-forward mb-2">
+                            <?php echo $section_7['submit_button_label'] ?>
+                            <i class="fas fa-chevron-right hvr-icon ml-1"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
