@@ -89,6 +89,38 @@ function create_posttype()
             'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
         )
     );
+
+    register_post_type(
+        'conditions',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Conditions'),
+                'singular_name' => __('Condition')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'condition'),
+            'show_in_rest' => true,
+            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+        )
+    );
+
+    register_post_type(
+        'questions_answers',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Questions & Answers'),
+                'singular_name' => __('Questions & Answers')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'questions-answers'),
+            'show_in_rest' => true,
+            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+        )
+    );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -132,12 +164,92 @@ function custom_testimonials_column($column, $post_id)
             break;
     }
 }
+// Add the custom columns to the questions_answers post type:
+add_filter('manage_questions_answers_posts_columns', 'set_custom_edit_questions_answers_columns');
+function set_custom_edit_questions_answers_columns($columns)
+{
+    unset($columns['title']);
+    unset($columns['date']);
+    $columns['ID'] = __('ID');
+    $columns['question'] = __('Question');
+    $columns['answer'] = __('Answer');
+    $columns['edit'] = __('Edit');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the questions_answers post type:
+add_action('manage_questions_answers_posts_custom_column', 'custom_questions_answers_column', 10, 2);
+function custom_questions_answers_column($column, $post_id)
+{
+    switch ($column) {
+        case 'ID':
+            echo '<span>' . get_the_ID($post_id) . '<span>';
+            break;
+
+        case 'question':
+            echo get_post_meta($post_id, 'question', true);
+            break;
+
+        case 'answer':
+            echo wp_trim_words(get_post_meta($post_id, 'answer', true), 30) . '[...]';
+            break;
+
+        case 'edit':
+            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</a>';
+            break;
+    }
+}
+
+// Add the custom columns to the conditions post type:
+add_filter('manage_conditions_posts_columns', 'set_custom_edit_conditions_columns');
+function set_custom_edit_conditions_columns($columns)
+{
+    unset($columns['date']);
+    unset($columns['title']);
+    $columns['ID'] = __('ID');
+    $columns['name'] = __('Name');
+    $columns['description'] = __('Description');
+    $columns['link_video'] = __('Link Video');
+    $columns['edit'] = __('Edit');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the conditions post type:
+add_action('manage_conditions_posts_custom_column', 'custom_conditions_column', 10, 2);
+function custom_conditions_column($column, $post_id)
+{
+    switch ($column) {
+        case 'ID':
+            echo '<span>' . get_the_ID($post_id) . '<span>';
+            break;
+
+        case 'name':
+            echo get_post_meta($post_id, 'name', true);
+            break;
+
+        case 'description':
+            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10) . '[...]';
+            break;
+
+        case 'link_video':
+            echo get_post_meta($post_id, 'link_video', true);
+            break;
+
+        case 'edit':
+            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</span>';
+            break;
+    }
+}
 
 // turn off wysiwig for custom post types
 add_action('init', 'init_remove_support', 100);
 function init_remove_support()
 {
     remove_post_type_support('testimonials', 'editor');
+    remove_post_type_support('conditions', 'editor');
+    remove_post_type_support('questions_answers', 'editor');
     remove_post_type_support('page', 'editor');
 }
 

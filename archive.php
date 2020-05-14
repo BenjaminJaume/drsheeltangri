@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<h1>Sorry wrong page</h1>
-
+<h1>Hello World!</h1>
 
 <?php get_footer(); ?>

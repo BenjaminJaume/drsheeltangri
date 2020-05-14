@@ -428,7 +428,7 @@ if ($section_6['displayed'] == "Yes") { ?>
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12 col-sm-6">
-                <h1 class="font-manrope text-white text-uppercase text-sm-center font-weight-bold">
+                <h1 class="font-manrope text-white text-uppercase text-sm-center">
                     <i class="far fa-envelope mr-1"></i>
                     <?php echo $section_7['title'] ?>
                 </h1>

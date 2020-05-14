@@ -76,10 +76,6 @@ body {
 }
 
 #carousel-front-page {
-  .carousel-item {
-    // height: 400px;
-  }
-
   .carousel-caption {
     color: #000;
     top: 50%;
@@ -106,6 +102,16 @@ body {
 
 .is-default {
   display: none;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal.in .modal-dialog {
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
