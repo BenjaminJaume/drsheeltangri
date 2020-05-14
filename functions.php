@@ -86,7 +86,7 @@ function create_posttype()
             'has_archive' => true,
             'rewrite' => array('slug' => 'testimonials'),
             'show_in_rest' => true,
-            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+            'menu_icon'           => wp_get_attachment_url(528),
         )
     );
 
@@ -100,9 +100,9 @@ function create_posttype()
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'condition'),
+            'rewrite' => array('slug' => 'conditions-treated'),
             'show_in_rest' => true,
-            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+            'menu_icon'           => wp_get_attachment_url(531),
         )
     );
 
@@ -118,7 +118,7 @@ function create_posttype()
             'has_archive' => true,
             'rewrite' => array('slug' => 'questions-answers'),
             'show_in_rest' => true,
-            'menu_icon'           => 'http://icons.iconarchive.com/icons/icons-land/vista-people/16/Person-Male-Light-icon.png',
+            'menu_icon'           => wp_get_attachment_url(527),
         )
     );
 }
@@ -149,7 +149,7 @@ function custom_testimonials_column($column, $post_id)
             break;
 
         case 'content':
-            echo wp_trim_words(get_post_meta($post_id, 'content', true), 30) . '[...]';
+            echo wp_trim_words(get_post_meta($post_id, 'content', true), 30);
             break;
 
         case 'date_testimonial':
@@ -192,7 +192,7 @@ function custom_questions_answers_column($column, $post_id)
             break;
 
         case 'answer':
-            echo wp_trim_words(get_post_meta($post_id, 'answer', true), 30) . '[...]';
+            echo wp_trim_words(get_post_meta($post_id, 'answer', true), 30);
             break;
 
         case 'edit':
@@ -230,7 +230,7 @@ function custom_conditions_column($column, $post_id)
             break;
 
         case 'description':
-            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10) . '[...]';
+            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
             break;
 
         case 'link_video':
@@ -250,7 +250,7 @@ function init_remove_support()
     remove_post_type_support('testimonials', 'editor');
     remove_post_type_support('conditions', 'editor');
     remove_post_type_support('questions_answers', 'editor');
-    remove_post_type_support('page', 'editor');
+    // remove_post_type_support('page', 'editor');
 }
 
 @ini_set('upload_max_size', '100M');

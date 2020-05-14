@@ -42,10 +42,10 @@ console($template);
                                     <span class="font-small font-rubik text-emerald m-0 p-0">
                                         Chiropractic Kinesiologist
                                     </span>
-                                    <span class="font-small font-rubik text-peter-river m-0 p-0">
+                                    <span class="font-small font-rubik text-primary m-0 p-0">
                                         Certified Specialist in N.O.T.
                                     </span>
-                                    <span class="font-small font-rubik text-peter-river m-0 p-0">
+                                    <span class="font-small font-rubik text-primary m-0 p-0">
                                         Neural Organization Technique
                                     </span>
                                 </div>

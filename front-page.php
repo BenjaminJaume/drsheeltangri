@@ -22,7 +22,7 @@ $section_7 = get_field('section_7');
                     <?php echo $introduction['title']; ?>
                 </h1>
 
-                <h4 class="font-manrope text-peter-river w-100 w-md-75 mx-auto mt-4">
+                <h4 class="font-manrope text-primary w-100 w-md-75 mx-auto mt-4">
                     <?php echo $introduction['introduction_content']; ?>
                 </h4>
 
@@ -49,7 +49,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid bg-light py-5" id="presentation">
     <div class="row">
         <div class="col-12">
-            <h1 class="h1 font-manrope text-uppercase text-center text-peter-river font-weight-bold mt-0">
+            <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold mt-0">
                 <?php echo $section_1['title']; ?>
             </h1>
         </div>
@@ -222,7 +222,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid my-5">
     <div class="row">
         <div class="col-12 mb-5">
-            <h1 class="h1 font-manrope text-uppercase text-center text-peter-river font-weight-bold m-0">
+            <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
                 <?php echo $section_4['title']; ?>
             </h1>
         </div>
@@ -271,7 +271,7 @@ $section_7 = get_field('section_7');
     <article class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h1 class="h1 font-manrope text-uppercase text-center text-peter-river font-weight-bold m-0">
+                <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
                     <?php echo $section_5['title']; ?>
                 </h1>
             </div>
@@ -350,7 +350,7 @@ if ($section_6['displayed'] == "Yes") { ?>
     <article class="container my-5">
         <div class="row">
             <div class="col-12 mb-5">
-                <h1 class="h1 font-manrope text-uppercase text-center text-peter-river font-weight-bold m-0">
+                <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
                     <?php echo $section_6['title']; ?>
                 </h1>
             </div>
@@ -394,10 +394,6 @@ if ($section_6['displayed'] == "Yes") { ?>
                                         }
                                         ?>
                                     <?php } ?>
-
-                                    <p class="font-manrope">
-
-                                    </p>
 
                                     <h6 class="text-muted">
                                         <i class="far fa-clock"></i>

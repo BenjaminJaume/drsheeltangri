@@ -114,6 +114,14 @@ body {
 .modal.in .modal-dialog {
 }
 
+.line-height-big {
+  line-height: 2rem;
+}
+
+.title-header-page {
+  background-color: rgba(colors.$white, colors.$opacity-link);
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 /* @media (max-width: 575px) {
 } */

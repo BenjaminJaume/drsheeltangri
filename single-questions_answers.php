@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-<h1>Archive page</h1>
+<h1>Single Question & Answer page</h1>
 
 <?php get_footer(); ?>
