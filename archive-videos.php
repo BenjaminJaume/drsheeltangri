@@ -1,16 +1,16 @@
 <?php
 
 /*
-Template Name: Conditions Treated
+Template Name: Videos
 */
 
 get_header();
 
 // Get all the conditions
 $args = [
-    'post_type'      => 'conditions',
+    'post_type'      => 'videos',
     'posts_per_page' => -1,
-    'post_name_in'  => ['conditions'],
+    'post_name_in'  => ['videos'],
     'fields'         => 'ids'
 ];
 $q = get_posts($args);

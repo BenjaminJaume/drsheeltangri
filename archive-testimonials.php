@@ -9,7 +9,7 @@ get_header();
 // Get all the custom posts
 $args = [
     'post_type'      => 'testimonials',
-    'posts_per_page' => 10,
+    'posts_per_page' => -1,
     'post_name_in'  => ['testimonials'],
     'fields'         => 'ids'
 ];

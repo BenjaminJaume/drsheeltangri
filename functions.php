@@ -124,6 +124,23 @@ function create_posttype()
             'menu_icon'           => wp_get_attachment_url(527),
         )
     );
+
+    register_post_type(
+        'videos',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Videos'),
+                'singular_name' => __('Video')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'videos'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(801),
+        )
+    );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -213,7 +230,7 @@ function set_custom_edit_conditions_columns($columns)
     $columns['ID'] = __('ID');
     $columns['name'] = __('Name');
     $columns['description'] = __('Description');
-    $columns['link_video'] = __('Link Video');
+    $columns['videos'] = __('Videos');
     $columns['edit'] = __('Edit');
 
     return $columns;
@@ -236,8 +253,78 @@ function custom_conditions_column($column, $post_id)
             echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
             break;
 
-        case 'link_video':
-            echo get_post_meta($post_id, 'link_video', true);
+        case 'videos':
+            $videos = get_field('videos', $post_id);
+            if (!empty($videos) && count($videos) >= 1) {
+                echo "<ul>";
+                foreach ($videos as $video) {
+                    $title = get_field('title', $video->ID);
+                    $link = get_edit_post_link($video->ID);
+
+                    echo '<li>';
+                    echo '<a href="' . $link . '" alt="" target="_blank" >' . $title . '</a>';
+                    echo '</li>';
+                }
+                echo "</ul>";
+            }
+            break;
+
+        case 'edit':
+            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" >Edit</a>';
+            break;
+    }
+}
+
+// Add the custom columns to the videos post type:
+add_filter('manage_videos_posts_columns', 'set_custom_edit_videos_columns');
+function set_custom_edit_videos_columns($columns)
+{
+    unset($columns['date']);
+    unset($columns['title']);
+    $columns['preview'] = __('Preview');
+    $columns['title'] = __('Title');
+    $columns['description'] = __('Description');
+    $columns['link'] = __('Link');
+    $columns['date_video'] = __('Date');
+    $columns['edit'] = __('Edit');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the videos post type:
+add_action('manage_videos_posts_custom_column', 'custom_videos_column', 10, 2);
+function custom_videos_column($column, $post_id)
+{
+    switch ($column) {
+        case 'preview':
+            // extracting the video ID first
+            $url = get_post_meta($post_id, 'link', true);
+            parse_str(parse_url($url, PHP_URL_QUERY), $a);
+            $video_id = $a['v'];
+
+            echo '<img src="https://img.youtube.com/vi/' . $video_id . '/0.jpg" alt="" width="100%" />';
+            break;
+
+        case 'title':
+            echo get_post_meta($post_id, 'title', true);
+            break;
+
+        case 'description':
+            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
+            break;
+
+        case 'link':
+            echo
+                '<a href="' . get_post_meta($post_id, 'link', true) . '" alt="" target="_blank">' .
+                    get_post_meta($post_id, 'link', true)
+                    . '</a>';
+            break;
+
+        case 'date_video':
+            $date = get_post_meta($post_id, 'date_video', true);
+            if ($date != '') {
+                echo date("j/m/Y", strtotime($date));
+            }
             break;
 
         case 'edit':
@@ -253,8 +340,12 @@ function init_remove_support()
     remove_post_type_support('testimonials', 'editor');
     remove_post_type_support('conditions', 'editor');
     remove_post_type_support('questions_answers', 'editor');
-    // remove_post_type_support('page', 'editor');
+    remove_post_type_support('videos', 'editor');
 }
+
+// SHORTCODES
+
+include 'shortcodes/conditions.php';
 
 @ini_set('upload_max_size', '100M');
 @ini_set('post_max_size', '100M');

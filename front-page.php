@@ -77,104 +77,33 @@ $section_7 = get_field('section_7');
         <div class="col-12 mb-4">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col" class="align-middle">
-                                <h3 class="font-manrope text-uppercase text-center m-0 p-0">
-                                    <?php echo $section_2['column_1']; ?>
-                                </h3>
-                            </th>
-                            <th scope="col" class="align-middle">
-                                <h3 class="font-manrope text-uppercase text-center mx-3 my-0 p-0">
-                                    <?php echo $section_2['column_2']; ?>
-                                </h3>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="align-middle">
-                                <?php echo $section_2['condition_1']['title']; ?>
-                            </td>
-                            <td class="align-middle text-center">
-                                <a href="<?php echo $section_2['condition_1']['link_video']; ?>" alt="" class="btn btn-outline-success font-manrope text-uppercase hvr-icon-forward rounded-0">
-                                    <span class="is-medium">
-                                        Video
-                                    </span>
-                                    <span class="is-default">
-                                        Watch video
-                                    </span>
-                                    <i class="fas fa-video ml-md-2 hvr-icon"></i>
+
+                    <?php echo do_shortcode("[display_conditions number=4]"); ?>
+
+                    <tr>
+                        <td class="align-middle">
+                            <p class="font-manrope font-weight-bold m-0">
+                                <?php echo $section_2['bottom_message']['title']; ?>
+                            </p>
+                        </td>
+                        <td class="align-middle">
+                            <span class="font-weight-light"><?php echo get_field('description', $q[$i]); ?></span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="is-medium">
+                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
+                                    <i class="fas fa-info-circle mr-md-1"></i>
+                                    More
                                 </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle">
-                                <?php echo $section_2['condition_2']['title']; ?>
-                            </td>
-                            <td class="align-middle text-center">
-                                <a href="<?php echo $section_2['condition_2']['link_video']; ?>" alt="" class="btn btn-outline-success font-manrope text-uppercase hvr-icon-forward rounded-0">
-                                    <span class="is-medium">
-                                        Video
-                                    </span>
-                                    <span class="is-default">
-                                        Watch video
-                                    </span>
-                                    <i class="fas fa-video ml-md-2 hvr-icon"></i>
+                            </span>
+                            <span class="is-default">
+                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
+                                    <i class="fas fa-info-circle mr-md-1"></i>
+                                    Learn more
                                 </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle">
-                                <?php echo $section_2['condition_3']['title']; ?>
-                            </td>
-                            <td class="align-middle text-center">
-                                <a href="<?php echo $section_2['condition_3']['link_video']; ?>" alt="" class="btn btn-outline-success font-manrope text-uppercase hvr-icon-forward rounded-0">
-                                    <span class="is-medium">
-                                        Video
-                                    </span>
-                                    <span class="is-default">
-                                        Watch video
-                                    </span>
-                                    <i class="fas fa-video ml-md-2 hvr-icon"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle">
-                                <?php echo $section_2['condition_4']['title']; ?>
-                            </td>
-                            <td class="align-middle text-center">
-                                <a href="<?php echo $section_2['condition_4']['link_video']; ?>" alt="" class="btn btn-outline-success font-manrope text-uppercase hvr-icon-forward rounded-0">
-                                    <span class="is-medium">
-                                        Video
-                                    </span>
-                                    <span class="is-default">
-                                        Watch video
-                                    </span>
-                                    <i class="fas fa-video ml-md-2 hvr-icon"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle font-weight-bold">
-                                <?php echo $section_2['condition_5']['title']; ?>
-                            </td>
-                            <td class="text-center">
-                                <span class="is-medium">
-                                    <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
-                                        <i class="fas fa-info-circle mr-md-1"></i>
-                                        More
-                                    </a>
-                                </span>
-                                <span class="is-default">
-                                    <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
-                                        <i class="fas fa-info-circle mr-md-1"></i>
-                                        Learn more
-                                    </a>
-                                </span>
-                            </td>
-                        </tr>
+                            </span>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
