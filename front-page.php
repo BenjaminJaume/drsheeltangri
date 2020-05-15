@@ -188,13 +188,10 @@ $section_7 = get_field('section_7');
                     Learn more
                 </a>
             </div>
-            <form action="<?php echo esc_url(home_url('/search')); ?>" class="form-inline justify-content-center my-2 my-lg-0">
-                <input class="form-control form-control-lg rounded-0 mr-2" type="search" placeholder="Condition keyword" aria-label="Search">
-                <button class="btn btn-success btn-lg rounded-0 hvr-icon-wobble-horizontal my-2" type="submit">
-                    Search
-                    <i class="fas fa-search hvr-icon ml-1"></i>
-                </button>
-            </form>
+
+            <div>
+                <?php get_search_form(); ?>
+            </div>
         </div>
     </div>
 </article>

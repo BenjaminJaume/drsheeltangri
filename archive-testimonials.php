@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Questions & Answers
+Template Name: Testimonials
 */
 
 get_header();

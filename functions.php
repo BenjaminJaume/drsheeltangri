@@ -83,6 +83,7 @@ function create_posttype()
                 'singular_name' => __('Testimonial')
             ),
             'public' => true,
+            'publicly_queryable' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'testimonials'),
             'show_in_rest' => true,
@@ -99,6 +100,7 @@ function create_posttype()
                 'singular_name' => __('Condition')
             ),
             'public' => true,
+            'publicly_queryable' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'conditions-treated'),
             'show_in_rest' => true,
@@ -115,6 +117,7 @@ function create_posttype()
                 'singular_name' => __('Questions & Answers')
             ),
             'public' => true,
+            'publicly_queryable' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'questions-answers'),
             'show_in_rest' => true,
