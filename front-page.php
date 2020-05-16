@@ -22,17 +22,17 @@ $section_7 = get_field('section_7');
                     <?php echo $introduction['title']; ?>
                 </h1>
 
-                <h4 class="font-manrope text-primary w-100 w-md-75 mx-auto mt-4">
+                <h4 class="font-manrope text-success w-100 w-md-75 mx-auto mt-4">
                     <?php echo $introduction['introduction_content']; ?>
                 </h4>
 
                 <div class="pt-5">
-                    <a href="<?php echo $introduction['button_1']['link']; ?>" alt="" class="btn btn-primary hvr-icon-pulse-grow btn-lg rounded-0">
+                    <a href="<?php echo $introduction['button_1']['link']; ?>" alt="" class="btn btn-success hvr-icon-pulse-grow btn-lg rounded-0">
                         <?php echo $introduction['button_1']['label']; ?>
                         <i class="fas fa-book hvr-icon ml-1"></i>
                     </a>
 
-                    <a href="<?php echo $introduction['button_2']['link']; ?>" alt="" class="btn btn-outline-primary hvr-icon-hang btn-lg rounded-0">
+                    <a href="<?php echo $introduction['button_2']['link']; ?>" alt="" class="btn btn-outline-success hvr-icon-hang btn-lg rounded-0">
                         <?php echo $introduction['button_2']['label']; ?>
                         <i class="fas fa-chevron-down hvr-icon ml-1"></i>
                     </a>
@@ -49,7 +49,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid bg-light py-5" id="presentation">
     <div class="row">
         <div class="col-12">
-            <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold mt-0">
+            <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold mt-0">
                 <?php echo $section_1['title']; ?>
             </h1>
         </div>
@@ -91,13 +91,13 @@ $section_7 = get_field('section_7');
                         </td>
                         <td class="align-middle text-center">
                             <span class="is-medium">
-                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
+                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
                                     <i class="fas fa-info-circle mr-md-1"></i>
                                     More
                                 </a>
                             </span>
                             <span class="is-default">
-                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-glow rounded-0">
+                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
                                     <i class="fas fa-info-circle mr-md-1"></i>
                                     Learn more
                                 </a>
@@ -112,7 +112,7 @@ $section_7 = get_field('section_7');
     <div class="row mb-4">
         <div class="col-12 text-center">
             <div class="is-mobile mx-auto mb-4">
-                <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-primary btn-lg hvr-glow rounded-0">
+                <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-success btn-lg hvr-glow rounded-0">
                     <i class="fas fa-info-circle mr-1"></i>
                     Learn more
                 </a>
@@ -133,7 +133,7 @@ $section_7 = get_field('section_7');
     </div>
     <div class="row my-3">
         <div class="col-12 text-center">
-            <a href="<?php echo $section_3['button_1']['link']; ?>" alt="" class="btn btn-primary btn-lg font-manrope rounded-0 text-uppercase hvr-icon-forward mb-4 mb-sm-auto">
+            <a href="<?php echo $section_3['button_1']['link']; ?>" alt="" class="btn btn-success btn-lg font-manrope rounded-0 text-uppercase hvr-icon-forward mb-4 mb-sm-auto">
                 <?php echo $section_3['button_1']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
@@ -148,7 +148,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid my-5">
     <div class="row">
         <div class="col-12 mb-5">
-            <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
+            <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
                 <?php echo $section_4['title']; ?>
             </h1>
         </div>
@@ -161,7 +161,7 @@ $section_7 = get_field('section_7');
             <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
                 <?php echo $section_4['category_1']['title']; ?>
             </h1>
-            <a href="/other-techniques" alt="" class="btn btn-primary font-manrope hvr-glow rounded-0">
+            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
                 <i class="fas fa-info-circle mr-1"></i>
                 Learn More
             </a>
@@ -173,7 +173,7 @@ $section_7 = get_field('section_7');
             <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
                 <?php echo $section_4['category_2']['title']; ?>
             </h1>
-            <a href="/other-techniques" alt="" class="btn btn-primary font-manrope hvr-glow rounded-0">
+            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
                 <i class="fas fa-info-circle mr-1"></i>
                 Learn More
             </a>
@@ -185,7 +185,7 @@ $section_7 = get_field('section_7');
             <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
                 <?php echo $section_4['category_3']['title']; ?>
             </h1>
-            <a href="/other-techniques" alt="" class="btn btn-primary font-manrope hvr-glow rounded-0">
+            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
                 <i class="fas fa-info-circle mr-1"></i>
                 Learn More
             </a>
@@ -197,7 +197,7 @@ $section_7 = get_field('section_7');
     <article class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
+                <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
                     <?php echo $section_5['title']; ?>
                 </h1>
             </div>
@@ -276,7 +276,7 @@ if ($section_6['displayed'] == "Yes") { ?>
     <article class="container my-5">
         <div class="row">
             <div class="col-12 mb-5">
-                <h1 class="h1 font-manrope text-uppercase text-center text-primary font-weight-bold m-0">
+                <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
                     <?php echo $section_6['title']; ?>
                 </h1>
             </div>
@@ -346,7 +346,7 @@ if ($section_6['displayed'] == "Yes") { ?>
     </article>
 <?php } ?>
 
-<div class="bg-dark py-5">
+<div class="bg-dark py-5 my-5">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12 col-sm-6">
@@ -365,7 +365,7 @@ if ($section_6['displayed'] == "Yes") { ?>
                     </div>
                     <div>
 
-                        <button type="submit" class="btn btn-primary rounded-0 hvr-icon-forward mb-2">
+                        <button type="submit" class="btn btn-success rounded-0 hvr-icon-forward mb-2">
                             <?php echo $section_7['submit_button_label'] ?>
                             <i class="fas fa-chevron-right hvr-icon ml-1"></i>
                         </button>

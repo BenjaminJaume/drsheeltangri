@@ -32,7 +32,7 @@ $condition_treated_page_id = 33;
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-primary text-uppercase mt-0 pt-0">
+            <h1 class="display-4 font-manrope text-success text-uppercase mt-0 pt-0">
                 <?php echo get_the_title($condition_treated_page_id);
                 ?>
             </h1>
@@ -74,7 +74,7 @@ $condition_treated_page_id = 33;
 
                     <h6 class="text-muted">
                         <i class="far fa-clock"></i>
-                        <?php the_field('date_testimonial'); ?>
+                        <?php the_field('date_testimonial', $q[$i]); ?>
                     </h6>
 
                 </div>

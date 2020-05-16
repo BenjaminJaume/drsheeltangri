@@ -190,7 +190,6 @@ function set_custom_edit_questions_answers_columns($columns)
 {
     unset($columns['title']);
     unset($columns['date']);
-    $columns['ID'] = __('ID');
     $columns['question'] = __('Question');
     $columns['answer'] = __('Answer');
     $columns['edit'] = __('Edit');
@@ -203,10 +202,6 @@ add_action('manage_questions_answers_posts_custom_column', 'custom_questions_ans
 function custom_questions_answers_column($column, $post_id)
 {
     switch ($column) {
-        case 'ID':
-            echo '<span>' . get_the_ID($post_id) . '<span>';
-            break;
-
         case 'question':
             echo get_post_meta($post_id, 'question', true);
             break;
@@ -227,7 +222,6 @@ function set_custom_edit_conditions_columns($columns)
 {
     unset($columns['date']);
     unset($columns['title']);
-    $columns['ID'] = __('ID');
     $columns['name'] = __('Name');
     $columns['description'] = __('Description');
     $columns['videos'] = __('Videos');
@@ -241,10 +235,6 @@ add_action('manage_conditions_posts_custom_column', 'custom_conditions_column', 
 function custom_conditions_column($column, $post_id)
 {
     switch ($column) {
-        case 'ID':
-            echo '<span>' . get_the_ID($post_id) . '<span>';
-            break;
-
         case 'name':
             echo get_post_meta($post_id, 'name', true);
             break;
@@ -346,6 +336,7 @@ function init_remove_support()
 // SHORTCODES
 
 include 'shortcodes/conditions.php';
+include 'shortcodes/video_embeded.php';
 
 @ini_set('upload_max_size', '100M');
 @ini_set('post_max_size', '100M');

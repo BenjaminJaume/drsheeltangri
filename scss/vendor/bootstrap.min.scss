@@ -5,6 +5,7 @@ $theme-colors: (
   "success": colors.$emerald,
   "primary": colors.$peter-river,
   "warning": colors.$sun-flower,
+  "light": #f1f2f6,
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

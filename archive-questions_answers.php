@@ -32,7 +32,7 @@ $condition_treated_page_id = 522;
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-primary text-uppercase mt-0 pt-0">
+            <h1 class="display-4 font-manrope text-success text-uppercase mt-0 pt-0">
                 <?php echo count($q) . ' ' . get_the_title($condition_treated_page_id);
                 ?>
             </h1>
@@ -44,7 +44,7 @@ $condition_treated_page_id = 522;
             for ($i = 0; $i < count($q); $i++) { ?>
                 <div class="line-height-big">
                     <div class="text-center">
-                        <h1 class="text-success font-manrope text-uppercase">
+                        <h1 class="text-primary font-manrope text-uppercase">
                             Question <?php echo $i + 1; ?>:
                         </h1>
                         <p class="font-big">
@@ -53,7 +53,7 @@ $condition_treated_page_id = 522;
                     </div>
 
                     <div>
-                        <h1 class="text-success text-center font-manrope text-uppercase">
+                        <h1 class="text-primary text-center font-manrope text-uppercase">
                             Answer <?php echo $i + 1; ?>:
                         </h1>
                         <p class="font-weight-light">

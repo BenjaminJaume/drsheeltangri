@@ -35,7 +35,7 @@ foreach ($events_articles as $e) {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <a type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity:1">
+                        <a class="close" data-dismiss="modal" aria-label="Close" style="opacity:1">
                             <?php
                             echo wp_get_attachment_image($id, '', false, 'class=img-fluid');
                             ?>
@@ -81,7 +81,7 @@ foreach ($events_articles as $e) {
                             </h5>
                         </div>
 
-                        <a type="button" data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
+                        <a data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
                             <div style="background-image: url(<?php echo wp_get_attachment_url($id); ?>);" class="card-img-top bg-cover">
                             </div>
                         </a>

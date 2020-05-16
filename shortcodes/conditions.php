@@ -1,6 +1,5 @@
 <?php
 
-
 function display_conditions($atts)
 {
     extract(shortcode_atts(array(
@@ -46,7 +45,7 @@ function display_conditions($atts)
     <tbody>';
 
     for ($i = 0; $i < count($q); $i++) {
-        $str = $str . '
+        $str = $str . ' 
         <tr>
             <td class="align-middle">
                 <a href="' . get_post_permalink($q[$i]) . '" alt="" class="font-manrope text-uppercase">
@@ -57,17 +56,17 @@ function display_conditions($atts)
                 <span class="font-weight-light">' . get_field('description', $q[$i]) . '</span>
             </td>
             <td class="align-middle text-center">
-                <a href="' . get_post_permalink($q[$i]) . '" alt="" class="btn btn-success font-manrope text-uppercase hvr-icon-forward rounded-0">
+                <a href="' . get_post_permalink($q[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
                     <span class="is-medium">
                         More
                     </span>
                     <span class="is-default">
                         More
                     </span>
-                    <i class="fas fa-info-circle ml-md-2 hvr-icon"></i>
+                    <i class="fas fa-chevron-right ml-md-2 hvr-icon"></i>
                 </a>
-                <a href="' . get_post_permalink($q[$i]) . '#video" alt="" class="btn btn-warning font-manrope text-uppercase hvr-glow rounded-0">
-                    <i class="fas fa-video text-white"></i>
+                <a href="' . get_post_permalink($q[$i]) . '#video" alt="" class="btn btn-outline-primary font-manrope text-uppercase hvr-glow rounded-0">
+                    <i class="fas fa-video"></i>
                 </a>
             </td>
         </tr>';

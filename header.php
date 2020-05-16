@@ -32,20 +32,20 @@ console($template);
                     <div class="container-fluid m-0 p-0">
                         <div class="row m-0 p-0">
                             <div class="col-auto my-auto mx-auto pl-0">
-                                <img src="<?php echo get_template_directory_uri() . '/images/logo.jpg' ?>" alt="" class="align-middle navbar-logo img-fluid" />
+                                <!-- <img src="<?php echo get_template_directory_uri() . '/images/logo.jpg' ?>" alt="" class="align-middle navbar-logo img-fluid" /> -->
                             </div>
                             <div class="col-auto m-0 mx-auto p-0">
                                 <div class="d-flex flex-column">
                                     <span class="font-manrope text-uppercase m-0 p-0">
                                         Dr. Sheel Tangri
                                     </span>
-                                    <span class="font-small font-rubik text-emerald m-0 p-0">
+                                    <span class="font-small m-0 p-0">
                                         Chiropractic Kinesiologist
                                     </span>
-                                    <span class="font-small font-rubik text-primary m-0 p-0">
+                                    <span class="font-small m-0 p-0">
                                         Certified Specialist in N.O.T.
                                     </span>
-                                    <span class="font-small font-rubik text-primary m-0 p-0">
+                                    <span class="font-small m-0 p-0">
                                         Neural Organization Technique
                                     </span>
                                 </div>
