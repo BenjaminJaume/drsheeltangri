@@ -49,27 +49,28 @@ $events_articles_page_id = 75;
 
                     if ($images) :
                     ?>
-                        <a data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
+                        <a href="<?php echo the_permalink($id); ?>">
                             <div style="background-image: url(<?php echo wp_get_attachment_url($images['1']['image']); ?>);" class="card-img-top bg-cover">
                             </div>
-
                         </a>
                     <?php
                     endif;
                     ?>
 
                     <div class="card-body text-center">
-                        <p class="card-text font-weight-light"><?php echo get_field('description', $id); ?></p>
+                        <p class="card-text font-weight-light">
+                            <?php echo get_field('description', $id); ?>
+                        </p>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success rounded-0 hvr-grow" data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
+                        <a href="<?php echo the_permalink($id); ?>" class="btn btn-success rounded-0 hvr-grow">
                             More
-                        </button>
+                        </a>
                     </div>
-                    <?php if ($e['date']) { ?>
+                    <?php if (get_field('date_article', $id)) { ?>
                         <div class="card-footer text-center text-muted">
                             <i class="far fa-clock"></i>
-                            <?php echo $e['date'] ?>
+                            <?php echo get_field('date_article', $id) ?>
                         </div>
                     <?php } ?>
                 </div>
