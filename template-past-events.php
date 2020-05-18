@@ -1,9 +1,5 @@
 <?php
 
-/*
-Template Name: Past Events
-*/
-
 get_header();
 
 $events_articles_page_id = 75;

@@ -6,15 +6,6 @@ Template Name: Conditions Treated
 
 get_header();
 
-// Get all the conditions
-$args = [
-    'post_type'      => 'conditions',
-    'posts_per_page' => -1,
-    'post_name_in'  => ['conditions'],
-    'fields'         => 'ids'
-];
-$q = get_posts($args);
-
 $condition_treated_page_id = 61;
 
 ?>

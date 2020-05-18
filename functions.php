@@ -141,6 +141,23 @@ function create_posttype()
             'menu_icon'           => wp_get_attachment_url(801),
         )
     );
+
+    register_post_type(
+        'articles',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Articles'),
+                'singular_name' => __('Article')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'articles'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(851),
+        )
+    );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -323,6 +340,46 @@ function custom_videos_column($column, $post_id)
     }
 }
 
+// Add the custom columns to the articles post type:
+add_filter('manage_articles_posts_columns', 'set_custom_edit_articles_columns');
+function set_custom_edit_articles_columns($columns)
+{
+    unset($columns['date']);
+    unset($columns['title']);
+    $columns['title'] = __('Title');
+    $columns['description'] = __('Description');
+    $columns['date_article'] = __('Date');
+    $columns['edit'] = __('Edit');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the articles post type:
+add_action('manage_articles_posts_custom_column', 'custom_articles_column', 10, 2);
+function custom_articles_column($column, $post_id)
+{
+    switch ($column) {
+        case 'title':
+            echo get_post_meta($post_id, 'title', true);
+            break;
+
+        case 'description':
+            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
+            break;
+
+        case 'date_article':
+            $date = get_post_meta($post_id, 'date_article', true);
+            if ($date != '') {
+                echo date("j/m/Y", strtotime($date));
+            }
+            break;
+
+        case 'edit':
+            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</span>';
+            break;
+    }
+}
+
 // turn off wysiwig for custom post types
 add_action('init', 'init_remove_support', 100);
 function init_remove_support()
@@ -331,6 +388,7 @@ function init_remove_support()
     remove_post_type_support('conditions', 'editor');
     remove_post_type_support('questions_answers', 'editor');
     remove_post_type_support('videos', 'editor');
+    remove_post_type_support('articles', 'editor');
 }
 
 // SHORTCODES
