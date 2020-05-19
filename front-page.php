@@ -55,7 +55,7 @@ $section_7 = get_field('section_7');
         </div>
     </div>
     <div class="row">
-        <div class="col-auto mx-auto my-auto pb-5 pb-lg-0">
+        <div class="col-auto mx-auto my-auto py-5 py-lg-0">
             <?php echo wp_get_attachment_image($section_1['image']['ID'], '', false, 'class=img-fluid frame'); ?>
         </div>
         <div class="col-12 col-lg-8 my-auto">

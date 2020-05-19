@@ -153,7 +153,7 @@ function create_posttype()
             'public' => true,
             'publicly_queryable' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'articles'),
+            'rewrite' => array('slug' => 'past-events-articles'),
             'show_in_rest' => true,
             'menu_icon'           => wp_get_attachment_url(851),
         )
@@ -399,3 +399,6 @@ include 'shortcodes/video_embeded.php';
 @ini_set('upload_max_size', '100M');
 @ini_set('post_max_size', '100M');
 @ini_set('max_execution_time', '300');
+
+// Flushing rules
+flush_rewrite_rules(false);

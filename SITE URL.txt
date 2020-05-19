@@ -1,15 +1,9 @@
 http://kinesiologist.eu/
 
 Wordpress ID
-Sheel
+admin
 
 Wordpress Drowssap
-123456
-
-Wordpress cPanel:
-sheel
-
-Wordpress Award Space Drowssap:
 DrSheel3
 
 cPanel Login:
@@ -17,3 +11,9 @@ kinesiologist
 
 cPanel Drowssap:
 Knslg+*-65/82*-
+
+FTP account
+kinesiologist@drsheeltangri.kinesiologist.eu
+
+FTP Drowssap
+$3@8Dc3oj#46

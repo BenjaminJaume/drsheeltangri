@@ -66,8 +66,21 @@ if (is_search()) {
                                         <p class="text-muted text-capitalize m-0 p-0">
                                             <?php
                                             $postType = get_post_type_object(get_post_type());
-                                            echo esc_html($postType->labels->singular_name);
+                                            $postTypeName = $postType->name;
+                                            $postTypeLabel = $postType->labels->singular_name;
+                                            if (
+                                                $postTypeName  == "articles" ||
+                                                $postTypeName == "questions_answers" ||
+                                                $postTypeName == "conditions" ||
+                                                $postTypeName == "videos"
+                                            ) {
                                             ?>
+                                                <a href="<?php echo get_post_type_archive_link($postTypeName); ?>" alt="" class="text-dark">
+                                                    #<?php echo esc_html($postTypeLabel); ?>
+                                                </a>
+                                            <?php } else {
+                                                echo esc_html($postTypeLabel);
+                                            } ?>
                                         </p>
                                         <a href=" <?php the_permalink(); ?>" title="<?php the_title(); ?>" class="h1 text-success font-manrope">
                                             <?php the_title(); ?>

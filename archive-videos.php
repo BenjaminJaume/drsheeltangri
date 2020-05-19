@@ -63,7 +63,7 @@ $condition_treated_page_id = 13;
                     </div>
 
                     <div class="card-body text-center">
-                        <p class="card-text font-weight-light"><?php echo get_field('description', $id); ?></p>
+                        <p class="card-text font-weight-light"><?php echo wp_trim_words(get_field('description', $id), 15); ?></p>
                     </div>
                     <div class="card-footer d-inline-flex justify-content-between align-items-center">
                         <a href="<?php echo get_the_permalink($id); ?>" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">

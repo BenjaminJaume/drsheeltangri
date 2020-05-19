@@ -1,5 +1,9 @@
 <?php
 
+/*
+Template Name: Articles
+*/
+
 get_header();
 
 // Get all the articles
@@ -25,16 +29,9 @@ $events_articles_page_id = 75;
         </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" id="card-deck-events">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center" id="card-deck-events">
         <?php
-        $i = 0;
         foreach ($q as $id) {
-            // if ($e['image']) {
-            //     if ($e['image']['ID']) {
-            //         $id_image = $e['image']['ID'];
-            //     } else {
-            //         $id_image = $e['image'];
-            //     }
         ?>
             <div class="col mb-4">
                 <div class="card h-100">
@@ -47,19 +44,19 @@ $events_articles_page_id = 75;
                     <?php
                     $images = get_field('images', $id);
 
-                    if ($images) :
+                    if ($images['1']['image']['ID']) {
+                        $id_image = $images['1']['image']['ID'];
+                    } else {
+                        $id_image = $images['1']['image'];
+                    }
                     ?>
-                        <a href="<?php echo the_permalink($id); ?>">
-                            <div style="background-image: url(<?php echo wp_get_attachment_url($images['1']['image']); ?>);" class="card-img-top bg-cover">
-                            </div>
-                        </a>
-                    <?php
-                    endif;
-                    ?>
+                    <a href="<?php echo the_permalink($id); ?>">
+                        <img src="<?php echo wp_get_attachment_url($id_image); ?>" class="img-fluid" />
+                    </a>
 
                     <div class="card-body text-center">
                         <p class="card-text font-weight-light">
-                            <?php echo get_field('description', $id); ?>
+                            <?php echo wp_trim_words(get_field('description', $id), 15); ?>
                         </p>
 
                         <!-- Button trigger modal -->
@@ -77,7 +74,6 @@ $events_articles_page_id = 75;
             </div>
         <?php
         }
-        $i++;
         ?>
     </div>
 </div>

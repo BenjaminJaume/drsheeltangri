@@ -63,9 +63,9 @@ function display_conditions($atts)
                     <span class="is-default">
                         More
                     </span>
-                    <i class="fas fa-chevron-right ml-md-2 hvr-icon"></i>
+                    <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
                 </a>
-                <a href="' . get_post_permalink($q[$i]) . '#video" alt="" class="btn btn-outline-primary font-manrope text-uppercase hvr-glow rounded-0">
+                <a href="' . get_post_permalink($q[$i]) . '#video" alt="" class="btn btn-outline-primary font-manrope text-uppercase hvr-glow rounded-0  mt-2 mt-lg-0">
                     <i class="fas fa-video"></i>
                 </a>
             </td>

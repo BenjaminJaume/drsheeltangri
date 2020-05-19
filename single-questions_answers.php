@@ -1,5 +1,13 @@
 <?php get_header(); ?>
 
-<h1>Single Question & Answer page</h1>
+<?php
+
+$header = "Location: " . get_site_url();
+header($header);
+
+exit();
+
+?>
+
 
 <?php get_footer(); ?>
