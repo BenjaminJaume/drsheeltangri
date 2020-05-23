@@ -1,12 +1,11 @@
 </main>
 
 <div class="bg-light border-top">
-
     <footer class="container mt-5 py-5">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center font-manrope text-uppercase">
-                    Dr. Sheel Tangri
+                    Silent Affirmations
                 </h1>
             </div>
         </div>

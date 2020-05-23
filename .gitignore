@@ -22,5 +22,5 @@ node_modules/
 *.sql
 *.sqlite
 
-# Oher
+# Other
 *.txt

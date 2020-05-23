@@ -201,6 +201,7 @@ function custom_testimonials_column($column, $post_id)
             break;
     }
 }
+
 // Add the custom columns to the questions_answers post type:
 add_filter('manage_questions_answers_posts_columns', 'set_custom_edit_questions_answers_columns');
 function set_custom_edit_questions_answers_columns($columns)
