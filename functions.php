@@ -206,7 +206,6 @@ function custom_testimonials_column($column, $post_id)
 add_filter('manage_questions_answers_posts_columns', 'set_custom_edit_questions_answers_columns');
 function set_custom_edit_questions_answers_columns($columns)
 {
-    unset($columns['title']);
     unset($columns['date']);
     $columns['question'] = __('Question');
     $columns['answer'] = __('Answer');
@@ -239,11 +238,12 @@ add_filter('manage_conditions_posts_columns', 'set_custom_edit_conditions_column
 function set_custom_edit_conditions_columns($columns)
 {
     unset($columns['date']);
-    unset($columns['title']);
-    $columns['name'] = __('Name');
-    $columns['description'] = __('Description');
-    $columns['videos'] = __('Videos');
-    $columns['edit'] = __('Edit');
+    $columns['order'] = __('Order');
+    $columns['category'] = __('Category');
+    $columns['videos'] = __('Video(s)');
+    $columns['questions_answers'] = __('Q&A');
+    $columns['audio'] = __('Audio(s)');
+    $columns['Testimonial'] = __('Testimonial(s)');
 
     return $columns;
 }
@@ -253,12 +253,12 @@ add_action('manage_conditions_posts_custom_column', 'custom_conditions_column', 
 function custom_conditions_column($column, $post_id)
 {
     switch ($column) {
-        case 'name':
-            echo get_post_meta($post_id, 'name', true);
+        case 'category':
+            echo get_field('category', $post_id);
             break;
 
-        case 'description':
-            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
+        case 'order':
+            echo get_field('order', $post_id);
             break;
 
         case 'videos':
@@ -277,8 +277,20 @@ function custom_conditions_column($column, $post_id)
             }
             break;
 
-        case 'edit':
-            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" >Edit</a>';
+        case 'questions_answers':
+            $questions_answers = get_field('q_a', $post_id);
+            if (!empty($questions_answers) && count($questions_answers) >= 1) {
+                echo "<ul>";
+                foreach ($questions_answers as $q_a) {
+                    $title = get_the_title($q_a->ID);
+                    $link = get_edit_post_link($q_a->ID);
+
+                    echo '<li>';
+                    echo '<a href="' . $link . '" alt="" target="_blank" >' . $title . '</a>';
+                    echo '</li>';
+                }
+                echo "</ul>";
+            }
             break;
     }
 }

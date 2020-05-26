@@ -49,7 +49,7 @@ function display_conditions($atts)
         <tr>
             <td class="align-middle">
                 <a href="' . get_post_permalink($q[$i]) . '" alt="" class="font-manrope text-uppercase">
-                    ' . get_field('name', $q[$i]) . '
+                    ' . get_the_title($q[$i]) . '
                 </a>
             </td>
             <td class="align-middle">

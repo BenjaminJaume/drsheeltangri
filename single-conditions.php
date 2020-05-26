@@ -8,7 +8,7 @@ $id = get_the_ID();
     <div class="row">
         <div class="col-12 text-center">
             <h1 class="display-4 font-manrope text-uppercase text-success mb-0">
-                <?php echo the_field('name', $id); ?>
+                <?php echo get_the_title($id); ?>
             </h1>
             <h3 class="text-muted font-weight-light">
                 Category: <?php echo the_field('category', $id); ?>
