@@ -48,7 +48,7 @@ $condition_treated_page_id = 13;
                     <div class="card-header text-center">
                         <a href="<?php echo get_the_permalink($id); ?>" alt="" class="text-success">
                             <h5 class="card-title font-manrope my-auto">
-                                <?php echo get_field('title', $id); ?>
+                                <?php echo get_the_title($id); ?>
                             </h5>
                         </a>
                     </div>

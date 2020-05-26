@@ -44,16 +44,18 @@ $condition_treated_page_id = 33;
             for ($i = 0; $i < count($q); $i++) { ?>
                 <div class="my-5">
                     <p class="font-italic font-big font-weight-light mb-3">
-                        "<?php echo get_field('content', $q[$i]); ?>"
+                        <?php echo get_field('content', $q[$i]); ?>
                     </p>
                     <div>
                         <span class="h5 font-manrope text-emerald">
                             <?php echo get_field('full_name', $q[$i]); ?>
                         </span>
-                        -
-                        <span class="h6 font-weight-light">
-                            <?php echo get_field('location', $q[$i]); ?>
-                        </span>
+                        <?php if (get_field('location', $q[$i])) { ?>
+                            -
+                            <span class="h6 font-weight-light">
+                                <?php echo get_field('location', $q[$i]); ?>
+                            </span>
+                        <?php } ?>
                     </div>
 
                     <p class="m-0">

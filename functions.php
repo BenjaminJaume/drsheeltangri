@@ -158,6 +158,23 @@ function create_posttype()
             'menu_icon'           => wp_get_attachment_url(851),
         )
     );
+
+    register_post_type(
+        'audios',
+        // CPT Options
+        array(
+            'labels' => array(
+                'name' => __('Audios'),
+                'singular_name' => __('Audio')
+            ),
+            'public' => true,
+            'publicly_queryable' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'audios'),
+            'show_in_rest' => true,
+            'menu_icon'           => wp_get_attachment_url(990),
+        )
+    );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -166,12 +183,11 @@ add_action('init', 'create_posttype');
 add_filter('manage_testimonials_posts_columns', 'set_custom_edit_testimonials_columns');
 function set_custom_edit_testimonials_columns($columns)
 {
-    unset($columns['title']);
     unset($columns['date']);
     $columns['full_name'] = __('Full Name');
     $columns['content'] = __('Content');
+    $columns['location'] = __('Location');
     $columns['date_testimonial'] = __('Date');
-    $columns['edit'] = __('Edit');
 
     return $columns;
 }
@@ -185,6 +201,10 @@ function custom_testimonials_column($column, $post_id)
             echo get_post_meta($post_id, 'full_name', true);
             break;
 
+        case 'location':
+            echo get_post_meta($post_id, 'location', true);
+            break;
+
         case 'content':
             echo wp_trim_words(get_post_meta($post_id, 'content', true), 30);
             break;
@@ -192,12 +212,8 @@ function custom_testimonials_column($column, $post_id)
         case 'date_testimonial':
             $date = get_post_meta($post_id, 'date_testimonial', true);
             if ($date != '') {
-                echo date("j/m/Y", strtotime($date));
+                echo date("F Y", strtotime($date));
             }
-            break;
-
-        case 'edit':
-            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</a>';
             break;
     }
 }
@@ -207,9 +223,9 @@ add_filter('manage_questions_answers_posts_columns', 'set_custom_edit_questions_
 function set_custom_edit_questions_answers_columns($columns)
 {
     unset($columns['date']);
+    $columns['category'] = __('Category');
     $columns['question'] = __('Question');
     $columns['answer'] = __('Answer');
-    $columns['edit'] = __('Edit');
 
     return $columns;
 }
@@ -219,16 +235,23 @@ add_action('manage_questions_answers_posts_custom_column', 'custom_questions_ans
 function custom_questions_answers_column($column, $post_id)
 {
     switch ($column) {
+        case 'category':
+            $categories = get_field('categories', $post_id);
+            if ($categories) {
+                echo '<ul>';
+                echo '<li>' . implode(', ', $categories) . '</li>';
+                echo '</ul>';
+            } else {
+                echo '-';
+            }
+            break;
+
         case 'question':
-            echo get_post_meta($post_id, 'question', true);
+            echo wp_trim_words(get_post_meta($post_id, 'question', true), 15);
             break;
 
         case 'answer':
-            echo wp_trim_words(get_post_meta($post_id, 'answer', true), 30);
-            break;
-
-        case 'edit':
-            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</a>';
+            echo wp_trim_words(get_post_meta($post_id, 'answer', true), 15);
             break;
     }
 }
@@ -300,12 +323,9 @@ add_filter('manage_videos_posts_columns', 'set_custom_edit_videos_columns');
 function set_custom_edit_videos_columns($columns)
 {
     unset($columns['date']);
-    unset($columns['title']);
     $columns['preview'] = __('Preview');
-    $columns['title'] = __('Title');
     $columns['description'] = __('Description');
     $columns['link'] = __('Link');
-    $columns['date_video'] = __('Date');
     $columns['edit'] = __('Edit');
 
     return $columns;
@@ -325,10 +345,6 @@ function custom_videos_column($column, $post_id)
             echo '<img src="https://img.youtube.com/vi/' . $video_id . '/0.jpg" alt="" width="100%" />';
             break;
 
-        case 'title':
-            echo get_post_meta($post_id, 'title', true);
-            break;
-
         case 'description':
             echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
             break;
@@ -338,13 +354,6 @@ function custom_videos_column($column, $post_id)
                 '<a href="' . get_post_meta($post_id, 'link', true) . '" alt="" target="_blank">' .
                     get_post_meta($post_id, 'link', true)
                     . '</a>';
-            break;
-
-        case 'date_video':
-            $date = get_post_meta($post_id, 'date_video', true);
-            if ($date != '') {
-                echo date("j/m/Y", strtotime($date));
-            }
             break;
 
         case 'edit':
@@ -393,6 +402,35 @@ function custom_articles_column($column, $post_id)
     }
 }
 
+// Add the custom columns to the audios post type:
+add_filter('manage_audios_posts_columns', 'set_custom_edit_audios_columns');
+function set_custom_edit_audios_columns($columns)
+{
+    unset($columns['date']);
+    $columns['description'] = __('Description');
+    $columns['file_name'] = __('File');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the audios post type:
+add_action('manage_audios_posts_custom_column', 'custom_audios_column', 10, 2);
+function custom_audios_column($column, $post_id)
+{
+    switch ($column) {
+        case 'description':
+            echo wp_trim_words(get_post_meta($post_id, 'description', true), 10);
+            break;
+
+        case 'file_name':
+            $file = get_field('file', $post_id);
+            echo $file['filename'];
+            echo '<br />';
+            echo formatBytes($file['filesize']);
+            break;
+    }
+}
+
 // turn off wysiwig for custom post types
 add_action('init', 'init_remove_support', 100);
 function init_remove_support()
@@ -402,6 +440,7 @@ function init_remove_support()
     remove_post_type_support('questions_answers', 'editor');
     remove_post_type_support('videos', 'editor');
     remove_post_type_support('articles', 'editor');
+    remove_post_type_support('audios', 'editor');
 }
 
 // SHORTCODES
@@ -415,3 +454,18 @@ include 'shortcodes/video_embeded.php';
 
 // Flushing rules
 flush_rewrite_rules(false);
+
+function formatBytes($bytes, $precision = 0)
+{
+    $units = array('B', 'KB', 'MB', 'GB', 'TB');
+
+    $bytes = max($bytes, 0);
+    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+    $pow = min($pow, count($units) - 1);
+
+    // Uncomment one of the following alternatives
+    $bytes /= pow(1024, $pow);
+    // $bytes /= (1 << (10 * $pow));
+
+    return round($bytes, $precision) . ' ' . $units[$pow];
+}

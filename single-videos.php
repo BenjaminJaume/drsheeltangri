@@ -8,7 +8,7 @@ $id = get_the_ID();
     <div class="row">
         <div class="col-12 text-center">
             <h1 class="font-manrope text-uppercase text-success mb-0">
-                <?php echo the_field('title', $id); ?>
+                <?php echo get_the_title($id); ?>
             </h1>
             <p class="text-muted text-capitalize text-center m-0 p-0">
                 <?php
