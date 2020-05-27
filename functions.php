@@ -494,6 +494,7 @@ function init_remove_support()
 include 'shortcodes/conditions.php';
 include 'shortcodes/video_embeded.php';
 
+// Edit size max for media upload
 @ini_set('upload_max_size', '100M');
 @ini_set('post_max_size', '100M');
 @ini_set('max_execution_time', '300');
@@ -516,30 +517,26 @@ function formatBytes($bytes, $precision = 0)
     return round($bytes, $precision) . ' ' . $units[$pow];
 }
 
-
 if (is_admin()) {
     //this hook will create a new filter on the admin area for the specified post type
-    add_action('restrict_conditions_posts', function () {
-        global $wpdb, $table_prefix;
+    add_action('restrict_manage_posts', function () {
 
         $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
-        $category = (isset($_GET['category'])) ? $_GET['category'] : '';
 
-        //only add filter to post type you want
         if ($post_type == 'conditions') {
-            //query database to get a list of categories for the specific post type:
             $values = array();
-            $q = get_posts(array(
+
+            $args = array(
                 'posts_per_page'    => -1,
                 'post_type'         => 'conditions',
                 'meta_key'          => 'category',
-                'meta_value'        => $category
-            ));
+            );
+            $q = get_posts($args);
+
             foreach ($q as $data) {
                 $values[$data->category] = $data->category;
             }
 
-            //give a unique name in the select field
 ?>
             <select name="category">
                 <option value="">All categories</option>
@@ -564,9 +561,19 @@ if (is_admin()) {
     add_filter('parse_query', function ($query) {
         global $pagenow;
         $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
+        $category = (isset($_GET['category'])) ? $_GET['category'] : '';
 
-        if ($post_type == 'conditions' && $pagenow == 'edit.php' && isset($_GET['admin_filter_year']) && !empty($_GET['admin_filter_year'])) {
-            $query->query_vars['year'] = $_GET['admin_filter_year'];
+        if ($post_type == 'conditions' && $pagenow == 'edit.php' && isset($_GET['category']) && !empty($_GET['category'])) {
+            // only modify queries for 'conditions' post type
+            if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'conditions') {
+                $query->set('meta_key', 'category');
+                $query->set('meta_value', $category);
+            }
+
+            // return
+            return $query;
+
+            wp_reset_query();
         }
     });
 }

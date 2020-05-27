@@ -41,7 +41,7 @@ $id = get_the_ID();
     ?>
             <div class="row my-5">
                 <div class="col-12">
-                    <h1 class="text-center font-manrope text-uppercase text-success">Video: <?php echo get_field('title', $id); ?></h1>
+                    <h1 class="text-center font-manrope text-uppercase text-success">Video: <?php echo get_the_title($id); ?></h1>
                     <div class="embed-responsive embed-responsive-16by9 border" id="video">
                         <iframe class="embed-responsive-item" src="<?php echo $url_video; ?>" allowfullscreen></iframe>
                     </div>

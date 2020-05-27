@@ -75,38 +75,98 @@ $section_7 = get_field('section_7');
 <article class="container my-5">
     <div class="row">
         <div class="col-12 mb-4">
+            <?php
+
+            $header_table = '
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
-
-                    <?php echo do_shortcode("[display_conditions number=4]"); ?>
-
+                </thead>
+                <thead class="thead-dark">
                     <tr>
-                        <td class="align-middle">
-                            <p class="font-manrope font-weight-bold m-0">
-                                <?php echo $section_2['bottom_message']['title']; ?>
-                            </p>
-                        </td>
-                        <td class="align-middle">
-                            <span class="font-weight-light"><?php echo get_field('description', $q[$i]); ?></span>
-                        </td>
-                        <td class="align-middle text-center">
-                            <span class="is-medium">
-                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
-                                    <i class="fas fa-info-circle mr-md-1"></i>
-                                    More
-                                </a>
+                        <th scope="col" class="align-middle text-center">
+                            <span class="font-manrope text-uppercase text-center m-0 p-0">
+                                Conditions
                             </span>
-                            <span class="is-default">
-                                <a href="<?php echo $section_2['bottom_message']['link_video']; ?>" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
-                                    <i class="fas fa-info-circle mr-md-1"></i>
-                                    Learn more
-                                </a>
+                        </th>
+                        <th scope="col" class="align-middle text-center">
+                            <span class="font-manrope text-uppercase text-center my-0 p-0">
+                                Description
                             </span>
-                        </td>
+                        </th>
+                        <th scope="col" class="align-middle text-center">
+                            <span class="font-manrope text-uppercase text-center my-0 p-0">
+                                More
+                            </span>
+                        </th>
                     </tr>
-                    </tbody>
-                </table>
-            </div>
+                </thead>
+                <tbody>';
+
+            $footer_table = '</table></div>';
+
+            // Get the first $number conditions
+            $args = [
+                'post_type'      => 'conditions',
+                'posts_per_page' => $atts['number'],
+                'post_name_in'  => ['conditions'],
+            ];
+            $query = get_posts($args);
+
+            for ($i = 0; $i < count($query); $i++) {
+                $str = $str . ' 
+            <tr>
+                <td class="align-middle">
+                    <a href="' . get_post_permalink($query[$i]) . '" alt="" class="font-manrope text-uppercase">
+                        ' . get_the_title($query[$i]) . '
+                    </a>
+                </td>
+                <td class="align-middle">
+                    <span class="font-weight-light">' . wp_trim_words(get_field('description', $query[$i]), 10) . '</span>
+                </td>
+                <td class="align-middle text-center">
+                    <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
+                        <span class="is-medium">
+                            More
+                        </span>
+                        <span class="is-default">
+                            More
+                        </span>
+                        <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
+                    </a>
+                    <a href="' . get_post_permalink($query[$i]) . '#video" alt="" class="btn btn-outline-primary font-manrope text-uppercase hvr-glow rounded-0  mt-2 mt-lg-0">
+                        <i class="fas fa-video"></i>
+                    </a>
+                </td>
+            </tr>';
+            }
+
+            $str = $str . '
+            <tr>
+                <td class="align-middle">
+                    <p class="font-manrope font-weight-bold m-0">
+                        And the list continue
+                    </p>
+                </td>
+                <td class="align-middle">
+                    <span class="font-weight-light"></span>
+                </td>
+                <td class="align-middle text-center">
+                    <a href="conditions-treated" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
+                        <span class="is-medium">
+                            <i class="fas fa-info-circle mr-md-1"></i>
+                            More
+                        </span>
+                        <span class="is-default">
+                            <i class="fas fa-info-circle mr-md-1"></i>
+                            Learn more
+                        </span>
+                    </a>
+                </td>
+            </tr>';
+
+            echo $header_table . $str . $footer_table;
+
+            ?>
         </div>
     </div>
     <div class="row mb-4">
@@ -288,46 +348,70 @@ if ($section_6['displayed'] == "Yes") { ?>
 
                         <?php
                         $iteration = 0;
-                        $args = array('post_type' => 'testimonials', 'posts_per_page' => 5);
-                        $loop = new WP_Query($args);
-                        while ($loop->have_posts()) : $loop->the_post();
-                            $iteration++; ?>
-                            <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
-                                <div class="carousel-caption text-center">
-                                    <p class="font-italic font-big font-weight-light mb-3">
-                                        "<?php the_field('content'); ?>"
-                                    </p>
-                                    <div>
-                                        <span class="h5 font-manrope text-emerald">
-                                            <?php the_field('full_name'); ?>
-                                        </span>
-                                        -
-                                        <span class="h6 font-weight-light">
-                                            <?php the_field('location'); ?>
-                                        </span>
-                                    </div>
+
+                        // Select all testimonials with a short_description in it
+                        $args = array(
+                            'posts_per_page'    => 5,
+                            'post_type'         => 'testimonials',
+                            'meta_key'          => 'short_testimonial',
+                            'meta_query'    => array(
+                                array(
+                                    'key'        => 'short_testimonial',
+                                    'compare'    => '!=',
+                                    'value'        => null,
+                                )
+                            )
+                        );
+                        $testimonials = get_posts($args);
+
+                        if ($testimonials) {
+                            foreach ($testimonials as $testimonial) {
+                                // setup_postdata($testimonial);
+                                $testimonial_id = $testimonial->ID;
+                                $iteration++; ?>
+                                <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
+                                    <div class="carousel-caption text-center">
+                                        <p class="font-italic font-big font-weight-light mb-3">
+                                            <?php the_field('short_testimonial', $testimonial_id, $testimonial_id) ?>
+                                        </p>
+                                        <div>
+                                            <span class="h5 font-manrope text-emerald">
+                                                <?php the_field('full_name', $testimonial_id); ?>
+                                            </span>
+
+                                            <?php if (get_field('location', $testimonial_id)) { ?>
+                                                -
+                                                <span class="h6 font-weight-light">
+                                                    <?php the_field('location', $testimonial_id); ?>
+                                                </span>
+                                            <?php } ?>
+                                        </div>
 
 
-                                    <?php
-                                    if (have_rows('position')) { ?>
-                                        <?php while (have_rows('position')) {
-                                            the_row();
-                                            $position_title = get_sub_field('position_title');
-                                            $company_name = get_sub_field('company_name');
-                                            if ($position_title !== '' || $company_name !== '') {
-                                                echo '<p>' . $position_title . '<br />' . $company_name . '</p>';
+                                        <?php
+                                        if (have_rows('position')) { ?>
+                                            <?php while (have_rows('position')) {
+                                                the_row();
+                                                $position_title = get_sub_field('position_title');
+                                                $company_name = get_sub_field('company_name');
+                                                if ($position_title !== '' || $company_name !== '') {
+                                                    echo '<p>' . $position_title . '<br />' . $company_name . '</p>';
+                                                }
                                             }
-                                        }
-                                        ?>
-                                    <?php } ?>
+                                            ?>
+                                        <?php } ?>
 
-                                    <h6 class="text-muted">
-                                        <i class="far fa-clock"></i>
-                                        <?php the_field('date_testimonial'); ?>
-                                    </h6>
+                                        <?php if (get_field('date_testimonial', $testimonial_id)) { ?>
+                                            <h6 class="text-muted">
+                                                <i class="far fa-clock"></i>
+                                                <?php the_field('date_testimonial', $testimonial_id); ?>
+                                            </h6>
+                                        <?php } ?>
+
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endwhile;
+                        <?php }
+                        }
                         wp_reset_query(); ?>
 
 
