@@ -44,41 +44,40 @@ $condition_treated_page_id = 33;
             for ($i = 0; $i < count($q); $i++) { ?>
                 <div class="my-5">
                     <p class="font-italic font-big font-weight-light mb-3">
-                        <?php echo get_field('content', $q[$i]); ?>
+                        <?php the_field('content', $q[$i]); ?>
                     </p>
                     <div>
                         <span class="h5 font-manrope text-emerald">
-                            <?php echo get_field('full_name', $q[$i]); ?>
+                            <?php the_field('full_name', $q[$i]); ?>
                         </span>
                         <?php if (get_field('location', $q[$i])) { ?>
                             -
                             <span class="h6 font-weight-light">
-                                <?php echo get_field('location', $q[$i]); ?>
+                                <?php the_field('location', $q[$i]); ?>
                             </span>
                         <?php } ?>
                     </div>
 
-                    <p class="m-0">
-                        <?php
-                        $position = get_field('position', $q[$i]);
-                        if ($position['position_title']) {
-                            echo $position['position_title'];
-                        } ?>
-                    </p>
+                    <?php
+                    $position = get_field('position', $q[$i]);
+                    if ($position['position_title']) { ?>
+                        <p class="m-0">
+                            <?php echo $position['position_title']; ?>
+                        </p>
+                    <?php } ?>
 
-                    <p>
-                        <?php
-                        if ($position['company_name']) {
-                            echo $position['company_name'];
-                        }
-                        ?>
-                    </p>
+                    <?php if ($position['company_name']) { ?>
+                        <p>
+                            <?php echo $position['company_name']; ?>
+                        </p>
+                    <?php } ?>
 
-                    <h6 class="text-muted">
-                        <i class="far fa-clock"></i>
-                        <?php the_field('date_testimonial', $q[$i]); ?>
-                    </h6>
-
+                    <?php if (get_field('date_testimonial', $q[$i])) { ?>
+                        <h6 class="text-muted my-2">
+                            <i class="far fa-clock"></i>
+                            <?php the_field('date_testimonial', $q[$i]); ?>
+                        </h6>
+                    <?php } ?>
                 </div>
             <?php } ?>
         </div>

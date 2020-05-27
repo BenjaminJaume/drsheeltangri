@@ -184,8 +184,8 @@ add_filter('manage_testimonials_posts_columns', 'set_custom_edit_testimonials_co
 function set_custom_edit_testimonials_columns($columns)
 {
     unset($columns['date']);
-    $columns['full_name'] = __('Full Name');
     $columns['content'] = __('Content');
+    $columns['short'] = __('Short');
     $columns['location'] = __('Location');
     $columns['date_testimonial'] = __('Date');
 
@@ -197,16 +197,16 @@ add_action('manage_testimonials_posts_custom_column', 'custom_testimonials_colum
 function custom_testimonials_column($column, $post_id)
 {
     switch ($column) {
-        case 'full_name':
-            echo get_post_meta($post_id, 'full_name', true);
-            break;
-
         case 'location':
             echo get_post_meta($post_id, 'location', true);
             break;
 
         case 'content':
             echo wp_trim_words(get_post_meta($post_id, 'content', true), 30);
+            break;
+
+        case 'short':
+            echo wp_trim_words(get_post_meta($post_id, 'short_testimonial', true), 30);
             break;
 
         case 'date_testimonial':
@@ -265,8 +265,8 @@ function set_custom_edit_conditions_columns($columns)
     $columns['category'] = __('Category');
     $columns['videos'] = __('Video(s)');
     $columns['questions_answers'] = __('Q&A');
-    $columns['audio'] = __('Audio(s)');
-    $columns['Testimonial'] = __('Testimonial(s)');
+    $columns['audios'] = __('Audio(s)');
+    $columns['testimonials'] = __('Testimonial(s)');
 
     return $columns;
 }
@@ -289,7 +289,7 @@ function custom_conditions_column($column, $post_id)
             if (!empty($videos) && count($videos) >= 1) {
                 echo "<ul>";
                 foreach ($videos as $video) {
-                    $title = get_field('title', $video->ID);
+                    $title = get_the_title($video->ID);
                     $link = get_edit_post_link($video->ID);
 
                     echo '<li>';
@@ -307,6 +307,38 @@ function custom_conditions_column($column, $post_id)
                 foreach ($questions_answers as $q_a) {
                     $title = get_the_title($q_a->ID);
                     $link = get_edit_post_link($q_a->ID);
+
+                    echo '<li>';
+                    echo '<a href="' . $link . '" alt="" target="_blank" >' . $title . '</a>';
+                    echo '</li>';
+                }
+                echo "</ul>";
+            }
+            break;
+
+        case 'audios':
+            $audios = get_field('audios', $post_id);
+            if (!empty($audios) && count($audios) >= 1) {
+                echo "<ul>";
+                foreach ($audios as $video) {
+                    $title = get_the_title($video->ID);
+                    $link = get_edit_post_link($video->ID);
+
+                    echo '<li>';
+                    echo '<a href="' . $link . '" alt="" target="_blank" >' . $title . '</a>';
+                    echo '</li>';
+                }
+                echo "</ul>";
+            }
+            break;
+
+        case 'testimonials':
+            $testimonials = get_field('testimonials', $post_id);
+            if (!empty($testimonials) && count($testimonials) >= 1) {
+                echo "<ul>";
+                foreach ($testimonials as $video) {
+                    $title = get_the_title($video->ID);
+                    $link = get_edit_post_link($video->ID);
 
                     echo '<li>';
                     echo '<a href="' . $link . '" alt="" target="_blank" >' . $title . '</a>';
