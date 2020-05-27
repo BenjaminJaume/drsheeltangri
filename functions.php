@@ -493,6 +493,7 @@ function init_remove_support()
 
 include 'shortcodes/conditions.php';
 include 'shortcodes/video_embeded.php';
+include 'shortcodes/paypal_button.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');

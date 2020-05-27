@@ -18,7 +18,7 @@ $section_7 = get_field('section_7');
     <div class="row">
         <div class="col-12 col-md-6 mx-auto my-auto">
             <div class="text-center py-5">
-                <h1 class="h1 font-manrope text-uppercase font-white font-weight-bold m-0">
+                <h1 class="h1 font-jost text-uppercase font-weight-light m-0">
                     <?php echo $introduction['title']; ?>
                 </h1>
 
@@ -40,7 +40,8 @@ $section_7 = get_field('section_7');
             </div>
         </div>
         <div class="col-12 col-md-6 p-0">
-            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/KRFdfcNjj5Q?controls=0?autoplay=1?loop=1" frameborder="0" allow="autoplay">
+            <?php $url_video = do_shortcode('[video_embeded url=' . $introduction['video'] . ']'); ?>
+            <iframe width="100%" height="500px" src="<?php echo $url_video; ?>?controls=0?autoplay=1?loop=1" frameborder="0" allow="autoplay">
             </iframe>
         </div>
     </div>
@@ -201,6 +202,11 @@ $section_7 = get_field('section_7');
                 <?php echo $section_3['button_2']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <?php echo do_shortcode("[paypal_button]"); ?>
         </div>
     </div>
 </div>
