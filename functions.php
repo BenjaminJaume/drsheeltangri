@@ -271,6 +271,13 @@ function set_custom_edit_conditions_columns($columns)
     return $columns;
 }
 
+add_filter('manage_edit-conditions_sortable_columns', 'smashing_conditions_sortable_columns');
+function smashing_conditions_sortable_columns($columns)
+{
+    $columns['order'] = 'order';
+    return $columns;
+}
+
 // Add the data to the custom columns for the conditions post type:
 add_action('manage_conditions_posts_custom_column', 'custom_conditions_column', 10, 2);
 function custom_conditions_column($column, $post_id)
@@ -355,11 +362,18 @@ add_filter('manage_videos_posts_columns', 'set_custom_edit_videos_columns');
 function set_custom_edit_videos_columns($columns)
 {
     unset($columns['date']);
-    $columns['preview'] = __('Preview');
+    $columns['order'] = __('Order');
     $columns['description'] = __('Description');
     $columns['link'] = __('Link');
-    $columns['edit'] = __('Edit');
+    $columns['preview'] = __('Preview');
 
+    return $columns;
+}
+
+add_filter('manage_edit-videos_sortable_columns', 'smashing_videos_sortable_columns');
+function smashing_videos_sortable_columns($columns)
+{
+    $columns['order'] = 'order';
     return $columns;
 }
 
@@ -368,6 +382,10 @@ add_action('manage_videos_posts_custom_column', 'custom_videos_column', 10, 2);
 function custom_videos_column($column, $post_id)
 {
     switch ($column) {
+        case 'order':
+            echo get_field('order', $post_id);
+            break;
+
         case 'preview':
             // extracting the video ID first
             $url = get_post_meta($post_id, 'link', true);
@@ -386,10 +404,6 @@ function custom_videos_column($column, $post_id)
                 '<a href="' . get_post_meta($post_id, 'link', true) . '" alt="" target="_blank">' .
                     get_post_meta($post_id, 'link', true)
                     . '</a>';
-            break;
-
-        case 'edit':
-            echo '<a href="' . get_edit_post_link($post_id) . '" alt="" target="_blank" />Edit</span>';
             break;
     }
 }
@@ -500,4 +514,59 @@ function formatBytes($bytes, $precision = 0)
     // $bytes /= (1 << (10 * $pow));
 
     return round($bytes, $precision) . ' ' . $units[$pow];
+}
+
+
+if (is_admin()) {
+    //this hook will create a new filter on the admin area for the specified post type
+    add_action('restrict_conditions_posts', function () {
+        global $wpdb, $table_prefix;
+
+        $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
+        $category = (isset($_GET['category'])) ? $_GET['category'] : '';
+
+        //only add filter to post type you want
+        if ($post_type == 'conditions') {
+            //query database to get a list of categories for the specific post type:
+            $values = array();
+            $q = get_posts(array(
+                'posts_per_page'    => -1,
+                'post_type'         => 'conditions',
+                'meta_key'          => 'category',
+                'meta_value'        => $category
+            ));
+            foreach ($q as $data) {
+                $values[$data->category] = $data->category;
+            }
+
+            //give a unique name in the select field
+?>
+            <select name="category">
+                <option value="">All categories</option>
+
+                <?php
+                $current_v = isset($_GET['category']) ? $_GET['category'] : '';
+                foreach ($values as $label => $value) {
+                    printf(
+                        '<option value="%s"%s>%s</option>',
+                        $value,
+                        $value == $current_v ? ' selected="selected"' : '',
+                        $label
+                    );
+                }
+                ?>
+            </select>
+<?php
+        }
+    });
+
+    //this hook will alter the main query according to the user's selection of the custom filter we created above:
+    add_filter('parse_query', function ($query) {
+        global $pagenow;
+        $post_type = (isset($_GET['post_type'])) ? $_GET['post_type'] : 'post';
+
+        if ($post_type == 'conditions' && $pagenow == 'edit.php' && isset($_GET['admin_filter_year']) && !empty($_GET['admin_filter_year'])) {
+            $query->query_vars['year'] = $_GET['admin_filter_year'];
+        }
+    });
 }
