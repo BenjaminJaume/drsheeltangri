@@ -518,6 +518,7 @@ function formatBytes($bytes, $precision = 0)
     return round($bytes, $precision) . ' ' . $units[$pow];
 }
 
+// Filter posts on Conditions Admin Page
 if (is_admin()) {
     //this hook will create a new filter on the admin area for the specified post type
     add_action('restrict_manage_posts', function () {
