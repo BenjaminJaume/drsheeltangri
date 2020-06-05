@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Sheel Tangri</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/favicon/apple-touch-icon.png'; ?>">
     <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-32x32.png'; ?>">

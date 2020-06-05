@@ -28,11 +28,6 @@ function loop_category($category)
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <span class="font-manrope text-uppercase text-center my-0 p-0">
-                            Description
-                        </span>
-                    </th>
-                    <th scope="col" class="align-middle text-center">
-                        <span class="font-manrope text-uppercase text-center my-0 p-0">
                             More
                         </span>
                     </th>
@@ -68,9 +63,6 @@ function loop_category($category)
             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="font-manrope text-uppercase">
                 ' . get_the_title($query[$i]) . '
             </a>
-        </td>
-        <td class="align-middle">
-            <span class="font-weight-light">' . wp_trim_words(get_field('description', $query[$i]), 10) . '</span>
         </td>
         <td class="align-middle text-center">
             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">

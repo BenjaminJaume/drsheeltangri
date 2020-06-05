@@ -91,11 +91,6 @@ $section_7 = get_field('section_7');
                         </th>
                         <th scope="col" class="align-middle text-center">
                             <span class="font-manrope text-uppercase text-center my-0 p-0">
-                                Description
-                            </span>
-                        </th>
-                        <th scope="col" class="align-middle text-center">
-                            <span class="font-manrope text-uppercase text-center my-0 p-0">
                                 More
                             </span>
                         </th>
@@ -121,9 +116,6 @@ $section_7 = get_field('section_7');
                         ' . get_the_title($query[$i]) . '
                     </a>
                 </td>
-                <td class="align-middle">
-                    <span class="font-weight-light">' . wp_trim_words(get_field('description', $query[$i]), 10) . '</span>
-                </td>
                 <td class="align-middle text-center">
                     <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
                         <span class="is-medium">
@@ -147,9 +139,6 @@ $section_7 = get_field('section_7');
                     <p class="font-manrope font-weight-bold m-0">
                         And the list continue
                     </p>
-                </td>
-                <td class="align-middle">
-                    <span class="font-weight-light"></span>
                 </td>
                 <td class="align-middle text-center">
                     <a href="conditions-treated" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">

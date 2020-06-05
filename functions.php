@@ -264,17 +264,10 @@ function set_custom_edit_conditions_columns($columns)
     $columns['order'] = __('Order');
     $columns['category'] = __('Category');
     $columns['videos'] = __('Video(s)');
-    $columns['questions_answers'] = __('Q&A');
     $columns['audios'] = __('Audio(s)');
+    $columns['questions_answers'] = __('Q&A');
     $columns['testimonials'] = __('Testimonial(s)');
 
-    return $columns;
-}
-
-add_filter('manage_edit-conditions_sortable_columns', 'smashing_conditions_sortable_columns');
-function smashing_conditions_sortable_columns($columns)
-{
-    $columns['order'] = 'order';
     return $columns;
 }
 
@@ -370,12 +363,36 @@ function set_custom_edit_videos_columns($columns)
     return $columns;
 }
 
-add_filter('manage_edit-videos_sortable_columns', 'smashing_videos_sortable_columns');
-function smashing_videos_sortable_columns($columns)
+function custom_post_types_pre_get_posts($query)
 {
-    $columns['order'] = 'order';
-    return $columns;
+    // do not modify queries in the admin
+    if (!is_admin()) {
+        return $query;
+    }
+
+    // only modify queries for 'event' post type
+    if (isset($query->query_vars['post_type'])) {
+        switch ($query->query_vars['post_type']) {
+            case 'conditions':
+                $query->set('orderby', 'meta_value');
+                $query->set('meta_key', 'order');
+                $query->set('meta_key', 'category');
+                $query->set('meta_type', 'numeric');
+                $query->set('order', 'ASC');
+                break;
+            case 'videos':
+                $query->set('orderby', 'meta_value');
+                $query->set('meta_key', 'order');
+                $query->set('meta_type', 'numeric');
+                $query->set('order', 'ASC');
+                break;
+        }
+    }
+
+    // return
+    return $query;
 }
+add_action('pre_get_posts', 'custom_post_types_pre_get_posts');
 
 // Add the data to the custom columns for the videos post type:
 add_action('manage_videos_posts_custom_column', 'custom_videos_column', 10, 2);
