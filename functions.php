@@ -188,6 +188,7 @@ function set_custom_edit_testimonials_columns($columns)
     $columns['short'] = __('Short');
     $columns['location'] = __('Location');
     $columns['date_testimonial'] = __('Date');
+    $columns['video'] = __('Video?');
 
     return $columns;
 }
@@ -213,6 +214,15 @@ function custom_testimonials_column($column, $post_id)
             $date = get_post_meta($post_id, 'date_testimonial', true);
             if ($date != '') {
                 echo date("F Y", strtotime($date));
+            }
+            break;
+
+        case 'video':
+            $video = get_post_meta($post_id, 'video', true);
+            if ($video != '') {
+                echo "<b>YES</b>";
+            } else {
+                echo "No";
             }
             break;
     }
@@ -371,7 +381,7 @@ function custom_post_types_pre_get_posts($query)
     }
 
     // only modify queries for 'event' post type
-    if (isset($query->query_vars['post_type'])) {
+    if (isset($query->query_vars['post_type']) && !isset($_GET['filter_action'])) {
         switch ($query->query_vars['post_type']) {
             case 'conditions':
                 $query->set('orderby', 'meta_value');
