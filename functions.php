@@ -380,7 +380,7 @@ function custom_post_types_pre_get_posts($query)
         return $query;
     }
 
-    // only modify queries for 'event' post type
+    // only modify queries for 'conditions' & 'videos' post type
     if (isset($query->query_vars['post_type']) && !isset($_GET['filter_action'])) {
         switch ($query->query_vars['post_type']) {
             case 'conditions':
