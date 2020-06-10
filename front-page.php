@@ -126,9 +126,6 @@ $section_7 = get_field('section_7');
                         </span>
                         <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
                     </a>
-                    <a href="' . get_post_permalink($query[$i]) . '#video" alt="" class="btn btn-outline-primary font-manrope text-uppercase hvr-glow rounded-0  mt-2 mt-lg-0">
-                        <i class="fas fa-video"></i>
-                    </a>
                 </td>
             </tr>';
             }
@@ -137,7 +134,7 @@ $section_7 = get_field('section_7');
             <tr>
                 <td class="align-middle">
                     <p class="font-manrope font-weight-bold m-0">
-                        And the list continue
+                        And the list continues
                     </p>
                 </td>
                 <td class="align-middle text-center">
@@ -248,11 +245,11 @@ $section_7 = get_field('section_7');
     </div>
 </article>
 
-<div class="bg-light py-5">
+<div class="bg-success py-5">
     <article class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
+                <h1 class="h1 font-manrope text-uppercase text-center text-light font-weight-bold m-0">
                     <?php echo $section_5['title']; ?>
                 </h1>
             </div>
@@ -261,28 +258,28 @@ $section_7 = get_field('section_7');
             <div class="col-12 col-sm-6 text-center">
                 <dl class="font-manrope text-uppercase">
                     <dd>
-                        <a href="<?php echo $section_5['link_1']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_1']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_1']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_2']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_2']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_2']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_3']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_3']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_3']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_4']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_4']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_4']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
@@ -293,28 +290,28 @@ $section_7 = get_field('section_7');
             <div class="col-12 col-sm-6 text-center">
                 <dl class="font-manrope text-uppercase">
                     <dd>
-                        <a href="<?php echo $section_5['link_5']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_5']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_5']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_6']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_6']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_6']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_7']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_7']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_7']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
                         </a>
                     </dd>
                     <dd>
-                        <a href="<?php echo $section_5['link_8']['link']; ?>" alt="" class="btn btn-light hvr-icon-forward border-0">
+                        <a href="<?php echo $section_5['link_8']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
                                 <?php echo $section_5['link_8']['label']; ?></u>
                             <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
@@ -425,7 +422,7 @@ if ($section_6['displayed'] == "Yes") { ?>
     </article>
 <?php } ?>
 
-<div class="bg-dark py-5 my-5">
+<div class="bg-success py-5 my-5">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12 col-sm-6">
@@ -443,8 +440,7 @@ if ($section_6['displayed'] == "Yes") { ?>
                         <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
                     </div>
                     <div>
-
-                        <button type="submit" class="btn btn-success rounded-0 hvr-icon-forward mb-2">
+                        <button type="submit" class="btn btn-primary rounded-0 hvr-icon-forward mb-2">
                             <?php echo $section_7['submit_button_label'] ?>
                             <i class="fas fa-chevron-right hvr-icon ml-1"></i>
                         </button>

@@ -10,7 +10,7 @@
 <?php if (get_the_post_thumbnail_url()) { ?>
     <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
         <div class="centered">
-            <h1 class="h1 text-center font-manrope text-uppercase text-success font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <h1 class="h1 text-center font-manrope text-uppercase text-dark font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
                 <?php echo wp_title(''); ?>
             </h1>
         </div>

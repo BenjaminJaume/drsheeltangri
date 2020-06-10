@@ -25,8 +25,8 @@ console($template);
 
 <body <?php body_class('main'); ?>>
 
-    <header class=" sticky-top" role="banner">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+    <header class="sticky-top" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
             <div class="container-fluid">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>
                     <div class="container-fluid m-0 p-0">

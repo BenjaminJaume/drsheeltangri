@@ -1,13 +1,66 @@
-<?php get_header(); ?>
+<?php get_header();
 
-<?php
-
-$header = "Location: " . get_site_url();
-header($header);
-
-exit();
-
+$id = get_the_ID();
 ?>
+
+<div class="container my-5">
+    <?php
+    $question = get_field('q_a', $id);
+    console(get_the_title($question));
+    $i = 1;
+
+    if ($q_a) : ?>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="font-manrope text-uppercase text-center text-success font-weight-bold mb-0">
+                    <?php
+                    if (count($q_a) == 1) {
+                        echo count($q_a) . ' Question & Answer found';
+                    } else {
+                        echo count($q_a) . ' Questions & Answers found';
+                    } ?>
+                </h1>
+            </div>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="font-manrope text-uppercase text-success mb-0">
+                <?php echo get_the_title($id); ?>
+            </h1>
+            <p class="text-muted text-capitalize text-center m-0 p-0">
+                <?php
+                $postType = get_post_type_object(get_post_type());
+                echo esc_html($postType->labels->singular_name);
+                ?>
+            </p>
+
+            <a href="questions-answers" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+                <i class="fas fa-arrow-left hvr-icon"></i>
+                Back to the questions
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 my-4">
+            <h1 class="font-manrope text-success text-center text-uppercase">Question:</h1>
+            <p class="font-big font-weight-light text-center m-0">
+                <?php echo the_field('question', $id); ?>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 my-4">
+            <h1 class="font-manrope text-warning text-center text-uppercase">Answer:</h1>
+            <p class="font-big font-weight-light text-center m-0">
+                <?php echo the_field('answer', $id); ?>
+            </p>
+        </div>
+    </div>
+</div>
 
 
 <?php get_footer(); ?>

@@ -44,26 +44,4 @@ $id = get_the_ID();
     </div>
 </div>
 
-<div class="container my-5">
-    <?php
-    $q_a = get_field('q_a');
-    $i = 1;
-
-    if ($q_a) : ?>
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="font-manrope text-uppercase text-center text-success font-weight-bold mb-0">
-                    <?php
-                    if (count($q_a) == 1) {
-                        echo count($q_a) . ' Question & Answer found';
-                    } else {
-                        echo count($q_a) . ' Questions & Answers found';
-                    } ?>
-                </h1>
-            </div>
-        </div>
-    <?php endif; ?>
-</div>
-
-
 <?php get_footer(); ?>
