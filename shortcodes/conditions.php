@@ -40,7 +40,7 @@ function loop_category($category)
     $header_condition = '
     <div class="border-top border-right border-left text-center py-3">
         <p class="text-muted m-0 p-0">Category:</p>
-        <h1 class="font-jost text-uppercase font-weight-light text-center m-0">' . $category . '</h1>
+        <h1 class="font-roboto text-uppercase font-weight-light text-center m-0">' . $category . '</h1>
     </div>';
 
     $args = [

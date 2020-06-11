@@ -9,7 +9,6 @@ get_header(); ?>
 <style>
     .bg-header {
         background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);
-        height: 400px;
     }
 </style>
 
@@ -44,22 +43,26 @@ get_header(); ?>
                 Attention & Intention
             </h4>
 
-            <?php echo do_shortcode('[audio src="' . wp_get_attachment_url(1197) . '"][/audio]'); ?>
+            <?php // echo do_shortcode('[audio src="' . wp_get_attachment_url(1197) . '"][/audio]'); 
+            ?>
 
-            <a href="<?php echo wp_get_attachment_url(1197); ?>" class="btn btn-success rounded-0 mt-3" download="">
+            <!-- <a href="<?php echo wp_get_attachment_url(1197); ?>" class="btn btn-success rounded-0 mt-3" download="">
                 Download the audio file
-            </a>
+            </a> -->
+            <p>Not yet available</p>
         </div>
         <div class="col-12 text-center mb-5 mb-xl-0">
             <h4 class="text-success">
                 Guided prayer
             </h4>
 
-            <?php echo do_shortcode('[audio src="' . wp_get_attachment_url(1130) . '"][/audio]'); ?>
+            <?php // echo do_shortcode('[audio src="' . wp_get_attachment_url(1130) . '"][/audio]'); 
+            ?>
 
-            <a href="<?php echo wp_get_attachment_url(1130); ?>" class="btn btn-success rounded-0 mt-3" download="">
+            <!-- <a href="<?php echo wp_get_attachment_url(1130); ?>" class="btn btn-success rounded-0 mt-3" download="">
                 Download the audio file
-            </a>
+            </a> -->
+            <p>Not yet available</p>
         </div>
         <div class="col-12 text-center">
             <h4 class="text-success">

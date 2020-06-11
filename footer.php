@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center font-manrope text-uppercase">
-                    Silent Affirmations
+                    Dr. Sheel Tangri
                 </h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 text-center">
-                <a href="contact" class="btn btn-warning rounded-0 font-manrope hvr-grow">Contact</a>
+                <a href="contact" class="btn btn-success rounded-0 font-manrope hvr-grow">Contact</a>
             </div>
         </div>
         <div class="row my-5">

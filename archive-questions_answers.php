@@ -22,47 +22,91 @@ $condition_treated_page_id = 522;
 <style>
     .bg-header {
         background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
-        height: 400px;
     }
 </style>
 
-<div class="container-fluid bg-header bg-cover m-0 p-0">
+<!-- <div class="container-fluid bg-header bg-cover m-0 p-0">
+</div> -->
+
+<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
+    <div class="centered">
+        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <?php echo wp_title(''); ?>
+        </h1>
+    </div>
 </div>
 
 <div class="container my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-success text-uppercase mt-0 pt-0">
-                <?php echo count($q) . ' ' . get_the_title($condition_treated_page_id);
-                ?>
+    <div class="row mb-5">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+            <h1 class="font-manrope font-weight-light text-center">
+                Type a keyword to find the answer you are looking for
             </h1>
+            <form role="search" method="get" action="<?php echo get_site_url(); ?>">
+                <div class="form-group">
+                    <select class="custom-select custom-select-lg" type="search" name="s" required="required" data-placeholder="Example: Low blood, Grind teeth, Short Leg Syndrome" data-allow-clear="1">
+                        <option></option>
+                        <?php foreach ($q as $id) { ?>
+                            <option value="<?php echo get_the_title($id); ?>">
+                                <?php echo get_the_title($id); ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+
+                    <button type="submit" class="btn btn-success rounded-0 hvr-icon-forward mt-3">
+                        Search
+                        <i class="fas fa-search hvr-icon ml-1"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <?php
-            for ($i = 0; $i < count($q); $i++) { ?>
-                <div class="line-height-big">
-                    <div class="text-center">
-                        <h1 class="text-primary font-manrope text-uppercase">
-                            Question <?php echo $i + 1; ?>:
-                        </h1>
-                        <p class="font-big">
-                            &quot;<?php echo get_field('question', $q[$i]); ?>&quot;
-                        </p>
-                    </div>
+            <div class="accordion" id="accordionQuestionsAnswers">
+                <?php
+                for ($i = 0; $i < count($q); $i++) { ?>
 
-                    <div>
-                        <h1 class="text-primary text-center font-manrope text-uppercase">
-                            Answer <?php echo $i + 1; ?>:
-                        </h1>
-                        <p class="font-weight-light">
-                            <?php echo get_field('answer', $q[$i]); ?>
-                        </p>
-                    </div>
-                </div>
+                    <div class="card">
+                        <div class="card-header" id="headingAccordionQuestionsAnswers-<?php echo $i; ?>">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-uppercase" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                    <p class="font-big m-0">
+                                        Topic: <?php echo get_the_title($q[$i]); ?>
+                                    </p>
+                                </button>
+                            </h2>
+                        </div>
 
-            <?php } ?>
+                        <div id="collapse-<?php echo $i; ?>" class="collapse" aria-labelledby="headingAccordionQuestionsAnswers-<?php echo $i; ?>" data-parent="#accordionQuestionsAnswers">
+                            <div class="card-body">
+                                <div>
+                                    <h1 class="font-manrope text-success text-uppercase font-weight-light">
+                                        Question:
+                                    </h1>
+                                    <i class="font-weight-light m-0">
+                                        <?php echo get_field('question', $q[$i]); ?>
+                                    </i>
+                                </div>
+
+                                <div>
+                                    <h1 class="font-manrope text-primary text-uppercase font-weight-light">
+                                        Answer:
+                                    </h1>
+                                    <p class="font-weight-light m-0">
+                                        <?php echo get_field('answer', $q[$i]); ?>
+                                    </p>
+                                </div>
+
+                                <button class="btn btn-warning text-uppercase mt-5" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                    <i class="far fa-times-circle"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
 

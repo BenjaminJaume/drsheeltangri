@@ -3,7 +3,6 @@
 <style>
     .bg-header {
         background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);
-        height: 400px;
     }
 </style>
 

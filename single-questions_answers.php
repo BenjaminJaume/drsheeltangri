@@ -44,7 +44,31 @@ $id = get_the_ID();
             </a>
         </div>
     </div>
+
+    <div class="row my-5">
+        <div class="col-12">
+            <h1 class="font-manrope text-success text-uppercase font-weight-light text-center">
+                Question:
+            </h1>
+            <p class="h3 font-weight-light m-0">
+                <?php echo the_field('question', $id); ?>
+            </p>
+        </div>
+    </div>
+
     <div class="row">
+        <div class="col-12">
+            <h1 class="font-manrope text-primary text-uppercase font-weight-light text-center">
+                Answer:
+            </h1>
+            <p class="h3 font-jost font-weight-light m-0">
+                <?php echo the_field('answer', $id); ?>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- <div class="row">
         <div class="col-12 my-4">
             <h1 class="font-manrope text-success text-center text-uppercase">Question:</h1>
             <p class="font-big font-weight-light text-center m-0">
@@ -59,7 +83,7 @@ $id = get_the_ID();
                 <?php echo the_field('answer', $id); ?>
             </p>
         </div>
-    </div>
+    </div> -->
 </div>
 
 

@@ -22,7 +22,6 @@ $condition_treated_page_id = 33;
 <style>
     .bg-header {
         background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
-        height: 400px;
     }
 </style>
 
@@ -37,9 +36,9 @@ $condition_treated_page_id = 33;
 <div class="container my-5">
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <h3 class="font-manrope font-weight-light mt-0 pt-0">
-                Here you can have a look at what people say about the treatment.
-            </h3>
+            <h1 class="font-manrope font-weight-light text-uppercase mt-0 pt-0">
+                Here is what people have to say about their experience
+            </h1>
         </div>
     </div>
 

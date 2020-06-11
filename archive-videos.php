@@ -22,22 +22,18 @@ $condition_treated_page_id = 13;
 <style>
     .bg-header {
         background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
-        height: 400px;
     }
 </style>
 
-<div class="container-fluid bg-header bg-cover m-0 p-0">
+<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
+    <div class="centered">
+        <h1 class="h1 text-center font-manrope text-uppercase text-success font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <?php echo wp_title(''); ?>
+        </h1>
+    </div>
 </div>
 
 <div class="container-fluid my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-success text-uppercase mt-0 pt-0">
-                <?php echo get_the_title($condition_treated_page_id);
-                ?>
-            </h1>
-        </div>
-    </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         <?php
         // For each video

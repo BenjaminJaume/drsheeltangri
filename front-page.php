@@ -18,7 +18,7 @@ $section_7 = get_field('section_7');
     <div class="row">
         <div class="col-12 col-md-6 mx-auto my-auto">
             <div class="text-center py-5">
-                <h1 class="h1 font-jost text-uppercase font-weight-light m-0">
+                <h1 class="h1 font-roboto text-uppercase font-weight-light m-0">
                     <?php echo $introduction['title']; ?>
                 </h1>
 
