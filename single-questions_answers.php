@@ -6,7 +6,6 @@ $id = get_the_ID();
 <div class="container my-5">
     <?php
     $question = get_field('q_a', $id);
-    console(get_the_title($question));
     $i = 1;
 
     if ($q_a) : ?>
@@ -38,7 +37,7 @@ $id = get_the_ID();
                 ?>
             </p>
 
-            <a href="questions-answers" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/questions-answers'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to the questions
             </a>

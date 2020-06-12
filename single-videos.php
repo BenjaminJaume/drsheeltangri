@@ -17,7 +17,7 @@ $id = get_the_ID();
                 ?>
             </p>
 
-            <a href="videos" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/videos'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to the videos
             </a>

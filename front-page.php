@@ -14,7 +14,7 @@ $section_7 = get_field('section_7');
 
 <?php get_header(); ?>
 
-<div class="container-fluid">
+<div class="container my-5">
     <div class="row">
         <div class="col-12 col-md-6 mx-auto my-auto">
             <div class="text-center py-5">
@@ -73,100 +73,69 @@ $section_7 = get_field('section_7');
     </div>
 </article>
 
+
 <article class="container my-5">
     <div class="row">
-        <div class="col-12 mb-4">
-            <?php
+        <div class="col-12 text-center">
+            <h1 class="text-success">
+                Conditions Treated
+            </h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <?php
 
-            $header_table = '
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                </thead>
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col" class="align-middle text-center">
-                            <span class="font-manrope text-uppercase text-center m-0 p-0">
-                                Conditions
-                            </span>
-                        </th>
-                        <th scope="col" class="align-middle text-center">
-                            <span class="font-manrope text-uppercase text-center my-0 p-0">
-                                More
-                            </span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>';
+        // Get the first $number conditions
+        $args = [
+            'post_type'      => 'conditions',
+            'posts_per_page' => 9,
+            'post_name_in'  => ['conditions'],
+        ];
+        $query = get_posts($args);
 
-            $footer_table = '</table></div>';
+        for ($i = 0; $i < count($query); $i++) { ?>
+            <div class="col-12 col-sm-6 col-md-4 text-center my-3">
+                <a href="<?php echo get_post_permalink($query[$i]); ?>" alt="" class="btn btn-success rounded-0 font-manrope text-uppercase hvr-icon-forward">
+                    <?php echo get_the_title($query[$i]); ?>
+                    <i class="fa fa-chevron-right hvr-icon"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
 
-            // Get the first $number conditions
-            $args = [
-                'post_type'      => 'conditions',
-                'posts_per_page' => $atts['number'],
-                'post_name_in'  => ['conditions'],
-            ];
-            $query = get_posts($args);
-
-            for ($i = 0; $i < count($query); $i++) {
-                $str = $str . ' 
-            <tr>
-                <td class="align-middle">
-                    <a href="' . get_post_permalink($query[$i]) . '" alt="" class="font-manrope text-uppercase">
-                        ' . get_the_title($query[$i]) . '
-                    </a>
-                </td>
-                <td class="align-middle text-center">
-                    <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
-                        <span class="is-medium">
-                            More
-                        </span>
-                        <span class="is-default">
-                            More
-                        </span>
-                        <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
-                    </a>
-                </td>
-            </tr>';
-            }
-
-            $str = $str . '
-            <tr>
-                <td class="align-middle">
-                    <p class="font-manrope font-weight-bold m-0">
-                        And the list continues
-                    </p>
-                </td>
-                <td class="align-middle text-center">
-                    <a href="conditions-treated" alt="" class="btn btn-success font-manrope text-uppercase hvr-glow rounded-0">
-                        <span class="is-medium">
-                            <i class="fas fa-info-circle mr-md-1"></i>
-                            More
-                        </span>
-                        <span class="is-default">
-                            <i class="fas fa-info-circle mr-md-1"></i>
-                            Learn more
-                        </span>
-                    </a>
-                </td>
-            </tr>';
-
-            echo $header_table . $str . $footer_table;
-
-            ?>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="font-manrope font-weight-light">
+                And the list continues...
+            </h1>
+        </div>
+        <div class="col-12 text-center">
+            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-lg btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
+                <span class="is-mobile">
+                    More
+                </span>
+                <span class="is-default">
+                    See More
+                </span>
+                <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-12 text-center">
+            <h1 class="font-weight-light text-uppercase">
+                - Or -
+            </h1>
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-12 text-center">
-            <div class="is-mobile mx-auto mb-4">
-                <a href="<?php echo $section_2['condition_5']['link_video']; ?>" alt="" class="btn btn-success btn-lg hvr-glow rounded-0">
-                    <i class="fas fa-info-circle mr-1"></i>
-                    Learn more
-                </a>
-            </div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+            <p class="text-muted">
+                Look for a condition in the list below
+            </p>
 
             <div>
-                <?php get_search_form(); ?>
+                <?php echo do_shortcode('[condition_search_form][/condition_search_form]'); ?>
             </div>
         </div>
     </div>

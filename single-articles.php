@@ -15,7 +15,7 @@ $id = get_the_ID();
                 <?php echo the_field('date_article', $id); ?>
             </p>
 
-            <a href="past-events-articles" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/past-events-articles'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to past events & articles
             </a>

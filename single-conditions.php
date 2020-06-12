@@ -14,7 +14,7 @@ $id = get_the_ID();
                 Category: <?php echo the_field('category', $id); ?>
             </h3>
 
-            <a href="conditions-treated" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to conditions
             </a>
@@ -34,21 +34,21 @@ $id = get_the_ID();
     $i = 1;
 
     if ($videos) :
-        foreach ($videos as $video) :
+        for ($i = 0; $i <= count($videos); $i++) {
             // ID of the video
-            $id = $video->ID;
+            $id = $videos[$i]->ID;
             $url_video = do_shortcode('[video_embeded url=' . get_field('link', $id) . ']');
     ?>
             <div class="row my-5">
                 <div class="col-12">
-                    <h1 class="text-center font-manrope text-uppercase text-success">Video: <?php echo get_the_title($id); ?></h1>
+                    <h1 class="text-center font-manrope text-uppercase text-success">Video #<?php echo $i + 1; ?></h1>
                     <div class="embed-responsive embed-responsive-16by9 border" id="video">
                         <iframe class="embed-responsive-item" src="<?php echo $url_video; ?>" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
     <?php
-        endforeach;
+        }
     endif;
     ?>
 </div>

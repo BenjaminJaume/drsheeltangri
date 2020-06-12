@@ -7,12 +7,10 @@ function video_embeded($atts)
     ), $atts));
 
     if (empty($atts['url'])) {
-        console('No parameters given');
+        // console('No parameters given');
     } else {
         $url = $atts['url'];
     }
-
-    console($url);
 
     // extracting the video ID if it's a Youtube video
     if (strpos($url, 'watch?v=')) {
