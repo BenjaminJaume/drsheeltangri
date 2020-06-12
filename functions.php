@@ -294,11 +294,11 @@ function custom_conditions_column($column, $post_id)
 {
     switch ($column) {
         case 'category':
-            echo get_field('category', $post_id);
+            the_field('category', $post_id);
             break;
 
         case 'order':
-            echo get_field('order', $post_id);
+            the_field('order', $post_id);
             break;
 
         case 'videos':
@@ -417,7 +417,7 @@ function custom_videos_column($column, $post_id)
 {
     switch ($column) {
         case 'order':
-            echo get_field('order', $post_id);
+            the_field('order', $post_id);
             break;
 
         case 'preview':
@@ -528,6 +528,7 @@ function init_remove_support()
 include 'shortcodes/conditions.php';
 include 'shortcodes/video_embeded.php';
 include 'shortcodes/paypal_button.php';
+include 'shortcodes/download_audio_file.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');
@@ -613,3 +614,22 @@ if (is_admin()) {
         }
     });
 }
+
+add_filter('acf/fields/wysiwyg/toolbars', 'my_toolbars');
+function my_toolbars($toolbars)
+{
+    array_unshift($toolbars['Full'][1], 'fontselect');
+    array_unshift($toolbars['Full'][1], 'fontsizeselect');
+
+    return $toolbars;
+}
+
+// Add custom Fonts to the Fonts list
+if (!function_exists('am_add_google_fonts_array_to_tiny_mce')) {
+    function am_add_google_fonts_array_to_tiny_mce($initArray)
+    {
+        $initArray['font_formats'] = 'Manrope=Manrope;Roboto=Roboto;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+        return $initArray;
+    }
+}
+add_filter('tiny_mce_before_init', 'am_add_google_fonts_array_to_tiny_mce');

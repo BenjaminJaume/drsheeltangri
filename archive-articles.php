@@ -19,16 +19,21 @@ $events_articles_page_id = 75;
 
 ?>
 
-<div class="container-fluid my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-primary text-uppercase mt-0 pt-0">
-                <?php echo get_the_title($events_articles_page_id);
-                ?>
-            </h1>
-        </div>
-    </div>
+<style>
+    .bg-header {
+        background-image: url(<?php echo get_the_post_thumbnail_url($events_articles_page_id); ?>);
+    }
+</style>
 
+<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
+    <div class="centered">
+        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <?php echo get_the_title($events_articles_page_id); ?>
+        </h1>
+    </div>
+</div>
+
+<div class="container-fluid my-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center" id="card-deck-events">
         <?php
         foreach ($q as $id) {
@@ -37,7 +42,7 @@ $events_articles_page_id = 75;
                 <div class="card h-100">
                     <div class="card-header text-center">
                         <h5 class="card-title font-manrope my-auto">
-                            <?php echo get_field('title', $id); ?>
+                            <?php the_field('title', $id); ?>
                         </h5>
                     </div>
 
@@ -67,7 +72,7 @@ $events_articles_page_id = 75;
                     <?php if (get_field('date_article', $id)) { ?>
                         <div class="card-footer text-center text-muted">
                             <i class="far fa-clock"></i>
-                            <?php echo get_field('date_article', $id) ?>
+                            <?php the_field('date_article', $id) ?>
                         </div>
                     <?php } ?>
                 </div>

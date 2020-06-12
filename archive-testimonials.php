@@ -15,19 +15,19 @@ $args = [
 ];
 $q = get_posts($args);
 
-$condition_treated_page_id = 33;
+$page_id = 33;
 
 ?>
 
 <style>
     .bg-header {
-        background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
+        background-image: url(<?php echo get_the_post_thumbnail_url($page_id); ?>);
     }
 </style>
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
-        <h1 class="h1 text-center font-manrope text-uppercase text-success font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             <?php echo wp_title(''); ?>
         </h1>
     </div>

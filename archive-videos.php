@@ -15,13 +15,13 @@ $args = [
 ];
 $q = get_posts($args);
 
-$condition_treated_page_id = 13;
+$page_id = 13;
 
 ?>
 
 <style>
     .bg-header {
-        background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
+        background-image: url(<?php echo get_the_post_thumbnail_url($page_id); ?>);
     }
 </style>
 
@@ -69,7 +69,7 @@ $condition_treated_page_id = 13;
                         <span class="text-muted">
                             <?php if (get_field('date', $id)) { ?>
                                 <i class="far fa-clock"></i>
-                                <?php echo get_field('date', $id) ?>
+                                <?php the_field('date', $id) ?>
                             <?php } ?>
                         </span>
                     </div>

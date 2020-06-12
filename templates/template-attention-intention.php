@@ -15,7 +15,7 @@ get_header(); ?>
 <?php if (get_the_post_thumbnail_url()) { ?>
     <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
         <div class="centered">
-            <h1 class="h1 text-center font-manrope text-uppercase text-success font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
                 <?php echo wp_title(''); ?>
             </h1>
         </div>
@@ -39,41 +39,39 @@ get_header(); ?>
 <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center my-5 mx-lg-5">
         <div class="col-12 text-center mb-5 mb-xl-0">
+            <?php $id_file_1 = 1250; ?>
             <h4 class="text-success">
                 Attention & Intention
             </h4>
 
-            <?php // echo do_shortcode('[audio src="' . wp_get_attachment_url(1197) . '"][/audio]'); 
+            <?php //echo do_shortcode('[audio src="' . wp_get_attachment_url($id_file_1) . '"][/audio]');
             ?>
 
-            <!-- <a href="<?php echo wp_get_attachment_url(1197); ?>" class="btn btn-success rounded-0 mt-3" download="">
-                Download the audio file
-            </a> -->
+            <?php //echo do_shortcode('[download_audio_file id="' . $id_file_1 . '"][/download_audio_file]'); 
+            ?>
             <p>Not yet available</p>
         </div>
         <div class="col-12 text-center mb-5 mb-xl-0">
+            <?php $id_file_2 = 1250; ?>
             <h4 class="text-success">
                 Guided prayer
             </h4>
 
-            <?php // echo do_shortcode('[audio src="' . wp_get_attachment_url(1130) . '"][/audio]'); 
+            <?php echo do_shortcode('[audio src="' . wp_get_attachment_url($id_file_2) . '"][/audio]');
             ?>
 
-            <!-- <a href="<?php echo wp_get_attachment_url(1130); ?>" class="btn btn-success rounded-0 mt-3" download="">
-                Download the audio file
-            </a> -->
-            <p>Not yet available</p>
+            <?php echo do_shortcode('[download_audio_file id="' . $id_file_2 . '"][/download_audio_file]'); ?>
         </div>
         <div class="col-12 text-center">
+            <?php $id_file_3 = 1203; ?>
             <h4 class="text-success">
                 How to use the Power of Attention and Intention
             </h4>
 
-            <?php echo do_shortcode('[audio src="' . wp_get_attachment_url(1203) . '"][/audio]'); ?>
+            <?php echo do_shortcode('[audio src="' . wp_get_attachment_url($id_file_3) . '"][/audio]');
+            ?>
 
-            <a href="<?php echo wp_get_attachment_url(1203); ?>" class="btn btn-success rounded-0 mt-3" download="">
-                Download the audio file
-            </a>
+            <?php echo do_shortcode('[download_audio_file id="' . $id_file_3 . '"][/download_audio_file]'); ?>
         </div>
     </div>
 </div>

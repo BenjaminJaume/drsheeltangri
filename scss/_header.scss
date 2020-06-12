@@ -43,7 +43,6 @@ header {
       a[title*="Learn N.O.T."] {
         color: colors.$emerald;
         font-weight: bold;
-        border: 1px solid colors.$emerald;
 
         &:hover {
           color: rgba(colors.$emerald, colors.$opacity-link);

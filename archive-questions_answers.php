@@ -15,18 +15,15 @@ $args = [
 ];
 $q = get_posts($args);
 
-$condition_treated_page_id = 522;
+$page_id = 522;
 
 ?>
 
 <style>
     .bg-header {
-        background-image: url(<?php echo get_the_post_thumbnail_url($condition_treated_page_id); ?>);
+        background-image: url(<?php echo get_the_post_thumbnail_url($page_id); ?>);
     }
 </style>
-
-<!-- <div class="container-fluid bg-header bg-cover m-0 p-0">
-</div> -->
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
@@ -84,21 +81,21 @@ $condition_treated_page_id = 522;
                                     <h1 class="font-manrope text-success text-uppercase font-weight-light">
                                         Question:
                                     </h1>
-                                    <i class="font-weight-light m-0">
-                                        <?php echo get_field('question', $q[$i]); ?>
-                                    </i>
+                                    <div class="font-weight-light font-italic m-0">
+                                        <?php the_field('question', $q[$i]); ?>
+                                    </div>
                                 </div>
 
                                 <div>
                                     <h1 class="font-manrope text-primary text-uppercase font-weight-light">
                                         Answer:
                                     </h1>
-                                    <p class="font-weight-light m-0">
-                                        <?php echo get_field('answer', $q[$i]); ?>
-                                    </p>
+                                    <div class="font-weight-light m-0">
+                                        <?php the_field('answer', $q[$i]); ?>
+                                    </div>
                                 </div>
 
-                                <button class="btn btn-warning text-uppercase mt-5" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                <button class="btn btn-warning rounded-0 text-uppercase mt-5" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
                                     <i class="far fa-times-circle"></i>
                                     Close
                                 </button>

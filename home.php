@@ -24,8 +24,11 @@
     <div class="row">
         <div class="col-12 font-big font-weight-light line-height-big">
             <?php
-            the_post();
-            the_content();
+            while (have_posts()) {
+                the_post();
+                the_title();
+                the_content();
+            }
             ?>
         </div>
     </div>
