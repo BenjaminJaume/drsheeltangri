@@ -26,22 +26,32 @@ $section_7 = get_field('section_7');
                     <?php echo $introduction['introduction_content']; ?>
                 </h4>
 
-                <div class="pt-5">
-                    <a href="<?php echo $introduction['button_1']['link']; ?>" alt="" class="btn btn-success hvr-icon-pulse-grow btn-lg rounded-0">
+                <div class="mt-5">
+                    <a href="<?php echo $introduction['button_1']['link']; ?>" alt="" class="btn btn-outline-success btn-lg text-dark hvr-icon-forward btn-lg rounded-0 mb-3">
                         <?php echo $introduction['button_1']['label']; ?>
                         <i class="fas fa-book hvr-icon ml-1"></i>
                     </a>
 
-                    <a href="<?php echo $introduction['button_2']['link']; ?>" alt="" class="btn btn-outline-success hvr-icon-hang btn-lg rounded-0">
+                    <br />
+
+                    <!-- <a href="<?php echo $introduction['button_2']['link']; ?>" alt="" class="btn btn-outline-success hvr-icon-hang btn-lg rounded-0">
                         <?php echo $introduction['button_2']['label']; ?>
                         <i class="fas fa-chevron-down hvr-icon ml-1"></i>
+                    </a> -->
+                    <a href="<?php echo get_site_url() . '/videos'; ?>" alt="" class="btn btn-success hvr-icon-forward rounded-0">
+                        Videos
+                        <i class="fas fa-video hvr-icon ml-1"></i>
+                    </a>
+
+                    <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-success hvr-icon-forward rounded-0">
+                        Conditions treated
+                        <i class="fas fa-heartbeat hvr-icon ml-1"></i>
                     </a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6 p-0">
-            <?php $url_video = do_shortcode('[video_embeded url=' . $introduction['video'] . ']'); ?>
-            <iframe width="100%" height="500px" src="<?php echo $url_video; ?>?controls=0?autoplay=1?loop=1" frameborder="0" allow="autoplay">
+            <iframe width="100%" height="400" src="<?php echo $introduction['video']; ?>" frameborder="0" allow="autoplay">
             </iframe>
         </div>
     </div>

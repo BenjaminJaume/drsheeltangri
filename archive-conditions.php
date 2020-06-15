@@ -6,30 +6,21 @@ Template Name: Conditions Treated
 
 get_header();
 
-$page_id = 61;
-
 ?>
 
 <style>
     .bg-header {
-        background-image: url(<?php echo get_the_post_thumbnail_url($page_id); ?>);
+        background-image: url(<?php echo wp_get_attachment_url(268); ?>);
     }
 </style>
 
-<?php if (get_the_post_thumbnail_url($page_id)) { ?>
-    <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
-        <div class="centered">
-            <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
-                <?php echo get_the_title($page_id); ?>
-            </h1>
-        </div>
+<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
+    <div class="centered">
+        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            Conditions
+        </h1>
     </div>
-<?php } else { ?>
-    <h1 class="h1 text-center font-manrope text-uppercase text-primary my-5">
-        <?php echo get_the_title($page_id); ?>
-    </h1>
-<?php } ?>
-
+</div>
 
 <div class="container my-5">
     <div class="row">
