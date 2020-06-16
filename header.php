@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/favicon/apple-touch-icon.png'; ?>">
-    <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-32x32.png'; ?>">
-    <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-16x16.png'; ?>">
-    <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/images/favicon/site.webmanifest'; ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/apple-touch-icon.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/favicon-32x32.png'; ?>">
+    <link rel=" icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/favicon-16x16.png'; ?>">
+    <link rel=" manifest" href="<?php echo get_template_directory_uri() . '/medias/images/favicon/site.webmanifest'; ?>">
 
     <?php wp_head(); ?>
 </head>
