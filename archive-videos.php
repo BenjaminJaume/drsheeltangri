@@ -27,7 +27,7 @@ $query = get_posts($args);
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
-        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Videos
         </h1>
     </div>
@@ -36,7 +36,7 @@ $query = get_posts($args);
 <div class="container-fluid my-5">
     <div class="row">
         <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
-            <h1 class="font-manrope font-weight-light text-success">
+            <h1 class="font-kollektif font-weight-light text-brand">
                 In order to get the full explanation of Dr. Tangri, please watch the playlist or the videos in the suggested order.
             </h1>
         </div>
@@ -57,7 +57,7 @@ $query = get_posts($args);
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <h3 class="font-manrope">Watch the ordered list of each individual video:</h3>
+            <h3 class="font-kollektif">Watch the ordered list of each individual video:</h3>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@ $query = get_posts($args);
                 <p class="text-muted m-0">
                     <?php echo 'Video #' . ($i + 1); ?>
                 </p>
-                <h1 class="text-success font-weight-light mt-0">
+                <h1 class="text-brand font-weight-light mt-0">
                     <?php echo get_the_title($query[$i]); ?>
                 </h1>
                 <p>

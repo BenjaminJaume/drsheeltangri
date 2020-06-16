@@ -14,156 +14,186 @@ $section_7 = get_field('section_7');
 
 <?php get_header(); ?>
 
-<div class="container my-5">
-    <div class="row">
-        <div class="col-12 col-md-6 mx-auto my-auto">
+<div class="container-fluid my-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-6">
             <div class="text-center py-5">
-                <h1 class="h1 font-roboto text-uppercase font-weight-light m-0">
+                <h1 class="h1 font-kollektif text-uppercase text-dark font-weight-bold m-0">
                     <?php echo $introduction['title']; ?>
                 </h1>
 
-                <h4 class="font-manrope text-success w-100 w-md-75 mx-auto mt-4">
-                    <?php echo $introduction['introduction_content']; ?>
-                </h4>
+                <hr class="w-50 bg-secondary">
 
-                <div class="mt-5">
-                    <a href="<?php echo $introduction['button_1']['link']; ?>" alt="" class="btn btn-outline-success btn-lg text-dark hvr-icon-forward btn-lg rounded-0 mb-3">
-                        <?php echo $introduction['button_1']['label']; ?>
-                        <i class="fas fa-book hvr-icon ml-1"></i>
-                    </a>
-
+                <h3 class="font-lato w-100 w-md-75 mx-auto mt-4">
+                    <span class="text-grey">
+                        Specialist in
+                    </span>
                     <br />
+                    <span class="text-brand text-md-nowrap">Neural Organisation Technique</span>
+                </h3>
 
-                    <!-- <a href="<?php echo $introduction['button_2']['link']; ?>" alt="" class="btn btn-outline-success hvr-icon-hang btn-lg rounded-0">
-                        <?php echo $introduction['button_2']['label']; ?>
-                        <i class="fas fa-chevron-down hvr-icon ml-1"></i>
-                    </a> -->
-                    <a href="<?php echo get_site_url() . '/videos'; ?>" alt="" class="btn btn-success hvr-icon-forward rounded-0">
-                        Videos
-                        <i class="fas fa-video hvr-icon ml-1"></i>
-                    </a>
+                <h1 class="">
+                    <?php echo wp_get_attachment_image(1327, [28, 28], true, "class=img-fluid"); ?>
+                </h1>
 
-                    <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-success hvr-icon-forward rounded-0">
-                        Conditions treated
-                        <i class="fas fa-heartbeat hvr-icon ml-1"></i>
-                    </a>
+                <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
+                    <q class="font-merriweather letter-spacing-big text-light-grey font-italic">
+                        N.O.T. resets your body’s nervous system “programs”, much like rebooting or resetting a computer.
+                    </q>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 p-0">
+        <div class="col-12 col-lg-6">
             <iframe width="100%" height="400" src="<?php echo $introduction['video']; ?>" frameborder="0" allow="autoplay">
             </iframe>
         </div>
     </div>
 </div>
 
-<article class="container-fluid bg-light py-5" id="presentation">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold mt-0">
-                <?php echo $section_1['title']; ?>
-            </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-auto mx-auto my-auto py-5 py-lg-0">
-            <?php echo wp_get_attachment_image($section_1['image']['ID'], '', false, 'class=img-fluid frame'); ?>
-        </div>
-        <div class="col-12 col-lg-8 my-auto">
-            <div class="text-center text-lg-left m-0 p-0 w-100 w-md-75 mx-auto">
-                <p>
-                    <?php echo $section_1['content_1']; ?>
-                </p>
-
-                <p class="font-weight-light">
-                    <?php echo $section_1['content_2']; ?>
-                </p>
+<div class="bg-light">
+    <article class="container bg-light py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="font-kollektif text-grey text-uppercase font-weight-bold">
+                    Download the free eBook
+                </h1>
             </div>
         </div>
-    </div>
-</article>
-
-
-<article class="container my-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="text-success">
-                Conditions Treated
-            </h1>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <?php
-
-        // Get the first $number conditions
-        $args = [
-            'post_type'      => 'conditions',
-            'posts_per_page' => 9,
-            'post_name_in'  => ['conditions'],
-        ];
-        $query = get_posts($args);
-
-        for ($i = 0; $i < count($query); $i++) { ?>
-            <div class="col-12 col-sm-6 col-md-4 text-center my-3">
-                <a href="<?php echo get_post_permalink($query[$i]); ?>" alt="" class="btn btn-success rounded-0 font-manrope text-uppercase hvr-icon-forward">
-                    <?php echo get_the_title($query[$i]); ?>
-                    <i class="fa fa-chevron-right hvr-icon"></i>
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-4 col-lg-6 text-center">
+                <a href="<?php echo get_site_url() . '/book'; ?>" alt="">
+                    <?php echo wp_get_attachment_image(1347, '', true, "class=img-fluid"); ?>
                 </a>
             </div>
-        <?php } ?>
-    </div>
+            <div class="col-12 col-sm-8 col-lg-6 text-center">
+                <h1 class="text-brand font-italic font-kollektif font-weight-bold">
+                    Let It Flow
+                </h1>
+                <h4 class="text-light-grey font-italic font-merriweather mb-3">
+                    Hands-on techniques for healing the body, mind and spirit
+                </h4>
+                <p class="text-light-grey">
+                    Dr. Sheel Tangri BSc. D.C. S.K.
+                </p>
+                <a href="<?php echo get_site_url() . '/book'; ?>" alt="" class="btn btn-dark btn-lg rounded-0 hvr-icon-forward mb-3">
+                    Downlaod
+                    <i class="fas fa-book hvr-icon ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+</div>
 
+<article class="container-fluid my-5">
     <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="font-manrope font-weight-light">
-                And the list continues...
-            </h1>
-        </div>
-        <div class="col-12 text-center">
-            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-lg btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
-                <span class="is-mobile">
-                    More
-                </span>
-                <span class="is-default">
-                    See More
-                </span>
-                <i class="fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
-            </a>
+        <div class="col-12">
+            <div style="background-image: url(<?php echo wp_get_attachment_url(1331); ?>); height: 250px" class="bg-cover">
+            </div>
         </div>
     </div>
-    <div class="row my-4">
-        <div class="col-12 text-center">
-            <h1 class="font-weight-light text-uppercase">
-                - Or -
+    <div class="row mt-5">
+        <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
+            <h1 class="h1 font-kollektif text-uppercase text-center text-brand font-weight-bold mb-5">
+                <?php echo $section_1['title']; ?>
             </h1>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-            <p class="text-muted">
-                Look for a condition in the list below
+            <p>
+                <?php echo $section_1['content_1']; ?>
             </p>
 
-            <div>
-                <?php echo do_shortcode('[condition_search_form][/condition_search_form]'); ?>
-            </div>
+            <p>
+                <?php echo $section_1['content_2']; ?>
+            </p>
         </div>
     </div>
 </article>
 
-<div class="container-fluid bg-light py-5">
-    <div class="row mb-5">
+<div class="bg-light">
+    <article class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-brand text-uppercase mb-5">
+                    Examples of Conditions Treated
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <?php
+
+            // Get the first $number conditions
+            $args = [
+                'post_type'      => 'conditions',
+                'posts_per_page' => 9,
+                'post_name_in'  => ['conditions'],
+            ];
+            $query = get_posts($args);
+
+            for ($i = 0; $i < count($query); $i++) { ?>
+                <div class="col-12 col-sm-6 col-md-4 text-center my-3">
+                    <a href="<?php echo get_post_permalink($query[$i]); ?>" alt="" class="btn btn-success rounded-0 font-kollektif text-uppercase hvr-icon-forward">
+                        <?php echo get_the_title($query[$i]); ?>
+                        <i class="fa fa-chevron-right hvr-icon"></i>
+                    </a>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>
+                    And the list continues...
+                </h1>
+            </div>
+            <div class="col-12 text-center">
+                <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-lg btn-dark font-kollektif text-uppercase hvr-icon-forward rounded-0">
+                    See More
+                    <i class=" fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-12 text-center">
+                <h1 class="font-weight-light text-uppercase">
+                    - Or -
+                </h1>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+                <p class="text-muted">
+                    Look for a condition in the list below
+                </p>
+
+                <div>
+                    <?php echo do_shortcode('[condition_search_form][/condition_search_form]'); ?>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="container my-5">
+    <div class="row">
         <div class="col-12 text-center">
-            <?php echo wp_get_attachment_image(79, '', false, 'class=img-fluid'); ?>
+            <h1 class="h1 text-brand text-uppercase font-kollektif font-weight-bold">
+                Get a treatment
+            </h1>
         </div>
     </div>
-    <div class="row my-3">
+    <div class="row mb-3">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
+            <p class="font-big">
+                In order to get a treatment, you can find a local practitioner (member & certified
+                of the Neurol Organisation Technique), or you can directly get in contact with me.
+            </p>
+        </div>
+    </div>
+    <div class="row mb-5">
         <div class="col-12 text-center">
-            <a href="<?php echo $section_3['button_1']['link']; ?>" alt="" class="btn btn-success btn-lg font-manrope rounded-0 text-uppercase hvr-icon-forward mb-4 mb-sm-auto">
+            <a href="<?php echo $section_3['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward mb-sm-auto">
                 <?php echo $section_3['button_1']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
-            <a href="<?php echo $section_3['button_2']['link']; ?>" alt="" class="btn btn-success btn-lg font-manrope rounded-0 text-uppercase hvr-icon-forward">
+            <a href="<?php echo $section_3['button_2']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward">
                 <?php echo $section_3['button_2']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
@@ -171,71 +201,77 @@ $section_7 = get_field('section_7');
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <?php echo do_shortcode("[paypal_button]"); ?>
+            <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique' ?>" alt="">
+                <img src="<?php echo wp_get_attachment_url(1355); ?>" alt="" class="img-fluid" style="height: 200px" />
+            </a>
         </div>
     </div>
 </div>
 
-<article class="container-fluid my-5">
-    <div class="row">
-        <div class="col-12 mb-5">
-            <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
-                <?php echo $section_4['title']; ?>
-            </h1>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-4 col-lg-3 text-center my-4">
-            <a href="/other-techniques" alt="">
-                <?php echo wp_get_attachment_image($section_4['category_1']['image']['ID'], '', false, 'class=img-fluid'); ?>
-            </a>
-            <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
-                <?php echo $section_4['category_1']['title']; ?>
-            </h1>
-            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
-                <i class="fas fa-info-circle mr-1"></i>
-                Learn More
-            </a>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 text-center my-4">
-            <a href="/other-techniques" alt="">
-                <?php echo wp_get_attachment_image($section_4['category_2']['image']['ID'], '', false, 'class=img-fluid'); ?>
-            </a>
-            <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
-                <?php echo $section_4['category_2']['title']; ?>
-            </h1>
-            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
-                <i class="fas fa-info-circle mr-1"></i>
-                Learn More
-            </a>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 text-center my-4">
-            <a href="/other-techniques" alt="">
-                <?php echo wp_get_attachment_image($section_4['category_3']['image']['ID'], '', false, 'class=img-fluid'); ?>
-            </a>
-            <h1 class="font-manrope font-bigger text-uppercase font-weight-bold">
-                <?php echo $section_4['category_3']['title']; ?>
-            </h1>
-            <a href="/other-techniques" alt="" class="btn btn-success font-manrope hvr-glow rounded-0">
-                <i class="fas fa-info-circle mr-1"></i>
-                Learn More
-            </a>
-        </div>
-    </div>
-</article>
+<hr class="w-75 my-5" />
 
-<div class="bg-success py-5">
-    <article class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h1 class="h1 font-manrope text-uppercase text-center text-light font-weight-bold m-0">
-                    <?php echo $section_5['title']; ?>
-                </h1>
+<div class="container-fluid">
+    <div class="row py-5">
+        <div class="col-12">
+            <div style="background-image: url(<?php echo wp_get_attachment_url(1356); ?>); height: 250px;" class="bg-cover">
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-12 col-sm-6 text-center">
-                <dl class="font-manrope text-uppercase">
+    </div>
+</div>
+
+<div class="bg-success">
+    <article class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h1 class="h1 font-kollektif text-uppercase text-center text-white font-weight-bold">
+                    Looking for something?
+                </h1>
+                <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
+                    <p class="font-big">
+                        What you can find here is a large number of tools to
+                        help you, inform you and guide you on what you can positively
+                        do to your body and mind, and get involved in N.O.T.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center my-4">
+                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                    N.O.T. and other techniques used
+                </h3>
+                <p class="m-0">
+                    <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">List of the conditions treated</a>
+                    <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.O.T. – Neural Organisation Technique</a>
+                    <a href="<?php echo get_site_url() . '/n-e-t-neuro-emotional-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.E.T. – Neuro-Emotional Technique</a>
+                    <a href="<?php echo get_site_url() . '/energetic-rebalancing'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Energetic Rebalancing</a>
+                    <a href="<?php echo get_site_url() . '/chiropractic'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Chiropractic</a>
+                    <a href="<?php echo get_site_url() . '/nutrition'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Nutrition</a>
+                </p>
+            </div>
+            <div class="col-12 text-center my-4">
+                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                    Materials
+                </h3>
+                <p class="m-0">
+                    <a href="<?php echo get_site_url() . '/book'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Free eBook</a>
+                    <a href="<?php echo get_site_url() . '/videos'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Videos serie</a>
+                    <a href="<?php echo get_site_url() . '/blog'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Articles</a>
+                </p>
+            </div>
+            <div class="col-12 text-center my-4">
+                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                    Others useful informations
+                </h3>
+                <p class="m-0">
+                    <a href="<?php echo get_site_url() . '/consultation'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Get a consultation</a>
+                    <a href="<?php echo get_site_url() . '/questions-answers'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Questions & Answers</a>
+                    <a href="<?php echo get_site_url() . '/seminars'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Seminars</a>
+                    <a href="<?php echo get_site_url() . '/f-a-q'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">F.A.Q.</a>
+                </p>
+            </div>
+            <!-- <div class="col-12 col-sm-6">
+                <dl class="font-kollektif text-uppercase">
                     <dd>
                         <a href="<?php echo $section_5['link_1']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
@@ -266,8 +302,8 @@ $section_7 = get_field('section_7');
                     </dd>
                 </dl>
             </div>
-            <div class="col-12 col-sm-6 text-center">
-                <dl class="font-manrope text-uppercase">
+            <div class="col-12 col-sm-6">
+                <dl class="font-kollektif text-uppercase">
                     <dd>
                         <a href="<?php echo $section_5['link_5']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
                             <u class="h4 letter-spacing-big">
@@ -297,7 +333,7 @@ $section_7 = get_field('section_7');
                         </a>
                     </dd>
                 </dl>
-            </div>
+            </div> -->
         </div>
     </article>
 </div>
@@ -307,14 +343,14 @@ if ($section_6['displayed'] == "Yes") { ?>
     <article class="container my-5">
         <div class="row">
             <div class="col-12 mb-5">
-                <h1 class="h1 font-manrope text-uppercase text-center text-success font-weight-bold m-0">
+                <h1 class="h1 font-kollektif text-uppercase text-center text-brand font-weight-bold m-0">
                     <?php echo $section_6['title']; ?>
                 </h1>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <div id="carousel-front-page" class="carousel slide bg-light vh-100" data-ride="carousel">
+                <div id="carousel-front-page" class="carousel slide bg-light" data-ride="carousel">
                     <div class="carousel-inner h-100">
 
                         <?php
@@ -342,17 +378,17 @@ if ($section_6['displayed'] == "Yes") { ?>
                                 $iteration++; ?>
                                 <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
                                     <div class="carousel-caption text-center">
-                                        <p class="font-italic font-big font-weight-light mb-3">
+                                        <p class="font-italic font-big mb-3">
                                             <?php the_field('short_testimonial', $testimonial_id, $testimonial_id) ?>
                                         </p>
                                         <div>
-                                            <span class="h5 font-manrope text-emerald">
+                                            <span class="h5 font-kollektif text-brand">
                                                 <?php the_field('full_name', $testimonial_id); ?>
                                             </span>
 
                                             <?php if (get_field('location', $testimonial_id)) { ?>
                                                 -
-                                                <span class="h6 font-weight-light">
+                                                <span class="h6">
                                                     <?php the_field('location', $testimonial_id); ?>
                                                 </span>
                                             <?php } ?>
@@ -404,25 +440,40 @@ if ($section_6['displayed'] == "Yes") { ?>
 <div class="bg-success py-5 my-5">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-12 col-sm-6">
-                <h1 class="font-manrope text-white text-uppercase text-sm-center">
+            <div class="col-12 col-lg-5">
+                <h1 class="font-kollektif text-white text-uppercase text-sm-center">
                     <i class="far fa-envelope mr-1"></i>
                     <?php echo $section_7['title'] ?>
                 </h1>
             </div>
-            <div class="col-12 col-sm-6">
-                <form class="form-inline justify-content-center">
+            <div class="col-12 col-lg-7">
+                <!-- <form class="form-inline justify-content-center">
                     <div class="form-group mb-2">
                         <input type="text" class="form-control rounded-0" value="<?php echo $section_7['name_placeholder'] ?>">
                     </div>
                     <div class="form-group mx-md-1 mx-lg-3 mb-2">
                         <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
                     </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary rounded-0 hvr-icon-forward mb-2">
-                            <?php echo $section_7['submit_button_label'] ?>
-                            <i class="fas fa-chevron-right hvr-icon ml-1"></i>
-                        </button>
+                    <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward mb-2">
+                        <?php echo $section_7['submit_button_label'] ?>
+                        <i class="fas fa-chevron-right hvr-icon ml-1"></i>
+                    </button>
+                </form> -->
+
+                <form>
+                    <div class="form-row">
+                        <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
+                            <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
+                        </div>
+                        <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
+                            <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
+                        </div>
+                        <div class="col-12 col-lg-4 text-center text-lg-left mt-3 mt-lg-0 form-group  mx-auto">
+                            <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward mb-2">
+                                <?php echo $section_7['submit_button_label'] ?>
+                                <i class="fas fa-chevron-right hvr-icon ml-1"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

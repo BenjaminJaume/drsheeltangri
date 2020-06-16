@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,6 +80,8 @@ body {
 }
 
 #carousel-front-page {
+  height: 350px;
+
   .carousel-caption {
     color: #000;
     top: 50%;
@@ -97,15 +99,11 @@ body {
 }
 
 .letter-spacing-big {
+  letter-spacing: 2px;
+}
+
+.letter-spacing-bigger {
   letter-spacing: 3px;
-}
-
-.is-medium {
-  display: none;
-}
-
-.is-default {
-  display: none;
 }
 
 .line-height-big {
@@ -125,6 +123,26 @@ body {
 
 .select2-selection.select2-selection--single {
   border-radius: 0 !important;
+}
+
+.font-kollektif {
+  font-family: "Kollektif Regular", sans-serif;
+}
+
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.font-merriweather {
+  font-family: "Merriweather", serif;
+}
+
+.is-medium {
+  display: none;
+}
+
+.is-default {
+  display: none;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

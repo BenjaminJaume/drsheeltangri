@@ -25,7 +25,7 @@ $q = get_posts($args);
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
-        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Questions & Answers
         </h1>
     </div>
@@ -34,7 +34,7 @@ $q = get_posts($args);
 <div class="container my-5">
     <div class="row mb-5">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-            <h1 class="font-manrope font-weight-light text-center">
+            <h1 class="font-kollektif font-weight-light text-center">
                 Type a keyword to find the answer you are looking for
             </h1>
             <form role="search" method="get" action="<?php echo get_site_url(); ?>">
@@ -76,7 +76,7 @@ $q = get_posts($args);
                         <div id="collapse-<?php echo $i; ?>" class="collapse" aria-labelledby="headingAccordionQuestionsAnswers-<?php echo $i; ?>" data-parent="#accordionQuestionsAnswers">
                             <div class="card-body">
                                 <div>
-                                    <h1 class="font-manrope text-success text-uppercase font-weight-light">
+                                    <h1 class="font-kollektif text-brand text-uppercase font-weight-light">
                                         Question:
                                     </h1>
                                     <div class="font-weight-light font-italic m-0">
@@ -85,7 +85,7 @@ $q = get_posts($args);
                                 </div>
 
                                 <div>
-                                    <h1 class="font-manrope text-primary text-uppercase font-weight-light">
+                                    <h1 class="font-kollektif text-dark text-uppercase font-weight-light">
                                         Answer:
                                     </h1>
                                     <div class="font-weight-light m-0">

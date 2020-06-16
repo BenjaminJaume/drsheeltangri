@@ -4,7 +4,7 @@
     <footer class="container mt-5 py-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center font-manrope text-uppercase">
+                <h1 class="text-center font-kollektif text-uppercase">
                     Dr. Sheel Tangri
                 </h1>
             </div>
@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-12 text-center">
-                <a href="contact" class="btn btn-success rounded-0 font-manrope hvr-grow">Contact</a>
+                <a href="contact" class="btn btn-success rounded-0 font-kollektif hvr-grow">Contact</a>
             </div>
         </div>
         <div class="row my-5">
@@ -22,14 +22,14 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <p class="text-dark font-manrope text-uppercase">
+                <p class="text-dark font-kollektif text-uppercase">
                     &copy; 2020 Dr. Sheel Tangri - All Rights Reserved
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <p class="font-manrope">
+                <p class="font-kollektif">
                     Web Designer: Benjamin Jaume -
                     <a href="www.benjaminjau.me" alt="" class="text-warning">
                         www.benjaminjau.me

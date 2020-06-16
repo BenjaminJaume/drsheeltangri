@@ -25,7 +25,7 @@ $q = get_posts($args);
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
-        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Past Events & Articles
         </h1>
     </div>
@@ -39,7 +39,7 @@ $q = get_posts($args);
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-header text-center">
-                        <h5 class="card-title font-manrope my-auto">
+                        <h5 class="card-title font-kollektif my-auto">
                             <?php the_field('title', $id); ?>
                         </h5>
                     </div>

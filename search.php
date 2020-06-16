@@ -8,7 +8,7 @@ if (is_search()) {
         <div class="container my-5">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="h1 font-manrope text-success text-uppercase">
+                    <h1 class="h1 font-kollektif text-brand text-uppercase">
                         Make a search
                     </h1>
 
@@ -16,7 +16,7 @@ if (is_search()) {
                         <?php get_search_form(); ?>
                     </div>
 
-                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back font-manrope my-3">
+                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back font-kollektif my-3">
                         <i class="fas fa-arrow-left hvr-icon"></i>
                         Back to the homepage
                     </a>
@@ -30,18 +30,18 @@ if (is_search()) {
             <div class="container my-5">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="font-manrope">
+                        <h1 class="font-kollektif">
                             <?php
                             if (get_post_type() != 'testimonials') {
                                 if ($wp_query->found_posts > 1) { ?>
                                     There are
-                                    <span class="text-primary"><?php echo $wp_query->found_posts; ?></span>
+                                    <span class="text-dark"><?php echo $wp_query->found_posts; ?></span>
                                     results for your search
                                 <?php
                                 } else {
                                 ?>
                                     There is
-                                    <span class="text-primary">
+                                    <span class="text-dark">
                                         <?php echo $wp_query->found_posts; ?>
                                     </span>
                                     result for
@@ -82,14 +82,14 @@ if (is_search()) {
                                                 echo esc_html($postTypeLabel);
                                             } ?>
                                         </p>
-                                        <a href=" <?php the_permalink(); ?>" title="<?php the_title(); ?>" class="h1 text-success font-manrope">
+                                        <a href=" <?php the_permalink(); ?>" title="<?php the_title(); ?>" class="h1 text-brand font-kollektif">
                                             <?php the_title(); ?>
                                         </a>
                                         <p>
                                             <?php the_excerpt(); ?>
                                         </p>
                                         <p>
-                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary rounded-0 hvr-icon-forward">
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-dark rounded-0 hvr-icon-forward">
                                                 Read More
                                                 <i class="fas fa-chevron-right hvr-icon"></i>
                                             </a>
@@ -105,7 +105,7 @@ if (is_search()) {
                 <div class="container my-5">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <h1 class="font-manrope text-warning">
+                            <h1 class="font-kollektif text-warning">
                                 There are no results for "<?php echo $s; ?>"
                             </h1>
 
@@ -113,7 +113,7 @@ if (is_search()) {
                                 <?php get_search_form(); ?>
                             </div>
 
-                            <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-primary rounded-0 font-manrope hvr-icon-back my-3">
+                            <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-dark rounded-0 font-kollektif hvr-icon-back my-3">
                                 <i class="fas fa-arrow-left hvr-icon"></i>
                                 Back to the homepage
                             </a>
@@ -126,7 +126,7 @@ if (is_search()) {
         <div class="container my-5">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="h1 font-manrope text-success text-uppercase">
+                    <h1 class="h1 font-kollektif text-brand text-uppercase">
                         Make a search
                     </h1>
 
@@ -134,7 +134,7 @@ if (is_search()) {
                         <?php get_search_form(); ?>
                     </div>
 
-                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-success rounded-0 hvr-icon-back font-manrope my-3">
+                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-success rounded-0 hvr-icon-back font-kollektif my-3">
                         <i class="fas fa-arrow-left hvr-icon"></i>
                         Back to the homepage
                     </a>

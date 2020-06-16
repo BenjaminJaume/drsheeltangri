@@ -10,7 +10,7 @@ function paypal_button()
         <button type="submit" class="btn btn-warning rounded-lg px-3">
             <?php echo wp_get_attachment_image(1128, [200, 30], false, 'class=img-fluid'); ?>
             <br />
-            <span class="font-manrope">Donate now</span>
+            <span class="font-kollektif">Donate now</span>
         </button>
         <!-- <img alt="" src="https://www.paypal.com/en_CR/i/scr/pixel.gif" width="1" height="1" /> -->
     </form>

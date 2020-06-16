@@ -15,13 +15,13 @@ get_header(); ?>
 <?php if (get_the_post_thumbnail_url()) { ?>
     <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
         <div class="centered">
-            <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
                 <?php echo wp_title(''); ?>
             </h1>
         </div>
     </div>
 <?php } else { ?>
-    <h1 class="h1 text-center font-manrope text-uppercase text-success my-5">
+    <h1 class="h1 text-center font-kollektif text-uppercase text-brand my-5">
         <?php echo wp_title(''); ?>
     </h1>
 <?php } ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 text-success text-uppercase font-manrope font-weight-light mb-1">
+            <h1 class="display-4 text-brand text-uppercase font-kollektif font-weight-light mb-1">
                 Dr. Sheel Tangri's Let It Flow
             </h1>
             <h3 class="font-weight-light font-italic">
@@ -40,14 +40,14 @@ get_header(); ?>
     <hr class="my-5 w-75" />
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <h4 class="font-manrope text-brand font-weight-light text-muted">
+            <h4 class="font-kollektif text-brand font-weight-light text-muted">
                 Get the free eBook "Let it flow" in your favorite language
             </h4>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-manrope">
+            <h1 class="font-kollektif">
                 <?php echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid'); ?>
                 English
             </h1>
@@ -64,7 +64,7 @@ get_header(); ?>
             </p>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-manrope">
+            <h1 class="font-kollektif">
                 <?php echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid'); ?>
                 Spanish
             </h1>
@@ -81,7 +81,7 @@ get_header(); ?>
             </p>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-manrope">
+            <h1 class="font-kollektif">
                 <?php echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid'); ?>
                 German
             </h1>

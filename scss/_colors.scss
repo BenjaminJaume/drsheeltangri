@@ -5,21 +5,14 @@ $turquoise: #1abc9c;
 $green-sea: #16a085;
 $sun-flower: #f1c40f;
 $orange: #f39c12;
-
-// $emerald: #2ecc71;
-$emerald: darken(#d6f0d6, 10%);
-// $emerald: #d6f0d6;
-
-$nephritis: #27ae60;
+$emerald: #27ae60;
 $carrot: #e67e22;
 $pumkin: #d35400;
-
-// $peter-river: #3498db;
-$peter-river: #83c8f3;
-
+$peter-river: #3498db;
 $belize-hole: #2980b9;
 $alizarin: #e74c3c;
 $pomegranate: #c0392b;
+$nephritis: #000;
 $amethyst: #9b59b6;
 $wisteria: #8e44ad;
 $clouds: #ecf0f1;
@@ -54,7 +47,10 @@ $blue-horizon: #4b6584;
 
 // Custom colors
 
-$brand-color: #000;
+$brand: #c6a530;
+$olive: #393f0e;
+$grey: #545454;
+$light-grey: #a6a6a6;
 $white: #fff;
 $black: #000;
 
@@ -66,7 +62,15 @@ $opacity-bg: 0.6;
 // Texts color
 
 .text-brand {
-  color: $brand-color;
+  color: $brand;
+}
+
+.text-light-grey {
+  color: $light-grey;
+}
+
+.text-olive {
+  color: $olive;
 }
 
 .text-turquoise {
@@ -150,6 +154,14 @@ $opacity-bg: 0.6;
 }
 
 // Links color
+
+.link-brand {
+  color: $brand;
+
+  &:hover {
+    color: rgba($brand, $opacity-link);
+  }
+}
 
 .link-turquoise {
   color: $turquoise;
@@ -312,6 +324,18 @@ $opacity-bg: 0.6;
 }
 
 // Backgrounds color
+
+.bg-brand {
+  background-color: rgba($brand, 1);
+}
+
+.bg-olive {
+  background-color: rgba($olive, 1);
+}
+
+.bg-grey {
+  background-color: rgba($grey, 1);
+}
 
 .bg-peter-river {
   background-color: rgba($peter-river, 1);

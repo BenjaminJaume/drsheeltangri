@@ -7,7 +7,7 @@ $id = get_the_ID();
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-uppercase text-success mb-0">
+            <h1 class="display-4 font-kollektif text-uppercase text-brand mb-0">
                 <?php echo the_field('title', $id); ?>
             </h1>
             <p class="text-muted">
@@ -15,7 +15,7 @@ $id = get_the_ID();
                 <?php echo the_field('date_article', $id); ?>
             </p>
 
-            <a href="<?php echo get_site_url() . '/past-events-articles'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/past-events-articles'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to past events & articles
             </a>
@@ -52,7 +52,7 @@ $id = get_the_ID();
                         <?php if (!$image['title']) { ?>
                             <hr class="w-75 my-5" />
                         <?php } else { ?>
-                            <h1 class="text-center font-manrope text-success">
+                            <h1 class="text-center font-kollektif text-brand">
                                 <?php echo $image['title']; ?>
                             </h1>
                         <?php } ?>

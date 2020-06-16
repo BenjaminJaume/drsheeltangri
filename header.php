@@ -7,6 +7,7 @@
     <title>Dr. Sheel Tangri</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Manrope:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/favicon/apple-touch-icon.png'; ?>">
     <link rel=" icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() . '/images/favicon/favicon-32x32.png'; ?>">
@@ -29,29 +30,7 @@ console($template);
         <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
             <div class="container-fluid">
                 <a class="navbar-brand mx-auto" href=<?php bloginfo('url'); ?>>
-                    <div class="container-fluid m-0 p-0">
-                        <div class="row m-0 p-0">
-                            <div class="col-auto my-auto mx-auto pl-0">
-                                <!-- <img src="<?php echo get_template_directory_uri() . '/images/logo.jpg' ?>" alt="" class="align-middle navbar-logo img-fluid" /> -->
-                            </div>
-                            <div class="col-auto m-0 mx-auto p-0">
-                                <div class="d-flex flex-column">
-                                    <span class="font-manrope text-uppercase m-0 p-0">
-                                        Dr. Sheel Tangri
-                                    </span>
-                                    <span class="font-small m-0 p-0">
-                                        Chiropractic Kinesiologist
-                                    </span>
-                                    <span class="font-small m-0 p-0">
-                                        Certified Specialist in N.O.T.
-                                    </span>
-                                    <span class="font-small m-0 p-0">
-                                        Neural Organization Technique
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?php echo wp_get_attachment_url(1361); ?>" alt="" class="navbar-logo" />
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +44,7 @@ console($template);
                     'container'         => 'div',
                     'container_class'   => 'collapse navbar-collapse',
                     'container_id'      => 'navbar',
-                    'menu_class'        => 'nav navbar-nav mx-auto text-center font-manrope font-weight-bold',
+                    'menu_class'        => 'nav navbar-nav mx-auto text-center font-kollektif font-weight-bold',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ));

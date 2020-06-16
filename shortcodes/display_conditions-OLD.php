@@ -45,12 +45,12 @@
 //         $str = $str . '
 //     <tr>
 //         <td class="align-middle">
-//             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="font-manrope text-uppercase">
+//             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="font-kollektif text-uppercase">
 //                 ' . get_the_title($query[$i]) . '
 //             </a>
 //         </td>
 //         <td class="align-middle text-center">
-//             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-primary font-manrope text-uppercase hvr-icon-forward rounded-0">
+//             <a href="' . get_post_permalink($query[$i]) . '" alt="" class="btn btn-dark font-kollektif text-uppercase hvr-icon-forward rounded-0">
 //                 <span class="is-medium">
 //                     More
 //                 </span>

@@ -11,7 +11,7 @@ $id = get_the_ID();
     if ($q_a) : ?>
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="font-manrope text-uppercase text-center text-success font-weight-bold mb-0">
+                <h1 class="font-kollektif text-uppercase text-center text-brand font-weight-bold mb-0">
                     <?php
                     if (count($q_a) == 1) {
                         echo count($q_a) . ' Question & Answer found';
@@ -27,7 +27,7 @@ $id = get_the_ID();
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="font-manrope text-uppercase text-success mb-0">
+            <h1 class="font-kollektif text-uppercase text-brand mb-0">
                 <?php echo get_the_title($id); ?>
             </h1>
             <p class="text-muted text-capitalize text-center m-0 p-0">
@@ -37,7 +37,7 @@ $id = get_the_ID();
                 ?>
             </p>
 
-            <a href="<?php echo get_site_url() . '/questions-answers'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/questions-answers'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to the questions
             </a>
@@ -46,7 +46,7 @@ $id = get_the_ID();
 
     <div class="row my-5">
         <div class="col-12">
-            <h1 class="font-manrope text-success text-uppercase font-weight-light text-center">
+            <h1 class="font-kollektif text-brand text-uppercase font-weight-light text-center">
                 Question:
             </h1>
             <p class="h3 font-weight-light m-0">
@@ -57,7 +57,7 @@ $id = get_the_ID();
 
     <div class="row">
         <div class="col-12">
-            <h1 class="font-manrope text-primary text-uppercase font-weight-light text-center">
+            <h1 class="font-kollektif text-dark text-uppercase font-weight-light text-center">
                 Answer:
             </h1>
             <p class="h3 font-jost font-weight-light m-0">
@@ -69,7 +69,7 @@ $id = get_the_ID();
 
     <!-- <div class="row">
         <div class="col-12 my-4">
-            <h1 class="font-manrope text-success text-center text-uppercase">Question:</h1>
+            <h1 class="font-kollektif text-brand text-center text-uppercase">Question:</h1>
             <p class="font-big font-weight-light text-center m-0">
                 <?php echo the_field('question', $id); ?>
             </p>
@@ -77,7 +77,7 @@ $id = get_the_ID();
     </div>
     <div class="row">
         <div class="col-12 my-4">
-            <h1 class="font-manrope text-warning text-center text-uppercase">Answer:</h1>
+            <h1 class="font-kollektif text-warning text-center text-uppercase">Answer:</h1>
             <p class="font-big font-weight-light text-center m-0">
                 <?php echo the_field('answer', $id); ?>
             </p>

@@ -15,13 +15,13 @@ get_header(); ?>
 <?php if (get_the_post_thumbnail_url()) { ?>
     <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
         <div class="centered">
-            <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+            <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
                 <?php echo wp_title(''); ?>
             </h1>
         </div>
     </div>
 <?php } else { ?>
-    <h1 class="h1 text-center font-manrope text-uppercase text-success my-5">
+    <h1 class="h1 text-center font-kollektif text-uppercase text-brand my-5">
         <?php echo wp_title(''); ?>
     </h1>
 <?php } ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 <div class="container my-5">
     <div class="row my-5">
         <div class="col-12 text-center">
-            <h1 class="font-manrope text-brand font-weight-light">
+            <h1 class="font-kollektif text-brand font-weight-light">
                 This page is dedicated to the Attention & Intention process.<br />
                 Listen to Dr. Sheel Tangri and read the material below.
             </h1>
@@ -40,7 +40,7 @@ get_header(); ?>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center my-5 mx-lg-5">
         <div class="col-12 text-center mb-5 mb-xl-0">
             <?php $id_file_1 = 1250; ?>
-            <h4 class="text-success">
+            <h4 class="text-brand">
                 Attention & Intention
             </h4>
 
@@ -53,7 +53,7 @@ get_header(); ?>
         </div>
         <div class="col-12 text-center mb-5 mb-xl-0">
             <?php $id_file_2 = 1250; ?>
-            <h4 class="text-success">
+            <h4 class="text-brand">
                 Guided prayer
             </h4>
 
@@ -64,7 +64,7 @@ get_header(); ?>
         </div>
         <div class="col-12 text-center">
             <?php $id_file_3 = 1203; ?>
-            <h4 class="text-success">
+            <h4 class="text-brand">
                 How to use the Power of Attention and Intention
             </h4>
 

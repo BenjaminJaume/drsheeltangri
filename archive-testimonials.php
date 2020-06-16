@@ -27,7 +27,7 @@ $page_id = 33;
 
 <div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
     <div class="centered">
-        <h1 class="h1 text-center font-manrope text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             <?php echo wp_title(''); ?>
         </h1>
     </div>
@@ -36,7 +36,7 @@ $page_id = 33;
 <div class="container my-5">
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <h1 class="font-manrope font-weight-light text-uppercase mt-0 pt-0">
+            <h1 class="font-kollektif font-weight-light text-uppercase mt-0 pt-0">
                 Here is what people have to say about their experience
             </h1>
         </div>
@@ -62,7 +62,7 @@ $page_id = 33;
                 <?php } ?>
 
                 <div class="text-center mt-3">
-                    <span class="h5 font-manrope text-emerald">
+                    <span class="h5 font-kollektif text-brand">
                         <?php the_field('full_name', $q[$i]); ?>
                     </span>
                     <?php if (get_field('location', $q[$i])) { ?>

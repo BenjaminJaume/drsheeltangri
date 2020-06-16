@@ -13,7 +13,7 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="font-manrope text-uppercase text-success mb-0">
+            <h1 class="font-kollektif text-uppercase text-brand mb-0">
                 <?php echo get_the_title($id); ?>
             </h1>
             <p class="text-muted text-capitalize text-center m-0 p-0">
@@ -23,7 +23,7 @@
                 ?>
             </p>
 
-            <a href="<?php echo get_site_url() . '/videos'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/videos'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to the videos
             </a>

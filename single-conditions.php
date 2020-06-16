@@ -7,14 +7,14 @@ $id = get_the_ID();
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 font-manrope text-uppercase text-success mb-0">
+            <h1 class="display-4 font-kollektif text-uppercase text-brand mb-0">
                 <?php echo get_the_title($id); ?>
             </h1>
             <h3 class="text-muted font-weight-light">
                 Category: <?php echo the_field('category', $id); ?>
             </h3>
 
-            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-outline-primary rounded-0 hvr-icon-back my-3">
+            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
                 Back to conditions
             </a>
@@ -41,7 +41,7 @@ $id = get_the_ID();
     ?>
             <div class="row my-5">
                 <div class="col-12">
-                    <h1 class="text-center font-manrope text-uppercase text-success">Video #<?php echo $i + 1; ?></h1>
+                    <h1 class="text-center font-kollektif text-uppercase text-brand">Video #<?php echo $i + 1; ?></h1>
                     <div class="embed-responsive embed-responsive-16by9 border" id="video">
                         <iframe class="embed-responsive-item" src="<?php echo $url_video; ?>" allowfullscreen></iframe>
                     </div>
@@ -61,7 +61,7 @@ $id = get_the_ID();
     if ($q_a) : ?>
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="font-manrope text-uppercase text-center text-success font-weight-bold mb-0">
+                <h1 class="font-kollektif text-uppercase text-center text-brand font-weight-bold mb-0">
                     <?php
                     if (count($q_a) == 1) {
                         echo count($q_a) . ' Question & Answer found';
@@ -79,7 +79,7 @@ $id = get_the_ID();
                 ?>
                     <div class="line-height-big">
                         <div class="text-center">
-                            <h1 class="text-primary font-manrope text-uppercase">
+                            <h1 class="text-dark font-kollektif text-uppercase">
                                 Question <?php echo $i ?>:
                             </h1>
                             <p class="font-big">
@@ -88,7 +88,7 @@ $id = get_the_ID();
                         </div>
 
                         <div>
-                            <h1 class="text-primary text-center font-manrope text-uppercase">
+                            <h1 class="text-dark text-center font-kollektif text-uppercase">
                                 Answer <?php echo $i ?>:
                             </h1>
                             <p class="font-weight-light">
