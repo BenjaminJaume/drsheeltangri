@@ -33,7 +33,7 @@ function loop_category($category)
     for ($i = 0; $i < count($query); $i++) {
         $str = $str . '
         <li class="list-group-item">
-            <a href="' . get_the_permalink($query[$i]) . '" alt="" class="btn btn-link text-uppercase">
+            <a href="' . get_the_permalink($query[$i]) . '" alt="" class="text-dark text-uppercase">
                 ' . get_the_title($query[$i]) . '
             </a>
         </li>';

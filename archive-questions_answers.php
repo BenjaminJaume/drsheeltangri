@@ -18,13 +18,13 @@ $q = get_posts($args);
 ?>
 
 <style>
-    .bg-header {
+    .container-bg-img::before {
         background-image: url(<?php echo wp_get_attachment_url(547); ?>);
     }
 </style>
 
-<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
-    <div class="centered">
+<div class="container-bg-img bg-cover m-0 p-0">
+    <div class="container-bg-img-inner">
         <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Questions & Answers
         </h1>
@@ -65,10 +65,8 @@ $q = get_posts($args);
                     <div class="card">
                         <div class="card-header" id="headingAccordionQuestionsAnswers-<?php echo $i; ?>">
                             <h2 class="mb-0">
-                                <button class="btn btn-link text-uppercase" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
-                                    <p class="font-big m-0">
-                                        Topic: <?php echo get_the_title($q[$i]); ?>
-                                    </p>
+                                <button class="btn text-dark text-uppercase font-big text-left" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                    Topic: <?php echo get_the_title($q[$i]); ?>
                                 </button>
                             </h2>
                         </div>
@@ -79,18 +77,14 @@ $q = get_posts($args);
                                     <h1 class="font-kollektif text-brand text-uppercase font-weight-light">
                                         Question:
                                     </h1>
-                                    <div class="font-weight-light font-italic m-0">
-                                        <?php the_field('question', $q[$i]); ?>
-                                    </div>
+                                    <?php the_field('question', $q[$i]); ?>
                                 </div>
 
                                 <div>
                                     <h1 class="font-kollektif text-dark text-uppercase font-weight-light">
                                         Answer:
                                     </h1>
-                                    <div class="font-weight-light m-0">
-                                        <?php the_field('answer', $q[$i]); ?>
-                                    </div>
+                                    <?php the_field('answer', $q[$i]); ?>
                                 </div>
 
                                 <button class="btn btn-warning rounded-0 text-uppercase mt-5" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">

@@ -20,14 +20,14 @@ $query = get_posts($args);
 ?>
 
 <style>
-    .bg-header {
-        background-image: url(<?php echo wp_get_attachment_url(547); ?>);
+    .container-bg-img::before {
+        background-image: url(<?php echo wp_get_attachment_url(1424); ?>);
     }
 </style>
 
-<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
-    <div class="centered">
-        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+<div class="container-bg-img bg-cover m-0 p-0">
+    <div class="container-bg-img-inner">
+        <h1 class="h1 text-success text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Videos
         </h1>
     </div>

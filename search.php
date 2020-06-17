@@ -35,13 +35,13 @@ if (is_search()) {
                             if (get_post_type() != 'testimonials') {
                                 if ($wp_query->found_posts > 1) { ?>
                                     There are
-                                    <span class="text-dark"><?php echo $wp_query->found_posts; ?></span>
+                                    <span class="text-success"><?php echo $wp_query->found_posts; ?></span>
                                     results for your search
                                 <?php
                                 } else {
                                 ?>
                                     There is
-                                    <span class="text-dark">
+                                    <span class="text-success">
                                         <?php echo $wp_query->found_posts; ?>
                                     </span>
                                     result for

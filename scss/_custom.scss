@@ -19,15 +19,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.img-text-container {
-  position: relative;
-  text-align: center;
+// .container-bg-img {
+//   position: relative;
+//   text-align: center;
 
-  .centered {
+//   .container-bg-img-inner {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }
+
+.container-bg-img {
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: opacity(75%);
+  }
+
+  .container-bg-img-inner {
+    position: relative;
   }
 }
 
@@ -65,10 +91,6 @@ body {
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
   }
-}
-
-.bg-header {
-  height: 250px;
 }
 
 .font-big {

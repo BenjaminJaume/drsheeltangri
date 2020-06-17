@@ -29,7 +29,7 @@ $section_7 = get_field('section_7');
                         Specialist in
                     </span>
                     <br />
-                    <span class="text-brand text-md-nowrap">Neural Organisation Technique</span>
+                    <span class="text-brand text-md-nowrap">Neural Organization Technique</span>
                 </h3>
 
                 <h1 class="">
@@ -62,11 +62,11 @@ $section_7 = get_field('section_7');
         <div class="row align-items-center">
             <div class="col-12 col-sm-4 col-lg-6 text-center">
                 <a href="<?php echo get_site_url() . '/book'; ?>" alt="">
-                    <?php echo wp_get_attachment_image(1347, '', true, "class=img-fluid"); ?>
+                    <?php echo wp_get_attachment_image(1372, '', true, "class=img-fluid frame-hover"); ?>
                 </a>
             </div>
             <div class="col-12 col-sm-8 col-lg-6 text-center">
-                <h1 class="text-brand font-italic font-kollektif font-weight-bold">
+                <h1 class="text-brand font-kollektif font-weight-bold mb-1">
                     Let It Flow
                 </h1>
                 <h4 class="text-light-grey font-italic font-merriweather mb-3">
@@ -76,7 +76,7 @@ $section_7 = get_field('section_7');
                     Dr. Sheel Tangri BSc. D.C. S.K.
                 </p>
                 <a href="<?php echo get_site_url() . '/book'; ?>" alt="" class="btn btn-dark btn-lg rounded-0 hvr-icon-forward mb-3">
-                    Downlaod
+                    Download
                     <i class="fas fa-book hvr-icon ml-1"></i>
                 </a>
             </div>
@@ -87,7 +87,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid my-5">
     <div class="row">
         <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url(1331); ?>); height: 250px" class="bg-cover">
+            <div style="background-image: url(<?php echo wp_get_attachment_url(1373); ?>); height: 250px" class="bg-cover">
             </div>
         </div>
     </div>
@@ -139,9 +139,9 @@ $section_7 = get_field('section_7');
 
         <div class="row">
             <div class="col-12 text-center">
-                <h1>
+                <h4 class="my-4">
                     And the list continues...
-                </h1>
+                </h4>
             </div>
             <div class="col-12 text-center">
                 <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-lg btn-dark font-kollektif text-uppercase hvr-icon-forward rounded-0">
@@ -152,9 +152,9 @@ $section_7 = get_field('section_7');
         </div>
         <div class="row my-4">
             <div class="col-12 text-center">
-                <h1 class="font-weight-light text-uppercase">
-                    - Or -
-                </h1>
+                <h4 class="font-weight-light">
+                    - or -
+                </h4>
             </div>
         </div>
         <div class="row mb-4">
@@ -183,7 +183,7 @@ $section_7 = get_field('section_7');
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <p class="font-big">
                 In order to get a treatment, you can find a local practitioner (member & certified
-                of the Neurol Organisation Technique), or you can directly get in contact with me.
+                of the Neural Organization Technique), or you can directly get in contact with me.
             </p>
         </div>
     </div>
@@ -208,20 +208,9 @@ $section_7 = get_field('section_7');
     </div>
 </div>
 
-<hr class="w-75 my-5" />
-
-<div class="container-fluid">
-    <div class="row py-5">
-        <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url(1356); ?>); height: 250px;" class="bg-cover">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-success">
+<div class="bg-success my-5">
     <article class="container py-5">
-        <div class="row mb-5">
+        <div class="row">
             <div class="col-12">
                 <h1 class="h1 font-kollektif text-uppercase text-center text-white font-weight-bold">
                     Looking for something?
@@ -235,42 +224,45 @@ $section_7 = get_field('section_7');
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center my-4">
-                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                    N.O.T. and other techniques used
-                </h3>
-                <p class="m-0">
-                    <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">List of the conditions treated</a>
-                    <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.O.T. – Neural Organisation Technique</a>
-                    <a href="<?php echo get_site_url() . '/n-e-t-neuro-emotional-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.E.T. – Neuro-Emotional Technique</a>
-                    <a href="<?php echo get_site_url() . '/energetic-rebalancing'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Energetic Rebalancing</a>
-                    <a href="<?php echo get_site_url() . '/chiropractic'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Chiropractic</a>
-                    <a href="<?php echo get_site_url() . '/nutrition'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Nutrition</a>
-                </p>
-            </div>
-            <div class="col-12 text-center my-4">
-                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                    Materials
-                </h3>
-                <p class="m-0">
-                    <a href="<?php echo get_site_url() . '/book'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Free eBook</a>
-                    <a href="<?php echo get_site_url() . '/videos'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Videos serie</a>
-                    <a href="<?php echo get_site_url() . '/blog'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Articles</a>
-                </p>
-            </div>
-            <div class="col-12 text-center my-4">
-                <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                    Others useful informations
-                </h3>
-                <p class="m-0">
-                    <a href="<?php echo get_site_url() . '/consultation'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Get a consultation</a>
-                    <a href="<?php echo get_site_url() . '/questions-answers'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Questions & Answers</a>
-                    <a href="<?php echo get_site_url() . '/seminars'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Seminars</a>
-                    <a href="<?php echo get_site_url() . '/f-a-q'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">F.A.Q.</a>
-                </p>
-            </div>
-            <!-- <div class="col-12 col-sm-6">
+    </article>
+</div>
+<article class="container">
+    <div class="row">
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                N.O.T. and other techniques used
+            </h3>
+            <p class="m-0">
+                <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">List of the conditions treated</a>
+                <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.O.T. – Neural Organization Technique</a>
+                <a href="<?php echo get_site_url() . '/n-e-t-neuro-emotional-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.E.T. – Neuro-Emotional Technique</a>
+                <a href="<?php echo get_site_url() . '/energetic-rebalancing'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Energetic Rebalancing</a>
+                <a href="<?php echo get_site_url() . '/chiropractic'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Chiropractic</a>
+                <a href="<?php echo get_site_url() . '/nutrition'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Nutrition</a>
+            </p>
+        </div>
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                Materials
+            </h3>
+            <p class="m-0">
+                <a href="<?php echo get_site_url() . '/book'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Free eBook</a>
+                <a href="<?php echo get_site_url() . '/videos'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Videos serie</a>
+                <a href="<?php echo get_site_url() . '/blog'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Articles</a>
+            </p>
+        </div>
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                Others useful informations
+            </h3>
+            <p class="m-0">
+                <a href="<?php echo get_site_url() . '/consultation'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Get a consultation</a>
+                <a href="<?php echo get_site_url() . '/questions-answers'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Questions & Answers</a>
+                <a href="<?php echo get_site_url() . '/seminars'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Seminars</a>
+                <a href="<?php echo get_site_url() . '/f-a-q'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">F.A.Q.</a>
+            </p>
+        </div>
+        <!-- <div class="col-12 col-sm-6">
                 <dl class="font-kollektif text-uppercase">
                     <dd>
                         <a href="<?php echo $section_5['link_1']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
@@ -334,8 +326,17 @@ $section_7 = get_field('section_7');
                     </dd>
                 </dl>
             </div> -->
+    </div>
+</article>
+
+<!-- <hr class="w-50 my-5 bg-dark" /> -->
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-12">
+            <div style="background-image: url(<?php echo wp_get_attachment_url(1356); ?>); height: 250px;" class="bg-cover frame">
+            </div>
         </div>
-    </article>
+    </div>
 </div>
 
 <?php

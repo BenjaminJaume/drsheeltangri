@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 
 <style>
-    .bg-header {
-        background-image: url(<?php echo wp_get_attachment_url(1342); ?>);
+    .container-bg-img::before {
+        background-image: url(<?php echo wp_get_attachment_url(1425); ?>);
     }
 </style>
 
-<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
-    <div class="centered">
-        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
+<div class="container-bg-img bg-cover m-0 p-0">
+    <div class="container-bg-img-inner">
+        <h1 class="h1 text-success text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             <?php echo wp_title(''); ?>
         </h1>
     </div>
@@ -29,7 +29,7 @@
             <?php } ?>
             <div class="col-12 col-md-8 mx-auto">
                 <p class="text-center text-md-left m-0">
-                    <a href="<?php echo the_permalink(); ?>" alt="" class="h1 font-weight-light text-uppercase">
+                    <a href="<?php echo the_permalink(); ?>" alt="" class="h1 text-success font-weight-light text-uppercase">
                         <?php echo get_the_title(); ?>
                     </a>
                 </p>

@@ -9,13 +9,13 @@ get_header();
 ?>
 
 <style>
-    .bg-header {
-        background-image: url(<?php echo wp_get_attachment_url(268); ?>);
+    .container-bg-img::before {
+        background-image: url(<?php echo wp_get_attachment_url(1422); ?>);
     }
 </style>
 
-<div class="container-fluid img-text-container bg-header bg-cover m-0 p-0">
-    <div class="centered">
+<div class="container-bg-img  m-0 p-0">
+    <div class="container-bg-img-inner">
         <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
             Conditions
         </h1>

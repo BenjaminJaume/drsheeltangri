@@ -1,14 +1,8 @@
-<!-- <?php // get_header();
+<?php get_header();
 
-        // $id = get_the_ID();
+$id = get_the_ID();
 
-        $header = "Location: " . get_site_url();
-        header($header);
-
-        exit();
-
-
-        ?>
+?>
 
 <div class="container my-5">
     <div class="row">
@@ -50,5 +44,4 @@
     </div>
 </div>
 
-<?php // get_footer(); 
-?> -->
+<?php get_footer(); ?>

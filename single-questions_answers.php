@@ -60,7 +60,7 @@ $id = get_the_ID();
             <h1 class="font-kollektif text-dark text-uppercase font-weight-light text-center">
                 Answer:
             </h1>
-            <p class="h3 font-jost font-weight-light m-0">
+            <p class="h3 font-weight-light m-0">
                 <?php echo the_field('answer', $id); ?>
             </p>
         </div>
