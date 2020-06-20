@@ -6,42 +6,34 @@ Template Name: Book
 
 get_header(); ?>
 
+<?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title=""]'); ?>
+
+
 <style>
     .container-bg-img::before {
         background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);
     }
 </style>
 
-<?php if (get_the_post_thumbnail_url()) { ?>
-    <div class="container-bg-img bg-cover m-0 p-0">
-        <div class="container-bg-img-inner">
-            <h1 class="h1 text-success text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
-                <?php echo wp_title(''); ?>
-            </h1>
-        </div>
-    </div>
-<?php } else { ?>
-    <h1 class="h1 text-success text-center font-kollektif text-uppercase text-brand my-5">
-        <?php echo wp_title(''); ?>
-    </h1>
-<?php } ?>
-
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
+            <p class="m-0">
+                Download a free copy of Dr. Tangri’s book
+            </p>
             <h1 class="display-4 text-brand text-uppercase font-kollektif font-weight-light mb-1">
-                Dr. Sheel Tangri's Let It Flow
+                Let It Flow
             </h1>
             <h3 class="font-weight-light font-italic">
-                Hands-on techniques for healing the body, mind and spirit
+                Hands on techniques for healing body, mind, and spirit
             </h3>
         </div>
     </div>
     <hr class="my-5 w-75" />
     <div class="row mb-5">
-        <div class="col-12 text-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <h4 class="font-kollektif text-brand font-weight-light text-muted">
-                Get the free eBook "Let it flow" in your favorite language
+                Get the free eBook in your favorite language, or order a hard copy sent to you
             </h4>
         </div>
     </div>
@@ -100,8 +92,8 @@ get_header(); ?>
     </div>
     <div class="row my-5">
         <div class="col-12 border text-center py-5">
+            <p class="font-weight-bold font-big m-0">If you would like to buy a hard copy of "Let It Flow"</p>
             <p class="text-muted">
-                If you would like to buy a hard copy of "Let It Flow"
                 <br />
                 <br />
 

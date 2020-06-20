@@ -31,30 +31,10 @@ body {
 //   }
 // }
 
-.container-bg-img {
+.top-banner {
   width: 100%;
   height: 300px;
-  display: grid;
-  place-items: center;
-  position: relative;
-
-  &:before {
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: opacity(75%);
-  }
-
-  .container-bg-img-inner {
-    position: relative;
-  }
+  background-attachment: fixed;
 }
 
 .vh-100 {

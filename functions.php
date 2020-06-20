@@ -530,6 +530,7 @@ include 'shortcodes/video_embeded.php';
 include 'shortcodes/paypal_button.php';
 include 'shortcodes/download_audio_file.php';
 include 'shortcodes/condition_search_form.php';
+include 'shortcodes/top_banner.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');

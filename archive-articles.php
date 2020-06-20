@@ -17,19 +17,31 @@ $q = get_posts($args);
 
 ?>
 
-<style>
-    .container-bg-img::before {
-        background-image: url(<?php echo wp_get_attachment_url(268); ?>);
-    }
-</style>
+<?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title="' .  get_the_title() . '"]'); ?>
 
-<div class="container-bg-img bg-cover m-0 p-0">
-    <div class="container-bg-img-inner">
-        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
-            Past Events & Articles
-        </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Upcoming Countries / Cities</h1>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="VN" inline="true" size="2"]'); ?> &amp; <?php echo do_shortcode('[svg-flag flag="KH" inline="true" size="2"]'); ?> Vietnam and Cambodia, Sept 15-30, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="LK" inline="true" size="2"]'); ?> Sri Lanka, Oct 1-12, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="IN" inline="true" size="2"]'); ?> Tamil Nadu, india, Oct 13-23, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="AT" inline="true" size="2"]'); ?> Vienna, Austria, Oct 24-26, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="CR" inline="true" size="2"]'); ?> San Jose, Costa Rica, Oct 28-Nov 1, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="MX" inline="true" size="2"]'); ?> Guadalajara, Mexico, Nov 2-12, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="CR" inline="true" size="2"]'); ?> Playa Grande, Costa Rica Nov 15-21, 2020</p>
+            <p class="mb-2"><?php echo do_shortcode('[svg-flag flag="CR" inline="true" size="2"]'); ?> Samara, Costa Rica, Nov 23-Dec 18, 2020</p>
+            <h1>Seminars and Presentations</h1>
+            Now Accepting Reservations: 7 Day Health and Wellness retreat near Tamarindo, Costa Rica Nov. 15-22, 2019
+            <div id="lipsum">
+
+                If you have any questions or would like to arrange for Dr Tangri to come to your country and perform treatments, deliver a presentation, or teach a seminar, you can get in touch with him via this <a class="text-primary" href="http://localhost/drsheeltangri/contact/">contact form</a> or sending an email to <a href="mailto:info@kinesiologist.eu">info@kinesiologist.eu</a>
+
+            </div>
+        </div>
     </div>
 </div>
+
 
 <div class="container-fluid my-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center" id="card-deck-events">

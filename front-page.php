@@ -70,7 +70,7 @@ $section_7 = get_field('section_7');
                     Let It Flow
                 </h1>
                 <h4 class="text-light-grey font-italic font-merriweather mb-3">
-                    Hands-on techniques for healing the body, mind and spirit
+                    Hands-on techniques for healing body, mind and spirit
                 </h4>
                 <p class="text-light-grey">
                     Dr. Sheel Tangri BSc. D.C. S.K.
@@ -87,7 +87,7 @@ $section_7 = get_field('section_7');
 <article class="container-fluid my-5">
     <div class="row">
         <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url(1373); ?>); height: 250px" class="bg-cover">
+            <div style="background-image: url(<?php echo wp_get_attachment_url(1409); ?>); height: 250px" class="bg-cover">
             </div>
         </div>
     </div>
@@ -123,6 +123,7 @@ $section_7 = get_field('section_7');
             $args = [
                 'post_type'      => 'conditions',
                 'posts_per_page' => 9,
+                'order' => 'ASC',
                 'post_name_in'  => ['conditions'],
             ];
             $query = get_posts($args);
@@ -182,8 +183,7 @@ $section_7 = get_field('section_7');
     <div class="row mb-3">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <p class="font-big">
-                In order to get a treatment, you can find a local practitioner (member & certified
-                of the Neural Organization Technique), or you can directly get in contact with me.
+                Contact me directly or find a local certified N.O.T. practitioner in your area
             </p>
         </div>
     </div>
