@@ -1,6 +1,14 @@
-<?php get_header(); ?>
+<?php
 
-<?php echo do_shortcode('[top_banner url="' . wp_get_attachment_url(1425) . '" title="' .  ucfirst($wp_query->queried_object->post_name) . '"]'); ?>
+/*
+Template Name: Blog
+*/
+
+get_header();
+
+?>
+
+<?php echo do_shortcode('[top_banner url="' . wp_get_attachment_url(get_post_thumbnail_id($wp_query->queried_object->ID)) . '" title="' .  ucfirst($wp_query->queried_object->post_name) . '"]'); ?>
 
 <div class="container my-5">
     <?php
