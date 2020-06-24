@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+
+$nutritional_nuggets_page_id = 1301;
+
+get_header(); ?>
 
 <?php
 
@@ -26,6 +30,15 @@ if (have_posts()) :
                 </div>
             </div>
         </div>
+
+        <?php
+        // if this is the Nutritional Nuggets page
+        if (get_the_ID() == $nutritional_nuggets_page_id) {
+            $image_1 = get_field('image_1', $nutritional_nuggets_page_id);
+            console($image_1);
+        ?>
+
+        <?php } ?>
 <?php endwhile;
 endif;
 ?>
