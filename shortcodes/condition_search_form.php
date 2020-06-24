@@ -6,6 +6,7 @@ function condition_search_form()
         'post_type'      => 'conditions',
         'posts_per_page' => -1,
         'post_name_in'  => ['conditions'],
+        'order' => 'ASC'
     ];
     $query = get_posts($args);
 ?>
