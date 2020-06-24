@@ -37,9 +37,17 @@ $id = get_the_ID();
                 ?>
             </p>
 
-            <a href="<?php echo get_site_url() . '/questions-answers'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
+            <?php
+
+            $post_type = get_post_type();
+            $post_type_data = get_post_type_object($post_type);
+            $post_type_slug = $post_type_data->rewrite['slug'];
+            $post_type_name = $post_type_data->labels->name;
+
+            ?>
+            <a href="<?php echo get_site_url() . '/' . $post_type_slug; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
-                Back to the questions
+                Back to <?php echo strtolower($post_type_name); ?>
             </a>
         </div>
     </div>

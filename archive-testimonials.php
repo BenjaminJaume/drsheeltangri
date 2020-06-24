@@ -15,28 +15,25 @@ $args = [
 ];
 $q = get_posts($args);
 
-$page_id = 33;
+$postType = get_queried_object();
+$postTypeName = $postType->labels->name;
 
 ?>
 
-<style>
-    .container-bg-img::before {
-        background-image: url(<?php echo get_the_post_thumbnail_url($page_id); ?>);
-    }
-</style>
-
-<div class="container-bg-img bg-cover m-0 p-0">
-    <div class="container-bg-img-inner">
-        <h1 class="h1 text-center font-kollektif text-uppercase font-weight-bold title-header-page frame py-1 py-sm-4 px-1 px-sm-4">
-            <?php echo wp_title(''); ?>
-        </h1>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="h1 text-success font-kollektif text-uppercase font-weight-bold">
+                <?php echo $postTypeName; ?>
+            </h1>
+        </div>
     </div>
 </div>
 
-<div class="container my-5">
+<div class="container">
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <h1 class="font-kollektif font-weight-light text-uppercase mt-0 pt-0">
+            <h1>
                 Here is what people have to say about their experience
             </h1>
         </div>

@@ -15,9 +15,11 @@ $args = [
 ];
 $q = get_posts($args);
 
+$page_ID = 75;
+
 ?>
 
-<?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title="' .  get_the_title() . '"]'); ?>
+<?php echo do_shortcode('[top_banner url=' . get_the_post_thumbnail_url($page_ID) . ' title="' . get_the_title($page_ID) . '"]'); ?>
 
 <div class="container">
     <div class="row">

@@ -1,6 +1,19 @@
 <?php get_header(); ?>
 
 <?php
+
+$post_type = get_post_type();
+
+if ($post_type == 'testimonials') {
+    $header = "Location: " . get_site_url();
+    header($header);
+
+    exit();
+}
+
+?>
+
+<?php
 if (have_posts()) :
     while (have_posts()) : the_post(); ?>
 

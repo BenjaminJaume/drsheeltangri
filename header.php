@@ -22,6 +22,10 @@
 global $template;
 console($template);
 
+global $seminars_page_id;
+$book_page_id = 13;
+$seminars_page_id = 75;
+
 ?>
 
 <body <?php body_class('main'); ?>>

@@ -8,13 +8,6 @@ get_header(); ?>
 
 <?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title=""]'); ?>
 
-
-<style>
-    .container-bg-img::before {
-        background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);
-    }
-</style>
-
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
@@ -40,7 +33,7 @@ get_header(); ?>
     <div class="row">
         <div class="col-12 col-md-4 text-center mx-auto">
             <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid'); ?>
+                <?php echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid align-text-top'); ?>
                 English
             </h1>
             <a href="<?php echo wp_get_attachment_url(1314); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
@@ -57,7 +50,7 @@ get_header(); ?>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto">
             <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid'); ?>
+                <?php echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid align-text-top'); ?>
                 Spanish
             </h1>
             <a href="<?php echo wp_get_attachment_url(1315); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
@@ -74,7 +67,7 @@ get_header(); ?>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto">
             <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid'); ?>
+                <?php echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid align-text-top'); ?>
                 German
             </h1>
             <a href="<?php echo wp_get_attachment_url(1313); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>

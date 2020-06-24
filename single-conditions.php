@@ -14,9 +14,17 @@ $id = get_the_ID();
                 Category: <?php echo the_field('category', $id); ?>
             </h3>
 
-            <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
+            <?php
+
+            $post_type = get_post_type();
+            $post_type_data = get_post_type_object($post_type);
+            $post_type_slug = $post_type_data->rewrite['slug'];
+            $post_type_name = $post_type_data->labels->name;
+
+            ?>
+            <a href="<?php echo get_site_url() . '/' . $post_type_slug; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
-                Back to conditions
+                Back to <?php echo strtolower($post_type_name); ?>
             </a>
         </div>
     </div>

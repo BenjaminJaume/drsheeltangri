@@ -183,7 +183,7 @@ $section_7 = get_field('section_7');
     <div class="row mb-3">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <p class="font-big">
-                Contact me directly or find a local certified N.O.T. practitioner in your area
+                Contact Dr. Sheel Tangri directly or find a local certified N.O.T. practitioner in your area
             </p>
         </div>
     </div>

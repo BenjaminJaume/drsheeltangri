@@ -160,7 +160,7 @@ function create_posttype()
             'public' => true,
             'publicly_queryable' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'past-events-articles'),
+            'rewrite' => array('slug' => 'seminars-events-articles'),
             'show_in_rest' => true,
             'menu_icon'           => wp_get_attachment_url(851),
         )
@@ -531,6 +531,7 @@ include 'shortcodes/paypal_button.php';
 include 'shortcodes/download_audio_file.php';
 include 'shortcodes/condition_search_form.php';
 include 'shortcodes/top_banner.php';
+include 'shortcodes/related_techniques.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');

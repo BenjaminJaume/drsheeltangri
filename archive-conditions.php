@@ -6,9 +6,12 @@ Template Name: Conditions Treated
 
 get_header();
 
+$postType = get_queried_object();
+$postTypeName = $postType->labels->name;
+
 ?>
 
-<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1436) . ' title="Conditions"]'); ?>
+<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1436) . ' title="' . $postTypeName . '"]'); ?>
 
 <div class="container my-5">
     <div class="row">

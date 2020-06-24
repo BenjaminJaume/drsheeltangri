@@ -15,9 +15,10 @@ $id = get_the_ID();
                 <?php echo the_field('date_article', $id); ?>
             </p>
 
-            <a href="<?php echo get_site_url() . '/past-events-articles'; ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
+            <?php console($seminars_page_id); ?>
+            <a href="<?php echo get_the_permalink($seminars_page_id); ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back my-3">
                 <i class="fas fa-arrow-left hvr-icon"></i>
-                Back to past events & articles
+                Back to <?php echo strtolower(get_the_title($seminars_page_id)); ?>
             </a>
         </div>
     </div>
