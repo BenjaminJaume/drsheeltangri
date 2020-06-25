@@ -22,9 +22,15 @@
 global $template;
 console($template);
 
+global $front_page_id;
 global $seminars_page_id;
+global $book_page_id;
+global $not_page_id;
+
+$front_page_id = 7;
 $book_page_id = 13;
 $seminars_page_id = 75;
+$not_page_id = 19;
 
 ?>
 

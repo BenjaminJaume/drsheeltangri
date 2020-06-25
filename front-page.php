@@ -1,14 +1,14 @@
 <?php
 
-$introduction = get_field('introduction');
+$introduction = get_field('introduction', $page_ID);
 
-$section_1 = get_field('section_1');
-$section_2 = get_field('section_2');
-$section_3 = get_field('section_3');
-$section_4 = get_field('section_4');
-$section_5 = get_field('section_5');
-$section_6 = get_field('section_6');
-$section_7 = get_field('section_7');
+$section_1 = get_field('section_1', $page_ID);
+$section_2 = get_field('section_2', $page_ID);
+$section_3 = get_field('section_3', $page_ID);
+$section_4 = get_field('section_4', $page_ID);
+$section_5 = get_field('section_5', $page_ID);
+$section_6 = get_field('section_6', $page_ID);
+$section_7 = get_field('section_7', $page_ID);
 
 ?>
 
@@ -25,11 +25,7 @@ $section_7 = get_field('section_7');
                 <hr class="w-50 bg-secondary">
 
                 <h3 class="font-lato w-100 w-md-75 mx-auto mt-4">
-                    <span class="text-grey">
-                        Specialist in
-                    </span>
-                    <br />
-                    <span class="text-brand text-md-nowrap">Neural Organization Technique</span>
+                    <?php echo $introduction['subtitle']; ?>
                 </h3>
 
                 <h1 class="">
@@ -38,7 +34,7 @@ $section_7 = get_field('section_7');
 
                 <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
                     <q class="font-merriweather letter-spacing-big text-light-grey font-italic">
-                        N.O.T. resets your body’s nervous system “programs”, much like rebooting or resetting a computer.
+                        <?php echo $introduction['introduction_content']; ?>
                     </q>
                 </div>
             </div>
@@ -55,28 +51,28 @@ $section_7 = get_field('section_7');
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="font-kollektif text-grey text-uppercase font-weight-bold">
-                    Download the free eBook
+                    <?php echo $section_1['title']; ?>
                 </h1>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-12 col-sm-4 col-lg-6 text-center">
-                <a href="<?php echo get_site_url() . '/book'; ?>" alt="">
+                <a href="<?php echo get_permalink($book_page_id); ?>" alt="">
                     <?php echo wp_get_attachment_image(1372, '', true, "class=img-fluid frame-hover"); ?>
                 </a>
             </div>
             <div class="col-12 col-sm-8 col-lg-6 text-center">
                 <h1 class="text-brand font-kollektif font-weight-bold mb-1">
-                    Let It Flow
+                    <?php echo $section_1['book_title']; ?>
                 </h1>
                 <h4 class="text-light-grey font-italic font-merriweather mb-3">
-                    Hands-on techniques for healing body, mind and spirit
+                    <?php echo $section_1['book_subtitle']; ?>
                 </h4>
                 <p class="text-light-grey">
-                    Dr. Sheel Tangri BSc. D.C. S.K.
+                    <?php echo $section_1['author']; ?>
                 </p>
-                <a href="<?php echo get_site_url() . '/book'; ?>" alt="" class="btn btn-dark btn-lg rounded-0 hvr-icon-forward mb-3">
-                    Download
+                <a href="<?php echo get_permalink($book_page_id); ?>" alt="" class="btn btn-dark btn-lg rounded-0 hvr-icon-forward mb-3">
+                    <?php echo $section_1['label_download_button']; ?>
                     <i class="fas fa-book hvr-icon ml-1"></i>
                 </a>
             </div>
@@ -87,21 +83,17 @@ $section_7 = get_field('section_7');
 <article class="container-fluid my-5">
     <div class="row">
         <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url(1409); ?>); height: 250px" class="bg-cover">
+            <div style="background-image: url(<?php echo wp_get_attachment_url($section_2['top_picture']['ID']); ?>); height: 250px" class="bg-cover">
             </div>
         </div>
     </div>
     <div class="row mt-5">
         <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
             <h1 class="h1 font-kollektif text-uppercase text-center text-brand font-weight-bold mb-5">
-                <?php echo $section_1['title']; ?>
+                <?php echo $section_2['title']; ?>
             </h1>
             <p>
-                <?php echo $section_1['content_1']; ?>
-            </p>
-
-            <p>
-                <?php echo $section_1['content_2']; ?>
+                <?php echo $section_2['content']; ?>
             </p>
         </div>
     </div>
@@ -111,8 +103,8 @@ $section_7 = get_field('section_7');
     <article class="container py-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="text-brand text-uppercase mb-5">
-                    Examples of Conditions Treated
+                <h1 class="h1 font-kollektif text-uppercase text-center text-dark font-weight-bold mb-5">
+                    <?php echo $section_3['title']; ?>
                 </h1>
             </div>
         </div>
@@ -141,12 +133,12 @@ $section_7 = get_field('section_7');
         <div class="row">
             <div class="col-12 text-center">
                 <h4 class="my-4">
-                    And the list continues...
+                    <?php echo $section_3['text_more']; ?>
                 </h4>
             </div>
             <div class="col-12 text-center">
                 <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" alt="" class="btn btn-lg btn-dark font-kollektif text-uppercase hvr-icon-forward rounded-0">
-                    See More
+                    <?php echo $section_3['label_button_condition_page']; ?>
                     <i class=" fas fa-chevron-right ml-md-2 px-1 px-md-0 hvr-icon"></i>
                 </a>
             </div>
@@ -161,7 +153,7 @@ $section_7 = get_field('section_7');
         <div class="row mb-4">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
                 <p class="text-muted">
-                    Look for a condition in the list below
+                    <?php echo $section_3['label_search_condition']; ?>
                 </p>
 
                 <div>
@@ -176,32 +168,32 @@ $section_7 = get_field('section_7');
     <div class="row">
         <div class="col-12 text-center">
             <h1 class="h1 text-brand text-uppercase font-kollektif font-weight-bold">
-                Get a treatment
+                <?php echo $section_4['title']; ?>
             </h1>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <p class="font-big">
-                Contact Dr. Sheel Tangri directly or find a local certified N.O.T. practitioner in your area
+                <?php echo $section_4['content']; ?>
             </p>
         </div>
     </div>
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <a href="<?php echo $section_3['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward mb-sm-auto">
-                <?php echo $section_3['button_1']['label']; ?>
+            <a href="<?php echo $section_4['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward mb-sm-auto">
+                <?php echo $section_4['button_1']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
-            <a href="<?php echo $section_3['button_2']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward">
-                <?php echo $section_3['button_2']['label']; ?>
+            <a href="<?php echo $section_4['button_2']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward">
+                <?php echo $section_4['button_2']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
         </div>
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique' ?>" alt="">
+            <a href="<?php echo get_permalink($not_page_id); ?>" alt="">
                 <img src="<?php echo wp_get_attachment_url(1355); ?>" alt="" class="img-fluid" style="height: 200px" />
             </a>
         </div>

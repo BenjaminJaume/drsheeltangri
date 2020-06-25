@@ -34,13 +34,8 @@ if (have_posts()) :
         <?php
         // if this is the Nutritional Nuggets page
         if (get_the_ID() == $nutritional_nuggets_page_id) {
-            //load_template(get_template_directory() . '/templates/template-nutritional-nuggets.php');
-
-            $image_1 = get_field('image_1', $nutritional_nuggets_page_id);
-            console($image_1);
-        ?>
-
-        <?php } ?>
+            load_template(get_template_directory() . '/templates/template-nutritional-nuggets.php');
+        } ?>
 <?php endwhile;
 endif;
 ?>
