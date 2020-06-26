@@ -194,7 +194,7 @@ $section_7 = get_field('section_7', $page_ID);
     <div class="row">
         <div class="col-12 text-center">
             <a href="<?php echo get_permalink($not_page_id); ?>" alt="">
-                <img src="<?php echo wp_get_attachment_url(1355); ?>" alt="" class="img-fluid" style="height: 200px" />
+                <img src="<?php echo wp_get_attachment_url($section_4['image']['ID']); ?>" alt="" class="img-fluid" style="height: 200px" />
             </a>
         </div>
     </div>
@@ -205,13 +205,11 @@ $section_7 = get_field('section_7', $page_ID);
         <div class="row">
             <div class="col-12">
                 <h1 class="h1 font-kollektif text-uppercase text-center text-white font-weight-bold">
-                    Looking for something?
+                    <?php echo $section_5['title']; ?>
                 </h1>
                 <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
                     <p class="font-big">
-                        What you can find here is a large number of tools to
-                        help you, inform you and guide you on what you can positively
-                        do to your body and mind, and get involved in N.O.T.
+                        <?php echo $section_5['content']; ?>
                     </p>
                 </div>
             </div>
@@ -222,102 +220,49 @@ $section_7 = get_field('section_7', $page_ID);
     <div class="row">
         <div class="col-12 text-center my-4">
             <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                N.O.T. and other techniques used
+                <?php echo $section_5['sub_section_1']['title']; ?>
             </h3>
             <p class="m-0">
-                <a href="<?php echo get_site_url() . '/conditions-treated'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">List of the conditions treated</a>
-                <a href="<?php echo get_site_url() . '/n-o-t-neural-organization-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.O.T. – Neural Organization Technique</a>
-                <a href="<?php echo get_site_url() . '/n-e-t-neuro-emotional-technique'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">N.E.T. – Neuro-Emotional Technique</a>
-                <a href="<?php echo get_site_url() . '/energetic-rebalancing'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Energetic Rebalancing</a>
-                <a href="<?php echo get_site_url() . '/chiropractic'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Chiropractic</a>
-                <a href="<?php echo get_site_url() . '/nutrition'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Nutrition</a>
+                <?php for ($i = 1; $i <= count($section_5['sub_section_1']['links']); $i++) {
+                    console($section_5['sub_section_1']['links']); ?>
+                    <a href="<?php echo $section_5['sub_section_1']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo $section_5['sub_section_1']['links'][$i]['title']; ?>
+                    </a>
+                <?php } ?>
             </p>
         </div>
         <div class="col-12 text-center my-4">
             <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                Materials
+                <?php echo $section_5['sub_section_2']['title']; ?>
             </h3>
             <p class="m-0">
-                <a href="<?php echo get_site_url() . '/book'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Free eBook</a>
-                <a href="<?php echo get_site_url() . '/videos'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Videos serie</a>
-                <a href="<?php echo get_site_url() . '/blog'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Articles</a>
+                <?php for ($i = 1; $i <= count($section_5['sub_section_2']['links']); $i++) {
+                    console($section_5['sub_section_2']['links']); ?>
+                    <a href="<?php echo $section_5['sub_section_2']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo $section_5['sub_section_2']['links'][$i]['title']; ?>
+                    </a>
+                <?php } ?>
             </p>
         </div>
         <div class="col-12 text-center my-4">
             <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                Others useful informations
+                <?php echo $section_5['sub_section_3']['title']; ?>
             </h3>
             <p class="m-0">
-                <a href="<?php echo get_site_url() . '/consultation'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Get a consultation</a>
-                <a href="<?php echo get_site_url() . '/questions-answers'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Questions & Answers</a>
-                <a href="<?php echo get_site_url() . '/seminars'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">Seminars</a>
-                <a href="<?php echo get_site_url() . '/f-a-q'; ?>" class="btn btn-dark btn-lg rounded-0 m-1">F.A.Q.</a>
+                <?php
+                $the_query = new WP_Query('posts_per_page=5');
+
+                while ($the_query->have_posts()) : $the_query->the_post();
+                ?>
+                    <a href="<?php echo the_permalink(); ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo the_title(); ?>
+                    </a>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
             </p>
         </div>
-        <!-- <div class="col-12 col-sm-6">
-                <dl class="font-kollektif text-uppercase">
-                    <dd>
-                        <a href="<?php echo $section_5['link_1']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_1']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_2']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_2']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_3']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_3']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_4']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_4']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                </dl>
-            </div>
-            <div class="col-12 col-sm-6">
-                <dl class="font-kollektif text-uppercase">
-                    <dd>
-                        <a href="<?php echo $section_5['link_5']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_5']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_6']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_6']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_7']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_7']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                    <dd>
-                        <a href="<?php echo $section_5['link_8']['link']; ?>" alt="" class="btn hvr-icon-forward border-0">
-                            <u class="h4 letter-spacing-big">
-                                <?php echo $section_5['link_8']['label']; ?></u>
-                            <i class="fas fa-chevron-right hvr-icon align-text-top ml-1"></i>
-                        </a>
-                    </dd>
-                </dl>
-            </div> -->
     </div>
 </article>
 
@@ -325,122 +270,120 @@ $section_7 = get_field('section_7', $page_ID);
 <div class="container-fluid my-5">
     <div class="row">
         <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url(1356); ?>); height: 250px;" class="bg-cover frame">
+            <div style="background-image: url(<?php echo wp_get_attachment_url($section_6['image']['ID']); ?>); height: 250px;" class="bg-cover frame">
             </div>
         </div>
     </div>
 </div>
 
-<?php
-if ($section_6['displayed'] == "Yes") { ?>
-    <article class="container my-5">
-        <div class="row">
-            <div class="col-12 mb-5">
-                <h1 class="h1 font-kollektif text-uppercase text-center text-brand font-weight-bold m-0">
-                    <?php echo $section_6['title']; ?>
-                </h1>
-            </div>
+<article class="container my-5">
+    <div class="row">
+        <div class="col-12 mb-5">
+            <h1 class="h1 font-kollektif text-uppercase text-center text-brand font-weight-bold m-0">
+                <?php echo $section_6['title']; ?>
+            </h1>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div id="carousel-front-page" class="carousel slide bg-light" data-ride="carousel">
-                    <div class="carousel-inner h-100">
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="carousel-front-page" class="carousel slide bg-light" data-ride="carousel">
+                <div class="carousel-inner h-100">
 
-                        <?php
-                        $iteration = 0;
+                    <?php
+                    $iteration = 0;
 
-                        // Select all testimonials with a short_description in it
-                        $args = array(
-                            'posts_per_page'    => 5,
-                            'post_type'         => 'testimonials',
-                            'meta_key'          => 'short_testimonial',
-                            'meta_query'    => array(
-                                array(
-                                    'key'        => 'short_testimonial',
-                                    'compare'    => '!=',
-                                    'value'        => null,
-                                )
+                    // Select all testimonials with a short_description in it
+                    $args = array(
+                        'posts_per_page'    => 5,
+                        'post_type'         => 'testimonials',
+                        'meta_key'          => 'short_testimonial',
+                        'meta_query'    => array(
+                            array(
+                                'key'        => 'short_testimonial',
+                                'compare'    => '!=',
+                                'value'        => null,
                             )
-                        );
-                        $testimonials = get_posts($args);
+                        )
+                    );
+                    $testimonials = get_posts($args);
 
-                        if ($testimonials) {
-                            foreach ($testimonials as $testimonial) {
-                                // setup_postdata($testimonial);
-                                $testimonial_id = $testimonial->ID;
-                                $iteration++; ?>
-                                <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
-                                    <div class="carousel-caption text-center">
-                                        <p class="font-italic font-big mb-3">
-                                            <?php the_field('short_testimonial', $testimonial_id, $testimonial_id) ?>
-                                        </p>
-                                        <div>
-                                            <span class="h5 font-kollektif text-brand">
-                                                <?php the_field('full_name', $testimonial_id); ?>
+                    if ($testimonials) {
+                        foreach ($testimonials as $testimonial) {
+                            // setup_postdata($testimonial);
+                            $testimonial_id = $testimonial->ID;
+                            $iteration++; ?>
+                            <div class="carousel-item<?php if ($iteration == 1) echo ' active' ?> h-100" data-interval="10000">
+                                <div class="carousel-caption text-center">
+                                    <p class="font-italic font-big mb-3">
+                                        <?php the_field('short_testimonial', $testimonial_id, $testimonial_id) ?>
+                                    </p>
+                                    <div>
+                                        <span class="h5 font-kollektif text-brand">
+                                            <?php the_field('full_name', $testimonial_id); ?>
+                                        </span>
+
+                                        <?php if (get_field('location', $testimonial_id)) { ?>
+                                            -
+                                            <span class="h6">
+                                                <?php the_field('location', $testimonial_id); ?>
                                             </span>
-
-                                            <?php if (get_field('location', $testimonial_id)) { ?>
-                                                -
-                                                <span class="h6">
-                                                    <?php the_field('location', $testimonial_id); ?>
-                                                </span>
-                                            <?php } ?>
-                                        </div>
-
-
-                                        <?php
-                                        if (have_rows('position')) { ?>
-                                            <?php while (have_rows('position')) {
-                                                the_row();
-                                                $position_title = get_sub_field('position_title');
-                                                $company_name = get_sub_field('company_name');
-                                                if ($position_title !== '' || $company_name !== '') {
-                                                    echo '<p>' . $position_title . '<br />' . $company_name . '</p>';
-                                                }
-                                            }
-                                            ?>
                                         <?php } ?>
-
-                                        <?php if (get_field('date_testimonial', $testimonial_id)) { ?>
-                                            <h6 class="text-muted">
-                                                <i class="far fa-clock"></i>
-                                                <?php the_field('date_testimonial', $testimonial_id); ?>
-                                            </h6>
-                                        <?php } ?>
-
                                     </div>
+
+
+                                    <?php
+                                    if (have_rows('position')) { ?>
+                                        <?php while (have_rows('position')) {
+                                            the_row();
+                                            $position_title = get_sub_field('position_title');
+                                            $company_name = get_sub_field('company_name');
+                                            if ($position_title !== '' || $company_name !== '') {
+                                                echo '<p>' . $position_title . '<br />' . $company_name . '</p>';
+                                            }
+                                        }
+                                        ?>
+                                    <?php } ?>
+
+                                    <?php if (get_field('date_testimonial', $testimonial_id)) { ?>
+                                        <h6 class="text-muted">
+                                            <i class="far fa-clock"></i>
+                                            <?php the_field('date_testimonial', $testimonial_id); ?>
+                                        </h6>
+                                    <?php } ?>
+
                                 </div>
-                        <?php }
-                        }
-                        wp_reset_query(); ?>
+                            </div>
+                    <?php }
+                    }
+                    wp_reset_query(); ?>
 
 
-                    </div>
-                    <a class="carousel-control-prev" href="#carousel-front-page" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel-front-page" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
+                <a class="carousel-control-prev" href="#carousel-front-page" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-front-page" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
-    </article>
-<?php } ?>
+    </div>
+</article>
 
-<div class="bg-success py-5 my-5">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-5">
-                <h1 class="font-kollektif text-white text-uppercase text-sm-center">
-                    <i class="far fa-envelope mr-1"></i>
-                    <?php echo $section_7['title'] ?>
-                </h1>
-            </div>
-            <div class="col-12 col-lg-7">
-                <!-- <form class="form-inline justify-content-center">
+<?php if ($section_7['display'] == 'Yes') { ?>
+    <div class="bg-success py-5 my-5">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5">
+                    <h1 class="font-kollektif text-white text-uppercase text-sm-center">
+                        <i class="far fa-envelope mr-1"></i>
+                        <?php echo $section_7['title'] ?>
+                    </h1>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <!-- <form class="form-inline justify-content-center">
                     <div class="form-group mb-2">
                         <input type="text" class="form-control rounded-0" value="<?php echo $section_7['name_placeholder'] ?>">
                     </div>
@@ -453,25 +396,26 @@ if ($section_6['displayed'] == "Yes") { ?>
                     </button>
                 </form> -->
 
-                <form>
-                    <div class="form-row">
-                        <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
-                            <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
+                                <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
+                            </div>
+                            <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
+                                <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
+                            </div>
+                            <div class="col-12 col-lg-4 text-center text-lg-left mt-3 mt-lg-0 form-group  mx-auto">
+                                <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward mb-2">
+                                    <?php echo $section_7['submit_button_label'] ?>
+                                    <i class="fas fa-chevron-right hvr-icon ml-1"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-8 col-md-5 col-lg-4 form-group text-center mx-auto">
-                            <input type="email" class="form-control rounded-0" id="inputPassword2" placeholder="<?php echo $section_7['email_placeholder'] ?>">
-                        </div>
-                        <div class="col-12 col-lg-4 text-center text-lg-left mt-3 mt-lg-0 form-group  mx-auto">
-                            <button type="submit" class="btn btn-dark rounded-0 hvr-icon-forward mb-2">
-                                <?php echo $section_7['submit_button_label'] ?>
-                                <i class="fas fa-chevron-right hvr-icon ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php } ?>
 
 <?php get_footer(); ?>

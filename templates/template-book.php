@@ -17,12 +17,13 @@ get_header(); ?>
             <h1 class="display-4 text-brand text-uppercase font-kollektif font-weight-light mb-1">
                 Let It Flow
             </h1>
-            <h3 class="font-weight-light font-italic">
+            <!-- <h3 class="font-weight-light font-italic"> -->
+            <h4 class="text-light-grey font-italic font-merriweather mb-3">
                 Hands on techniques for healing body, mind, and spirit
-            </h3>
+            </h4>
         </div>
     </div>
-    <hr class="my-5 w-75" />
+    <hr class="my-5 w-75 bg-dark" />
     <div class="row mb-5">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <h4 class="font-kollektif text-brand font-weight-light text-muted">

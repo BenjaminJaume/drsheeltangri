@@ -32,10 +32,9 @@ body {
 // }
 
 .top-banner {
-  width: 100%;
-  height: 300px;
-  background-attachment: fixed;
   border-bottom: 1px solid #dee2e6;
+  object-fit: cover;
+  max-height: 300px;
 }
 
 .vh-100 {

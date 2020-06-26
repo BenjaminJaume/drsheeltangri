@@ -532,6 +532,7 @@ include 'shortcodes/download_audio_file.php';
 include 'shortcodes/condition_search_form.php';
 include 'shortcodes/top_banner.php';
 include 'shortcodes/related_techniques.php';
+include 'shortcodes/students_testimonials.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');

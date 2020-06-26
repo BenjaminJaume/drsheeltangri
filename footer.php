@@ -4,7 +4,7 @@
     <footer class="container mt-5 py-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center font-kollektif text-uppercase">
+                <h1 class="text-center font-kollektif text-uppercase text-success font-weight-bold">
                     Dr. Sheel Tangri
                 </h1>
             </div>
@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-12 text-center">
-                <a href="contact" class="btn btn-success rounded-0 hvr-grow">Contact</a>
+                <a href="contact" class="btn btn-outline-success rounded-0 hvr-grow">Contact</a>
             </div>
         </div>
         <div class="row my-5">

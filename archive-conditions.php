@@ -11,13 +11,13 @@ $postTypeName = $postType->labels->name;
 
 ?>
 
-<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1436) . ' title="' . $postTypeName . '"]'); ?>
+<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1436) . ' title="Conditions treated"]'); ?>
 
 <div class="container my-5">
     <div class="row">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <h1 class="font-kollektif font-weight-light text-center">
-                Type a condition to find out what can be treated
+                Type in a condition to see how it can be treated, or look on the lists below
             </h1>
             <?php echo do_shortcode('[condition_search_form][/condition_search_form]'); ?>
         </div>
