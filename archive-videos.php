@@ -22,7 +22,7 @@ $postTypeName = $postType->labels->name;
 
 ?>
 
-<?php echo do_shortcode('[top_banner url="' . wp_get_attachment_url(1424) . '" title="' . $postTypeName . '"]'); ?>
+<?php echo do_shortcode('[top_banner url="' . wp_get_attachment_url(1919) . '" title="' . $postTypeName . '"]'); ?>
 
 <div class="container-fluid my-5">
     <div class="row">

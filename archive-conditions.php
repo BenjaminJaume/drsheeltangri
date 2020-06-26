@@ -11,7 +11,7 @@ $postTypeName = $postType->labels->name;
 
 ?>
 
-<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1436) . ' title="Conditions treated"]'); ?>
+<?php echo do_shortcode('[top_banner url=' . wp_get_attachment_url(1921) . ' title="Conditions treated"]'); ?>
 
 <div class="container my-5">
     <div class="row">

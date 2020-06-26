@@ -58,7 +58,12 @@ $section_7 = get_field('section_7', $page_ID);
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 text-center mb-5 mb-lg-0">
                 <a href="<?php echo get_permalink($book_page_id); ?>" alt="">
-                    <?php echo wp_get_attachment_image(1372, '', true, "class=img-fluid frame-hover"); ?>
+                    <?php if ($section_1['book_picture']['ID']) {
+                        $book_picture_id = wp_get_attachment_url($section_1['book_picture']['ID']);
+                    } else {
+                        $book_picture_id = wp_get_attachment_url($section_1['book_picture']);
+                    } ?>
+                    <img src="<?php echo $book_picture_id; ?>" alt="" class="img-fluid frame-hover" />
                 </a>
             </div>
             <div class="col-12 col-lg-6 text-center">

@@ -34,8 +34,6 @@ get_header(); ?>
     <div class="row">
         <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
             <h1 class="font-kollektif mb-3">
-                <?php // echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid align-text-top'); 
-                ?>
                 <span class="align-text-bottom">
                     <?php echo do_shortcode('[svg-flag flag="US" inline="true" size="1"]'); ?>
                 </span>
@@ -55,8 +53,6 @@ get_header(); ?>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
             <h1 class="font-kollektif mb-3">
-                <?php //echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid align-text-top'); 
-                ?>
                 <span class="align-text-bottom">
                     <?php echo do_shortcode('[svg-flag flag="ES" inline="true" size="1"]'); ?>
                 </span>
@@ -76,21 +72,19 @@ get_header(); ?>
         </div>
         <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
             <h1 class="font-kollektif mb-3">
-                <?php // echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid align-text-top'); 
-                ?>
                 <span class="align-text-bottom">
                     <?php echo do_shortcode('[svg-flag flag="DE" inline="true" size="1"]'); ?>
                 </span>
                 German
             </h1>
-            <a href="<?php echo wp_get_attachment_url(1313); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
+            <a href="<?php echo wp_get_attachment_url(1912); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
                 Download
                 <i class="fa fa-download"></i>
             </a>
             <p class="text-muted">
                 <?php
-                $file_type = wp_check_filetype(wp_get_attachment_url(1313));
-                $file_size = formatBytes(filesize(get_attached_file(1313)), 2);
+                $file_type = wp_check_filetype(wp_get_attachment_url(1912));
+                $file_size = formatBytes(filesize(get_attached_file(1912)), 2);
 
                 echo '.' . $file_type['ext'] . ' | ' . $file_size; ?>
             </p>
