@@ -66,6 +66,10 @@ header {
       border-color: transparent;
     }
   }
+
+  .glink.nturl.notranslate {
+    @extend .ml-2;
+  }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

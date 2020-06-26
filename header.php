@@ -71,7 +71,10 @@ $nutrition_page_id = 25;
                     'walker'            => new WP_Bootstrap_Navwalker(),
                 ));
                 ?>
-                </>
+
+                <div class="d-flex mt-4 mt-sm-0 mx-auto">
+                    <?php echo do_shortcode('[gtranslate]'); ?>
+                </div>
         </nav>
     </header>
 
