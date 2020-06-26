@@ -533,6 +533,7 @@ include 'shortcodes/condition_search_form.php';
 include 'shortcodes/top_banner.php';
 include 'shortcodes/related_techniques.php';
 include 'shortcodes/students_testimonials.php';
+include 'shortcodes/social_medias.php';
 
 // Edit size max for media upload
 @ini_set('upload_max_size', '100M');
@@ -632,8 +633,17 @@ function my_toolbars($toolbars)
 if (!function_exists('am_add_google_fonts_array_to_tiny_mce')) {
     function am_add_google_fonts_array_to_tiny_mce($initArray)
     {
-        $initArray['font_formats'] = 'Manrope=Manrope;Roboto=Roboto;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+        $initArray['font_formats'] = 'Kollektif Regular=Kollektif Regular;Manrope=Manrope;Roboto=Roboto;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
         return $initArray;
     }
 }
 add_filter('tiny_mce_before_init', 'am_add_google_fonts_array_to_tiny_mce');
+
+function scanwp_buttons($buttons)
+{
+    array_unshift($buttons, 'fontselect');
+    array_unshift($buttons, 'fontsizeselect');
+    return $buttons;
+}
+
+add_filter('mce_buttons_2', 'scanwp_buttons');

@@ -7,7 +7,7 @@ function top_banner($atts)
         'title' => '',
     ), $atts));
 ?>
-    <img src="<?php echo $url; ?>" alt="" class="top-banner" width="100%" />
+    <img src="<?php echo $url; ?>" alt="" class="top-banner mb-5" width="100%" />
 
     <h1 class="h1 text-center text-success font-kollektif text-uppercase font-weight-bold mb-5">
         <?php echo $title; ?>

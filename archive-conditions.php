@@ -16,9 +16,9 @@ $postTypeName = $postType->labels->name;
 <div class="container my-5">
     <div class="row">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-            <h1 class="font-kollektif font-weight-light text-center">
+            <h3 class="font-kollektif font-weight-light text-center">
                 Type in a condition to see how it can be treated, or look on the lists below
-            </h1>
+            </h3>
             <?php echo do_shortcode('[condition_search_form][/condition_search_form]'); ?>
         </div>
     </div>

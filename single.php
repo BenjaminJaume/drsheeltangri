@@ -25,8 +25,10 @@ if (have_posts()) :
 
         <div class="container my-5">
             <div class="row">
-                <div class="col-12">
-                    <?php the_content(); ?>
+                <div class="col-12 font-big line-height-big">
+                    <div class="page-content">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
             </div>
         </div>

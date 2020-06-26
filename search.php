@@ -16,7 +16,7 @@ if (is_search()) {
                         <?php get_search_form(); ?>
                     </div>
 
-                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-dark rounded-0 hvr-icon-back font-kollektif my-3">
+                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-success rounded-0 hvr-icon-back my-3">
                         <i class="fas fa-arrow-left hvr-icon"></i>
                         Back to the homepage
                     </a>
@@ -134,7 +134,7 @@ if (is_search()) {
                         <?php get_search_form(); ?>
                     </div>
 
-                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-success rounded-0 hvr-icon-back font-kollektif my-3">
+                    <a href="<?php echo home_url('/'); ?>" alt="" class="btn btn-outline-success rounded-0 hvr-icon-back my-3">
                         <i class="fas fa-arrow-left hvr-icon"></i>
                         Back to the homepage
                     </a>

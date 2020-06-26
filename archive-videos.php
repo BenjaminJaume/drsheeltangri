@@ -26,10 +26,10 @@ $postTypeName = $postType->labels->name;
 
 <div class="container-fluid my-5">
     <div class="row">
-        <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
-            <h1 class="font-kollektif font-weight-light text-brand">
-                In order to get the full explanation of Dr. Tangri, please watch the playlist or the videos in the suggested order.
-            </h1>
+        <div class="col-12 col-md-8 mx-auto text-center">
+            <h3 class="font-kollektif font-weight-light text-brand">
+                In order to get the most out of the information presented in the videos, it is advisable to watch them in the sequence that they are presented
+            </h3>
         </div>
     </div>
     <div class="row my-5">
@@ -46,13 +46,16 @@ $postTypeName = $postType->labels->name;
             </iframe> -->
         </div>
     </div>
+</div>
+
+<hr class="w-50 my-5" />
+
+<div class="container">
     <div class="row">
         <div class="col-12 text-center">
             <h3 class="font-kollektif">Watch the ordered list of each individual video:</h3>
         </div>
     </div>
-</div>
-<div class="container">
     <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3"> -->
     <?php
     // For each video

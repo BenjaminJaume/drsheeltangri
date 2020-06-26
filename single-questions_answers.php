@@ -30,7 +30,7 @@ $id = get_the_ID();
             <h1 class="font-kollektif text-uppercase text-brand mb-0">
                 <?php echo get_the_title($id); ?>
             </h1>
-            <p class="text-muted text-capitalize text-center m-0 p-0">
+            <p class="text-muted text-capitalize text-center">
                 <?php
                 $postType = get_post_type_object(get_post_type());
                 echo esc_html($postType->labels->singular_name);
@@ -54,10 +54,10 @@ $id = get_the_ID();
 
     <div class="row my-5">
         <div class="col-12">
-            <h1 class="font-kollektif text-brand text-uppercase font-weight-light text-center">
+            <h1 class="font-kollektif text-brand text-uppercase text-center">
                 Question:
             </h1>
-            <p class="h3 font-weight-light m-0">
+            <p class="font-big">
                 <?php echo the_field('question', $id); ?>
             </p>
         </div>
@@ -65,10 +65,10 @@ $id = get_the_ID();
 
     <div class="row">
         <div class="col-12">
-            <h1 class="font-kollektif text-dark text-uppercase font-weight-light text-center">
+            <h1 class="font-kollektif text-dark text-uppercase text-center">
                 Answer:
             </h1>
-            <p class="h3 font-weight-light m-0">
+            <p class="font-big">
                 <?php echo the_field('answer', $id); ?>
             </p>
         </div>

@@ -25,6 +25,7 @@ console($template);
 global $front_page_id;
 global $seminars_page_id;
 global $book_page_id;
+global $contact_page_id;
 
 global $not_page_id;
 global $net_page_id;
@@ -33,8 +34,9 @@ global $chiropractic_page_id;
 global $nutrition_page_id;
 
 $front_page_id = 7;
-$book_page_id = 13;
 $seminars_page_id = 75;
+$book_page_id = 13;
+$contact_page_id = 37;
 
 $not_page_id = 19;
 $net_page_id = 23;

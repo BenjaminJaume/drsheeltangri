@@ -6,12 +6,12 @@ Template Name: Book
 
 get_header(); ?>
 
-<?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title=""]'); ?>
+<?php echo do_shortcode('[top_banner url="' . get_the_post_thumbnail_url() . '" title="' . get_the_title() . '"]'); ?>
 
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <p class="m-0">
+            <p>
                 Download a free copy of Dr. Tangri’s book
             </p>
             <h1 class="display-4 text-brand text-uppercase font-kollektif font-weight-light mb-1">
@@ -32,9 +32,13 @@ get_header(); ?>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid align-text-top'); ?>
+        <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
+            <h1 class="font-kollektif mb-3">
+                <?php // echo wp_get_attachment_image(1320, [28, 28], false, 'class=img-fluid align-text-top'); 
+                ?>
+                <span class="align-text-bottom">
+                    <?php echo do_shortcode('[svg-flag flag="US" inline="true" size="1"]'); ?>
+                </span>
                 English
             </h1>
             <a href="<?php echo wp_get_attachment_url(1314); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
@@ -49,9 +53,13 @@ get_header(); ?>
                 echo '.' . $file_type['ext'] . ' | ' . $file_size; ?>
             </p>
         </div>
-        <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid align-text-top'); ?>
+        <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
+            <h1 class="font-kollektif mb-3">
+                <?php //echo wp_get_attachment_image(1321, [28, 28], false, 'class=img-fluid align-text-top'); 
+                ?>
+                <span class="align-text-bottom">
+                    <?php echo do_shortcode('[svg-flag flag="ES" inline="true" size="1"]'); ?>
+                </span>
                 Spanish
             </h1>
             <a href="<?php echo wp_get_attachment_url(1315); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
@@ -66,9 +74,13 @@ get_header(); ?>
                 echo '.' . $file_type['ext'] . ' | ' . $file_size; ?>
             </p>
         </div>
-        <div class="col-12 col-md-4 text-center mx-auto">
-            <h1 class="font-kollektif">
-                <?php echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid align-text-top'); ?>
+        <div class="col-12 col-md-4 text-center mx-auto mb-5 mb-md-0">
+            <h1 class="font-kollektif mb-3">
+                <?php // echo wp_get_attachment_image(1319, [28, 28], false, 'class=img-fluid align-text-top'); 
+                ?>
+                <span class="align-text-bottom">
+                    <?php echo do_shortcode('[svg-flag flag="DE" inline="true" size="1"]'); ?>
+                </span>
                 German
             </h1>
             <a href="<?php echo wp_get_attachment_url(1313); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
@@ -93,7 +105,7 @@ get_header(); ?>
 
                 ISBN: ISBN 1-55212-437-1
                 <br />
-                List Price: US&#36;14.50, C&#36;16.00, &#128;12.00, &#163;8.50
+                List Price: <strong>USD&#36;14.50, CAD&#36;16.00, &#128;12.00, &#163;8.50</strong>
                 <br />
 
                 100 pages; quality trade paperback (softcover); catalogue #00-0102

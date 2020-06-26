@@ -12,6 +12,8 @@ function related_techniques($atts)
 
     $techniques_ID = [19, 23, 27, 21, 25];
 ?>
+    <hr class="w-75 my-5" />
+
     <h1 class="text-success text-center text-uppercase mb-5">
         Related techniques
     </h1>

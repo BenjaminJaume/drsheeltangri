@@ -21,7 +21,7 @@ $page_ID = 75;
 
 <?php echo do_shortcode('[top_banner url=' . get_the_post_thumbnail_url($page_ID) . ' title="' . get_the_title($page_ID) . '"]'); ?>
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-12">
             <h1>Upcoming Countries / Cities</h1>
@@ -42,7 +42,7 @@ $page_ID = 75;
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="container-fluid my-5">

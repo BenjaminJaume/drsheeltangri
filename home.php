@@ -14,7 +14,7 @@ get_header();
     <?php
     while (have_posts()) {
         the_post(); ?>
-        <div class="row align-items-center">
+        <div class="row align-items-center" data-aos="slide-left" data-aos-once="true">
             <?php if (has_post_thumbnail()) { ?>
                 <div class="col-12 col-md-4 text-center mb-3 mb-md-0 mx-auto">
                     <a href="<?php echo the_permalink(); ?>" alt="" class="h1 font-weight-light">

@@ -50,18 +50,18 @@ $section_7 = get_field('section_7', $page_ID);
     <article class="container bg-light py-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="font-kollektif text-grey text-uppercase font-weight-bold">
+                <h1 class="font-kollektif text-grey text-uppercase font-weight-bold mb-5">
                     <?php echo $section_1['title']; ?>
                 </h1>
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-12 col-sm-4 col-lg-6 text-center">
+            <div class="col-12 col-lg-6 text-center mb-5 mb-lg-0">
                 <a href="<?php echo get_permalink($book_page_id); ?>" alt="">
                     <?php echo wp_get_attachment_image(1372, '', true, "class=img-fluid frame-hover"); ?>
                 </a>
             </div>
-            <div class="col-12 col-sm-8 col-lg-6 text-center">
+            <div class="col-12 col-lg-6 text-center">
                 <h1 class="text-brand font-kollektif font-weight-bold mb-1">
                     <?php echo $section_1['book_title']; ?>
                 </h1>
@@ -223,8 +223,7 @@ $section_7 = get_field('section_7', $page_ID);
                 <?php echo $section_5['sub_section_1']['title']; ?>
             </h3>
             <p class="m-0">
-                <?php for ($i = 1; $i <= count($section_5['sub_section_1']['links']); $i++) {
-                    console($section_5['sub_section_1']['links']); ?>
+                <?php for ($i = 1; $i <= count($section_5['sub_section_1']['links']); $i++) { ?>
                     <a href="<?php echo $section_5['sub_section_1']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
                         <?php echo $section_5['sub_section_1']['links'][$i]['title']; ?>
                     </a>
@@ -236,8 +235,7 @@ $section_7 = get_field('section_7', $page_ID);
                 <?php echo $section_5['sub_section_2']['title']; ?>
             </h3>
             <p class="m-0">
-                <?php for ($i = 1; $i <= count($section_5['sub_section_2']['links']); $i++) {
-                    console($section_5['sub_section_2']['links']); ?>
+                <?php for ($i = 1; $i <= count($section_5['sub_section_2']['links']); $i++) { ?>
                     <a href="<?php echo $section_5['sub_section_2']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
                         <?php echo $section_5['sub_section_2']['links'][$i]['title']; ?>
                     </a>

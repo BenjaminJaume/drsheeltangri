@@ -139,6 +139,33 @@ body {
   font-family: "Merriweather", serif;
 }
 
+.page-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .text-brand;
+  }
+
+  a:not(.btn) {
+    @extend .text-brand;
+  }
+
+  img {
+    @extend .img-fluid;
+
+    &:not(.no-frame) {
+      @extend .frame;
+    }
+
+    &.sfcm {
+      border: none;
+    }
+  }
+}
+
 .is-medium {
   display: none;
 }

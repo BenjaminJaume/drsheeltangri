@@ -25,7 +25,7 @@ $id = get_the_ID();
     </div>
     <div class="row">
         <div class="col-12 my-4">
-            <p class="font-big font-weight-light text-center m-0">
+            <p class="font-big text-center m-0">
                 <?php echo the_field('description', $id); ?>
             </p>
         </div>

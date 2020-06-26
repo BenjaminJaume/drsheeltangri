@@ -26,9 +26,9 @@ $postTypeName = $postType->labels->name;
 <div class="container my-5">
     <div class="row mb-5">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
-            <h1 class="font-kollektif font-weight-light text-center">
+            <h3 class="font-kollektif font-weight-light text-center">
                 Type a keyword to find the answer you are looking for
-            </h1>
+            </h3>
             <form role="search" method="get" action="<?php echo get_site_url(); ?>">
                 <div class="form-group">
                     <select class="custom-select custom-select-lg" type="search" name="s" required="required" data-placeholder="Example: Low blood, Grind teeth, Short Leg Syndrome" data-allow-clear="1">
@@ -58,14 +58,14 @@ $postTypeName = $postType->labels->name;
                         <div class="card-header" id="headingAccordionQuestionsAnswers-<?php echo $i; ?>">
                             <h2 class="mb-0">
                                 <button class="btn text-dark text-uppercase font-big text-left" type="button" data-toggle="collapse" data-target="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
-                                    Topic: <?php echo get_the_title($q[$i]); ?>
+                                    <?php echo get_the_title($q[$i]); ?>
                                 </button>
                             </h2>
                         </div>
 
                         <div id="collapse-<?php echo $i; ?>" class="collapse" aria-labelledby="headingAccordionQuestionsAnswers-<?php echo $i; ?>" data-parent="#accordionQuestionsAnswers">
                             <div class="card-body">
-                                <div>
+                                <div class="mb-5">
                                     <h1 class="font-kollektif text-brand text-uppercase font-weight-light">
                                         Question:
                                     </h1>
