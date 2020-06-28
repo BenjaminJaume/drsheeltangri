@@ -27,7 +27,7 @@ $postTypeName = $postType->labels->name;
 <div class="container-fluid my-5">
     <div class="row">
         <div class="col-12 col-md-8 mx-auto text-center">
-            <h3 class="font-kollektif font-weight-light text-brand">
+            <h3 class="font-kollektif font-weight-light">
                 In order to get the most out of the information presented in the videos, it is advisable to watch them in the sequence that they are presented
             </h3>
         </div>
