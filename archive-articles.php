@@ -46,7 +46,7 @@ $page_ID = 75;
 
 
 <div class="container-fluid my-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center" id="card-deck-events">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
         <?php
         foreach ($q as $id) {
         ?>

@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-12 text-center">
-                <a href="contact" class="btn btn-outline-success rounded-0 hvr-grow">Contact</a>
+                <a href="<?php echo get_permalink(37); ?>" class="btn btn-outline-success rounded-0 hvr-grow">Contact</a>
             </div>
         </div>
         <div class="row my-5">

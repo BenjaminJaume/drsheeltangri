@@ -12,6 +12,13 @@ $args = [
     'posts_per_page' => -1,
     'post_name_in'  => ['testimonials'],
     'fields'         => 'ids',
+    'meta_query'    => array(
+        array(
+            'key'         => 'is_student',
+            'value'          => 'no',
+            'compare'     => 'NOT',
+        )
+    ),
 ];
 $q = get_posts($args);
 

@@ -184,7 +184,7 @@ $section_7 = get_field('section_7', $page_ID);
             </p>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
         <div class="col-12 text-center">
             <a href="<?php echo $section_4['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward mb-sm-auto">
                 <?php echo $section_4['button_1']['label']; ?>
@@ -196,6 +196,11 @@ $section_7 = get_field('section_7', $page_ID);
             </a>
         </div>
     </div>
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <?php echo do_shortcode('[paypal_button][/paypal_button]'); ?>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 text-center">
             <a href="<?php echo get_permalink($not_page_id); ?>" alt="">
@@ -205,79 +210,7 @@ $section_7 = get_field('section_7', $page_ID);
     </div>
 </div>
 
-<div class="bg-success my-5">
-    <article class="container py-5">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="h1 font-kollektif text-uppercase text-center text-white font-weight-bold">
-                    <?php echo $section_5['title']; ?>
-                </h1>
-                <div class="col-12 col-sm-10 col-md-8 text-center mx-auto">
-                    <p class="font-big">
-                        <?php echo $section_5['content']; ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-<article class="container">
-    <div class="row">
-        <div class="col-12 text-center my-4">
-            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                <?php echo $section_5['sub_section_1']['title']; ?>
-            </h3>
-            <p class="m-0">
-                <?php for ($i = 1; $i <= count($section_5['sub_section_1']['links']); $i++) { ?>
-                    <a href="<?php echo $section_5['sub_section_1']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
-                        <?php echo $section_5['sub_section_1']['links'][$i]['title']; ?>
-                    </a>
-                <?php } ?>
-            </p>
-        </div>
-        <div class="col-12 text-center my-4">
-            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                <?php echo $section_5['sub_section_2']['title']; ?>
-            </h3>
-            <p class="m-0">
-                <?php for ($i = 1; $i <= count($section_5['sub_section_2']['links']); $i++) { ?>
-                    <a href="<?php echo $section_5['sub_section_2']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
-                        <?php echo $section_5['sub_section_2']['links'][$i]['title']; ?>
-                    </a>
-                <?php } ?>
-            </p>
-        </div>
-        <div class="col-12 text-center my-4">
-            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
-                <?php echo $section_5['sub_section_3']['title']; ?>
-            </h3>
-            <p class="m-0">
-                <?php
-                $the_query = new WP_Query('posts_per_page=5');
-
-                while ($the_query->have_posts()) : $the_query->the_post();
-                ?>
-                    <a href="<?php echo the_permalink(); ?>" class="btn btn-dark btn-lg rounded-0 m-1">
-                        <?php echo the_title(); ?>
-                    </a>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-                ?>
-            </p>
-        </div>
-    </div>
-</article>
-
-<!-- <hr class="w-50 my-5 bg-dark" /> -->
-<div class="container-fluid my-5">
-    <div class="row">
-        <div class="col-12">
-            <div style="background-image: url(<?php echo wp_get_attachment_url($section_6['image']['ID']); ?>); height: 250px;" class="bg-cover frame">
-            </div>
-        </div>
-    </div>
-</div>
+<hr class="w-50 my-5" />
 
 <article class="container my-5">
     <div class="row">
@@ -371,6 +304,94 @@ $section_7 = get_field('section_7', $page_ID);
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+        </div>
+    </div>
+</article>
+
+<div class="bg-brand my-5">
+    <article class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center mx-auto">
+                <h1 class="h1 font-kollektif text-uppercase text-center font-weight-bold m-0">
+                    Latest posts
+                </h1>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center">
+            <?php
+            $recent_posts = wp_get_recent_posts(array(
+                'numberposts' => 4, // Number of recent posts thumbnails to display
+                'post_status' => 'publish' // Show only the published posts
+            ));
+            foreach ($recent_posts as $post) : ?>
+                <div class="col text-center mb-5 mb-lg-0">
+                    <a href="<?php echo get_permalink($post['ID']) ?>">
+                        <?php echo get_the_post_thumbnail($post['ID'], 'thumbnail', 'class=img-fluid frame-hover text-decoration-none mb-3'); ?>
+                    </a>
+
+                    <a href="<?php echo get_permalink($post['ID']) ?>">
+                        <p class="btn-link text-dark"><?php echo $post['post_title'] ?></p>
+                    </a>
+                </div>
+            <?php endforeach;
+            wp_reset_query(); ?>
+        </div>
+    </article>
+</div>
+
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-12">
+            <div style="background-image: url(<?php echo wp_get_attachment_url($section_6['image']['ID']); ?>); height: 250px;" class="bg-cover frame">
+            </div>
+        </div>
+    </div>
+</div>
+
+<article class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                <?php echo $section_5['sub_section_1']['title']; ?>
+            </h3>
+            <p class="m-0">
+                <?php for ($i = 1; $i <= count($section_5['sub_section_1']['links']); $i++) { ?>
+                    <a href="<?php echo $section_5['sub_section_1']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo $section_5['sub_section_1']['links'][$i]['title']; ?>
+                    </a>
+                <?php } ?>
+            </p>
+        </div>
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                <?php echo $section_5['sub_section_2']['title']; ?>
+            </h3>
+            <p class="m-0">
+                <?php for ($i = 1; $i <= count($section_5['sub_section_2']['links']); $i++) { ?>
+                    <a href="<?php echo $section_5['sub_section_2']['links'][$i]['link']; ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo $section_5['sub_section_2']['links'][$i]['title']; ?>
+                    </a>
+                <?php } ?>
+            </p>
+        </div>
+        <div class="col-12 text-center my-4">
+            <h3 class="font-kollektif text-uppercase font-weight-light mb-4">
+                <?php echo $section_5['sub_section_3']['title']; ?>
+            </h3>
+            <p class="m-0">
+                <?php
+                $the_query = new WP_Query('posts_per_page=5');
+
+                while ($the_query->have_posts()) : $the_query->the_post();
+                ?>
+                    <a href="<?php echo the_permalink(); ?>" class="btn btn-dark btn-lg rounded-0 m-1">
+                        <?php echo the_title(); ?>
+                    </a>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
+            </p>
         </div>
     </div>
 </article>

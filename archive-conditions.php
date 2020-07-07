@@ -30,7 +30,7 @@ $postTypeName = $postType->labels->name;
             <?php echo loop_category('Defense system'); ?>
         </div>
         <div class="col-12 text-center my-3">
-            <?php echo loop_category('Digestive/Immune System'); ?>
+            <?php echo loop_category('Digestive / Immune System'); ?>
         </div>
         <div class="col-12 text-center my-3">
             <?php echo loop_category('Hormonal System'); ?>

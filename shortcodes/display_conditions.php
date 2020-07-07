@@ -28,7 +28,7 @@ function loop_category($category)
     $query = get_posts($args);
 
     $str = '<ul class="list-group">';
-    $str = $str . '<li class="list-group-item bg-success text-uppercase font-bigger font-weight-light" style="height: 100px">' . $category . '</li>';
+    $str = $str . '<li class="list-group-item bg-success text-uppercase font-bigger font-weight-light" style="height: 130px">' . $category . '</li>';
 
     for ($i = 0; $i < count($query); $i++) {
         $str = $str . '
