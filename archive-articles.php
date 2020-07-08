@@ -49,7 +49,7 @@ $page_ID = 75;
 <div class="container-fluid my-5">
     <div class="row bg-success py-5 mb-5">
         <div class="col-12 text-center">
-            <h2 class="text-white text-uppercase">Past events</h2>
+            <h2 class="text-white text-uppercase font-kollektif font-kollektif">Past events</h2>
         </div>
     </div>
 </div>
@@ -92,7 +92,7 @@ $page_ID = 75;
 <div class="container-fluid my-5">
     <div class="row bg-success py-5 mb-5">
         <div class="col-12 text-center">
-            <h2 class="text-white text-uppercase">Articles</h2>
+            <h2 class="text-white text-uppercase font-kollektif">Articles</h2>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center">

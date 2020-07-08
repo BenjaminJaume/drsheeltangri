@@ -198,7 +198,7 @@ $section_7 = get_field('section_7', $page_ID);
     </div>
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <?php //echo do_shortcode('[paypal_button][/paypal_button]'); 
+            <?php echo do_shortcode('[paypal_button][/paypal_button]');
             ?>
         </div>
     </div>
@@ -330,8 +330,8 @@ $section_7 = get_field('section_7', $page_ID);
                         <?php echo get_the_post_thumbnail($post['ID'], 'thumbnail', 'class=img-fluid frame-hover text-decoration-none mb-3'); ?>
                     </a>
 
-                    <a href="<?php echo get_permalink($post['ID']) ?>">
-                        <p class="btn-link text-dark"><?php echo $post['post_title'] ?></p>
+                    <a href="<?php echo get_permalink($post['ID']) ?>" class="h5 btn-link text-dark">
+                        <p><?php echo $post['post_title'] ?></p>
                     </a>
                 </div>
             <?php endforeach;
