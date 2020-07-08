@@ -11,9 +11,10 @@ $args = [
     'post_type'      => 'articles',
     'posts_per_page' => -1,
     'post_name_in'  => ['articles'],
-    'fields'         => 'ids'
+    'fields'         => 'ids',
+    'order' => 'ASC'
 ];
-$q = get_posts($args);
+$query = get_posts($args);
 
 $page_ID = 75;
 
@@ -46,16 +47,70 @@ $page_ID = 75;
 
 
 <div class="container-fluid my-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
+    <div class="row bg-success py-5 mb-5">
+        <div class="col-12 text-center">
+            <h2 class="text-white text-uppercase">Past events</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-auto text-center mx-auto mb-5">
+            <?php echo wp_get_attachment_image(1995, 'medium', true, "class=img-fluid frame"); ?>
+        </div>
+        <div class="col-12 col-md-auto text-center mx-auto mb-5">
+            <?php echo wp_get_attachment_image(1996, 'medium', true, "class=img-fluid frame"); ?>
+        </div>
+        <div class="col-12 col-lg-4 text-center">
+            <p class="text-brand">
+                Presenting N.O.T. to Ayurvedic Association of Kerala, South India
+            </p>
+            <p>
+                October 2018
+            </p>
+        </div>
+    </div>
+
+    <hr class="w-25" />
+
+    <div class="row justify-content-center align-items-center mt-5">
+        <div class="col-12 col-lg-4 text-center">
+            <p class="text-brand">
+                N.O.T. seminar - Guadalajara, Mexico
+            </p>
+            <p>
+                November 2018
+            </p>
+        </div>
+        <div class="col-12 col-md-auto text-center mx-auto mb-5">
+            <?php echo wp_get_attachment_image(575, 'medium', true, "class=img-fluid frame"); ?>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid my-5">
+    <div class="row bg-success py-5 mb-5">
+        <div class="col-12 text-center">
+            <h2 class="text-white text-uppercase">Articles</h2>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center">
         <?php
-        foreach ($q as $id) {
+        foreach ($query as $id) {
         ?>
             <div class="col mb-4">
-                <div class="card h-100">
-                    <div class="card-header text-center">
-                        <h5 class="card-title font-kollektif my-auto">
-                            <?php the_field('title', $id); ?>
-                        </h5>
+                <div class="card rounded-0">
+                    <div class="card-header text-center bg-transparent">
+                        <a href="<?php echo the_permalink($id); ?>" class="text-success">
+                            <h3 class="card-title font-kollektif">
+                                <?php the_field('title', $id); ?>
+                            </h3>
+                        </a>
+                        <?php if (get_field('date_article', $id)) { ?>
+                            <i class="far fa-clock"></i>
+                            <?php the_field('date_article', $id) ?>
+                        <?php } ?>
                     </div>
 
                     <?php
@@ -68,25 +123,23 @@ $page_ID = 75;
                     }
                     ?>
                     <a href="<?php echo the_permalink($id); ?>">
-                        <img src="<?php echo wp_get_attachment_url($id_image); ?>" class="img-fluid" />
+                        <!-- <img src="<?php echo wp_get_attachment_url($id_image); ?>" class="img-fluid" /> -->
+                        <?php // echo wp_get_attachment_image($id_image, 'thumbnail', true, "class=card-img-top img-fluid"); 
+                        ?>
+                        <img src="<?php echo wp_get_attachment_url($id_image); ?>" alt="" class="top-banner" width="100%" />
                     </a>
 
-                    <div class="card-body text-center">
+                    <!-- <div class="card-body text-center">
                         <p class="card-text font-weight-light">
                             <?php echo wp_trim_words(get_field('description', $id), 15); ?>
                         </p>
-
+                    </div> -->
+                    <div class="card-footer text-center">
                         <!-- Button trigger modal -->
                         <a href="<?php echo the_permalink($id); ?>" class="btn btn-success rounded-0 hvr-grow">
-                            More
+                            Read more
                         </a>
                     </div>
-                    <?php if (get_field('date_article', $id)) { ?>
-                        <div class="card-footer text-center text-muted">
-                            <i class="far fa-clock"></i>
-                            <?php the_field('date_article', $id) ?>
-                        </div>
-                    <?php } ?>
                 </div>
             </div>
         <?php

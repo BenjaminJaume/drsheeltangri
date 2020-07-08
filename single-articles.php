@@ -7,7 +7,7 @@ $id = get_the_ID();
 <div class="container my-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 font-kollektif text-uppercase text-brand mb-0">
+            <h1 class="font-kollektif text-uppercase text-brand mb-0">
                 <?php echo the_field('title', $id); ?>
             </h1>
             <p class="text-muted">
@@ -30,42 +30,61 @@ $id = get_the_ID();
         </div>
     </div>
 
-    <?php
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+        <?php
 
-    $images = get_field('images');
-    $i = 0;
+        $images = get_field('images');
 
-    if ($images) :
-        foreach ($images as $image) :
-            // ID of the image
-            if ($image['image']) {
-                if ($image['image']['ID']) {
-                    $id_image = $image['image']['ID'];
+        if ($images) {
+            // print_r($images);
+            for ($i = 1; $i <= count($images); $i++) {
+                if ($images[$i]['image']['ID']) {
+                    $image_id = $images[$i]['image']['ID'];
                 } else {
-                    $id_image = $image['image'];
+                    $image_id = $images[$i]['image'];
                 }
 
-    ?>
-                <div class="row <?php if ($image['title']) {
-                                    echo 'my-5';
-                                } ?>">
-                    <div class="col-12">
-                        <?php if (!$image['title']) { ?>
-                            <hr class="w-75 my-5" />
-                        <?php } else { ?>
-                            <h1 class="text-center font-kollektif text-brand">
-                                <?php echo $image['title']; ?>
-                            </h1>
-                        <?php } ?>
-                        <img src="<?php echo wp_get_attachment_url($id_image); ?>" class="img-fluid" />
+                if ($image_id) {
+        ?>
+                    <div class="col-12 mb-4 text-center">
+                        <p>
+                            <a href="#" class="btn btn-link text-success" data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
+                                <?php echo $images[$i]['title']; ?>
+                            </a>
+                        </p>
+                        <!-- Button trigger modal -->
+                        <a href="#" data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
+                            <?php echo wp_get_attachment_image($image_id, 'medium', true, "class=card-img-top img-fluid frame-hover"); ?>
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal-<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $images[$i]['title']; ?>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-kollektif text-brand" id="<?php echo $images[$i]['title']; ?>"><?php echo $images[$i]['title']; ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a href="<?php echo get_the_permalink($image_id); ?>" alt="">
+                                            <img src="<?php echo wp_get_attachment_url($image_id); ?>" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-success rounded-0 hvr-shrink" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-    <?php
+        <?php
+                }
             }
-            $i++;
-        endforeach;
-    endif;
-    ?>
+        }
+        ?>
+    </div>
 </div>
 
 

@@ -186,11 +186,11 @@ $section_7 = get_field('section_7', $page_ID);
     </div>
     <div class="row mb-3">
         <div class="col-12 text-center">
-            <a href="<?php echo $section_4['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward mb-sm-auto">
+            <a href="<?php echo $section_4['button_1']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward m-2">
                 <?php echo $section_4['button_1']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
-            <a href="<?php echo $section_4['button_2']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward">
+            <a href="<?php echo $section_4['button_2']['link']; ?>" alt="" class="btn btn-success rounded-0 hvr-icon-forward m-2">
                 <?php echo $section_4['button_2']['label']; ?>
                 <i class="fas fa-chevron-right ml-2 hvr-icon"></i>
             </a>
@@ -198,7 +198,8 @@ $section_7 = get_field('section_7', $page_ID);
     </div>
     <div class="row mb-5">
         <div class="col-12 text-center">
-            <?php echo do_shortcode('[paypal_button][/paypal_button]'); ?>
+            <?php //echo do_shortcode('[paypal_button][/paypal_button]'); 
+            ?>
         </div>
     </div>
     <div class="row">
