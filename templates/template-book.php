@@ -27,7 +27,7 @@ get_header(); ?>
     <div class="row mb-5">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center mx-auto">
             <h4 class="font-kollektif text-brand font-weight-light text-muted">
-                Get the free eBook in your favorite language, or order a hard copy sent to you
+                Get the free ebook in one of the languages offered, or order an English hard copy sent to you.
             </h4>
         </div>
     </div>
@@ -99,7 +99,14 @@ get_header(); ?>
 
                 ISBN: ISBN 1-55212-437-1
                 <br />
-                List Price: <strong>USD&#36;14.50, CAD&#36;16.00, &#128;12.00, &#163;8.50</strong>
+
+                List Price:
+                <strong>
+                    <span class="flag-icon flag-icon-us align-baseline ml-2"></span> USD&#36;14.50
+                    <span class="flag-icon flag-icon-ca align-baseline ml-2"></span> CAD&#36;16.00
+                    <span class="flag-icon flag-icon-eu align-baseline ml-2"></span> &#128;12.00
+                    <span class="flag-icon flag-icon-gb align-baseline ml-2"></span> &#163;8.50
+                </strong>
                 <br />
 
                 100 pages; quality trade paperback (softcover); catalogue #00-0102
@@ -114,12 +121,12 @@ get_header(); ?>
                 <br />
                 <br />
 
-                or Phone <a href="tel:1-888-232-4444">1-888-232-4444</a> (USA and Canada only) or <a href="tel:1-250-383-6864">1-250-383-6864</a>.
+                or Phone <a href="tel:1-888-232-4444" class="text-success">1-888-232-4444</a> (USA and Canada only) or <a href="tel:1-250-383-6864" class="text-success">1-250-383-6864</a>.
                 <br />
 
                 From Europe, ring our UK order desk clerk at local rate number
                 <br />
-                <a href="tel:08452309601">0845 230 9601</a> (UK only) or <a href="+44(0)1865722113">+44 (0)1865 722 113</a>
+                <a href="tel:08452309601" class="text-success">0845 230 9601</a> (UK only) or <a href="tel:+441865722113" class="text-success">+44 (0)1865 722 113</a>
 
             </p>
         </div>

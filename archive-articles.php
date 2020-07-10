@@ -80,7 +80,7 @@ $page_ID = 75;
                 N.O.T. seminar - Guadalajara, Mexico
             </p>
             <p>
-                November 2018
+                October 2019
             </p>
         </div>
         <div class="col-12 col-md-auto text-center mx-auto mb-5">
