@@ -392,8 +392,8 @@ function custom_post_types_pre_get_posts($query)
         switch ($query->query_vars['post_type']) {
             case 'conditions':
                 $query->set('orderby', 'meta_value');
+                // $query->set('meta_key', 'category');
                 $query->set('meta_key', 'order');
-                $query->set('meta_key', 'category');
                 $query->set('meta_type', 'numeric');
                 $query->set('order', 'ASC');
                 break;
