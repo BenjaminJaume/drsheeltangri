@@ -58,14 +58,14 @@ get_header(); ?>
                 </span>
                 Spanish
             </h1>
-            <a href="<?php echo wp_get_attachment_url(1315); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
+            <a href="<?php echo wp_get_attachment_url(2070); ?>" class="btn btn-success btn-lg rounded-0 mb-2" download>
                 Download
                 <i class="fa fa-download"></i>
             </a>
             <p class="text-muted">
                 <?php
-                $file_type = wp_check_filetype(wp_get_attachment_url(1315));
-                $file_size = formatBytes(filesize(get_attached_file(1315)), 2);
+                $file_type = wp_check_filetype(wp_get_attachment_url(2070));
+                $file_size = formatBytes(filesize(get_attached_file(2070)), 2);
 
                 echo '.' . $file_type['ext'] . ' | ' . $file_size; ?>
             </p>
