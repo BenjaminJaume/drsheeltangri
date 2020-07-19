@@ -31,7 +31,7 @@
             <div class="col-12 text-center">
                 <p class="">
                     Web Designer: Benjamin Jaume -
-                    <a href="www.benjaminjau.me" alt="" class="text-warning">
+                    <a href="http://www.benjaminjau.me" alt="" class="text-warning">
                         www.benjaminjau.me
                     </a>
                 </p>

@@ -19,9 +19,6 @@
 
 <?php
 
-global $template;
-console($template);
-
 global $front_page_id;
 global $seminars_page_id;
 global $book_page_id;

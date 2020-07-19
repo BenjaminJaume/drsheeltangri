@@ -49,20 +49,47 @@ $page_ID = 75;
 <div class="container-fluid my-5">
     <div class="row bg-success py-5 mb-5">
         <div class="col-12 text-center">
-            <h2 class="text-white text-uppercase font-kollektif font-kollektif">Past events</h2>
+            <h2 class="text-white text-uppercase font-kollektif font-kollektif mb-0">Past events</h2>
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-md-auto text-center mx-auto mb-5">
-            <?php echo wp_get_attachment_image(1995, 'medium', true, "class=img-fluid frame"); ?>
+        <div class="col-12 col-md-6 col-lg-4 text-center mx-auto mb-5">
+            <a href="<?php echo get_the_permalink(2003); ?>" alt="">
+                <?php echo wp_get_attachment_image(2003, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
         </div>
-        <div class="col-12 col-md-auto text-center mx-auto mb-5">
-            <?php echo wp_get_attachment_image(1996, 'medium', true, "class=img-fluid frame"); ?>
+        <div class="col-12 col-md-6 col-lg-4 text-center mx-auto mb-5">
+            <a href="<?php echo get_the_permalink(2002); ?>" alt="">
+                <?php echo wp_get_attachment_image(2002, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
         </div>
         <div class="col-12 col-lg-4 text-center">
+            <p class="text-brand">
+                N.O.T. seminar in Guadalajara, Mexico
+            </p>
+            <p>
+                October 2019
+            </p>
+        </div>
+    </div>
+
+    <hr class="w-25 my-5" />
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center order-lg-2 mx-auto mb-5">
+            <a href="<?php echo get_the_permalink(1995); ?>" alt="">
+                <?php echo wp_get_attachment_image(1995, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center order-lg-3 mx-auto mb-5">
+            <a href="<?php echo get_the_permalink(1996); ?>" alt="">
+                <?php echo wp_get_attachment_image(1996, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 text-center order-lg-1">
             <p class="text-brand">
                 Presenting N.O.T. to Ayurvedic Association of Kerala, South India
             </p>
@@ -72,19 +99,57 @@ $page_ID = 75;
         </div>
     </div>
 
-    <hr class="w-25" />
+    <hr class="w-25 my-5" />
 
-    <div class="row justify-content-center align-items-center mt-5">
-        <div class="col-12 col-lg-4 text-center">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center ml-auto mb-5">
+            <a href="<?php echo get_the_permalink(575); ?>" alt="">
+                <?php echo wp_get_attachment_image(575, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center mr-auto">
             <p class="text-brand">
                 N.O.T. seminar - Guadalajara, Mexico
             </p>
             <p>
-                October 2019
+                October 2018
             </p>
         </div>
-        <div class="col-12 col-md-auto text-center mx-auto mb-5">
-            <?php echo wp_get_attachment_image(575, 'medium', true, "class=img-fluid frame"); ?>
+    </div>
+
+    <hr class="w-25 my-5" />
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-auto text-center order-lg-2 mr-auto mb-5">
+            <a href="<?php echo get_the_permalink(1999); ?>" alt="">
+                <?php echo wp_get_attachment_image(1999, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center order-lg-1 ml-auto">
+            <p class="text-brand">
+                Presentation in Nosara, Costa Rica
+            </p>
+            <p>
+                2009
+            </p>
+        </div>
+    </div>
+
+    <hr class="w-25 my-5" />
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center ml-auto mb-5">
+            <a href="<?php echo get_the_permalink(1998); ?>" alt="">
+                <?php echo wp_get_attachment_image(1998, 'medium', true, "class=img-fluid frame-hover"); ?>
+            </a>
+        </div>
+        <div class="col-12 col-md-auto text-center mr-auto">
+            <p class="text-brand">
+                Volunteering in Zanzibar, Africa
+            </p>
+            <p>
+                2003
+            </p>
         </div>
     </div>
 </div>
@@ -92,7 +157,7 @@ $page_ID = 75;
 <div class="container-fluid my-5">
     <div class="row bg-success py-5 mb-5">
         <div class="col-12 text-center">
-            <h2 class="text-white text-uppercase font-kollektif">Articles</h2>
+            <h2 class="text-white text-uppercase font-kollektif mb-0">Articles</h2>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center">
