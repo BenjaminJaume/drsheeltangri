@@ -1,0 +1,32 @@
+{
+  "name": "silentaffirmations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@ttskch/select2-bootstrap4-theme": "^1.4.0",
+    "animate.css": "^3.7.2",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.4.1",
+    "hover.css": "^2.3.2",
+    "normalize.css": "^8.0.1",
+    "scss": "^0.2.4",
+    "select2": "^4.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "sass --watch scss:css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminJaume/silentaffirmations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenjaminJaume/silentaffirmations/issues"
+  },
+  "homepage": "https://github.com/BenjaminJaume/silentaffirmations#readme"
+}

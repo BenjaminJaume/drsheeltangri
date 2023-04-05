@@ -1,0 +1,11 @@
+@use "../colors";
+
+$theme-colors: (
+  "dark": colors.$olive,
+  // "success": colors.$emerald,
+    "success": colors.$brand,
+  "warning": colors.$sun-flower,
+  // "light": #f1f2f6,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
